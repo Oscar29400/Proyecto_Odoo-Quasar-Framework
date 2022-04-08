@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_empleados,empleados_default,model_empleados,base.group_user,1,1,1,1
+acl_productos,productos_default,model_productos,base.group_user,1,1,1,1
+acl_cargamento,cargamento_default,model_cargamento,base.group_user,1,1,1,1
+acl_ventar,ventar_default,model_ventar,base.group_user,1,1,1,1

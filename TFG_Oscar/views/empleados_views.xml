@@ -1,0 +1,93 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="empleados_tree"> 
+      <field name="name">Listado de Empleados </field>
+      <field name="model">empleados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="seguridadSocial"/>
+          <field name="foto" widget="image" class="oe_avatar"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Kanban-->
+    <record model="ir.ui.view" id="empleados_kanban"> 
+      <field name="name">Listado del Empleados</field>
+      <field name="model">empleados</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_vignette">
+                <div class = "oe_kanban_details">
+                  <h4>
+                      <a type="open">
+                        <field name="id"/>
+                      </a>
+                  </h4>
+                  <ul>
+                    <li><field name="nombre"/></li>
+                    <li><field name="apellidos"/></li>
+                    <li><field name="seguridadSocial"/></li>
+                    <li><field name="foto" widget="image" class="oe_avatar"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+   
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="empleados_form_view">
+    <field name="name">Crear el empleado</field>
+    <field name="model">empleados</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="nombre"/>
+        </group>
+        <group>
+          <field name="apellidos"/>
+        </group>
+        <group>
+          <field name="seguridadSocial"/>
+        </group>
+        <group>
+          <field name="foto" widget="image" class="oe_avatar"/>
+        </group>
+      </group>
+      </form>
+    </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="empleados_action_window">
+      <field name="name">Listado del Empleado</field>
+      <field name="res_model">empleados</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+
+    
+
+    <!-- actions -->
+
+    <menuitem name="empleados" id="empleados_menu" parent="botin_menu_root"
+              action="empleados_action_window"/>
+
+  </data>
+</odoo>

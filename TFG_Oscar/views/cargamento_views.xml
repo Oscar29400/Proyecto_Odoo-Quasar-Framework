@@ -1,0 +1,93 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="cargamento_tree"> 
+      <field name="name">Listado del Cargamento </field>
+      <field name="model">cargamento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="nombre"/>
+          <field name="productos"/>
+          <field name="volumen"/>
+          <field name="peso"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Kanban-->
+    <record model="ir.ui.view" id="cargamento_kanban"> 
+      <field name="name">Listado del Cargamento</field>
+      <field name="model">cargamento</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_vignette">
+                <div class = "oe_kanban_details">
+                  <h4>
+                      <a type="open">
+                        <field name="id"/>
+                      </a>
+                  </h4>
+                  <ul>
+                    <li><field name="nombre"/></li>
+                    <li><field name="productos"/></li>
+                    <li><field name="volumen"/></li>
+                    <li><field name="peso"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+   
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="cargamento_form_view">
+    <field name="name">Crear el Cargamento</field>
+    <field name="model">cargamento</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="nombre"/>
+        </group>
+        <group>
+          <field name="productos"/>
+        </group>
+        <group>
+          <field name="volumen"/>
+        </group>
+        <group>
+          <field name="peso"/>
+        </group>
+      </group>
+      </form>
+    </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="cargamento_action_window">
+      <field name="name">Listado del Cargamento</field>
+      <field name="res_model">cargamento</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+
+    
+
+    <!-- actions --> 
+
+    <menuitem name="Cargamentos" id="cargamento_menu" parent="botin_menu_root"
+              action="cargamento_action_window"/>
+
+  </data>
+</odoo>
