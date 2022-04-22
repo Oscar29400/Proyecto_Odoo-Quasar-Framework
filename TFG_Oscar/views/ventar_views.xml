@@ -9,10 +9,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
-          <field name="nombre"/>
-          <field name="img"/>
-          <field name="precioCoste"/>
-          <field name="precioVenta"/>
+          <field name="producto"/>
+          <field name="precioVenta2"/>
+          <field name="cantidad"/>
+          <field name="empleado"/>
+
         </tree>
       </field>
     </record>
@@ -33,17 +34,13 @@
                       </a>
                   </h4>
                   <ul>
-                    <li><field name="nombre"/></li>
+                    <li><field name="empleado"/></li>
                   </ul>
                   <ul>
-                    <li><field name="img"/></li>
-                  </ul>
-
-                  <ul>
-                    <li><field name="precioCoste"/></li>
+                    <li><field name="producto"/></li>
                   </ul>
                   <ul>
-                    <li><field name="precioVenta"/></li>
+                    <li><field name="precioVenta2"/></li>
                   </ul>
                 </div>
               </div>
@@ -61,10 +58,10 @@
     <form>
       <group>
         <group>
-          <field name="nombre"/>
-          <field name="img"/>
-          <field name="precioCoste"/>
-          <field name="precioVenta"/>
+          <field name="empleado"/>
+          <field name="producto"/>
+          <field name="precioVenta2"/>
+          <field name="cantidad"/>
         </group>
 
       </group>
@@ -91,7 +88,7 @@
     
     <!-- actions -->
 
-    <menuitem name="ventar" id="ventar_menu" parent="botin_menu_root"
+    <menuitem name="Venta" id="ventar_menu" parent="botin_menu_root"
               action="ventar_action_window"/>
 
   </data>

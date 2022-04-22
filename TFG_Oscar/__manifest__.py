@@ -30,7 +30,8 @@
         #Cargamos las vistas y las plantillas
         'views/empleados_views.xml',
         'views/productos_views.xml',
-        'views/cargamento_views.xml',
+        'views/compras_views.xml',
         'views/ventar_views.xml',
+        'views/proveedores_views.xml',
     ]
 }

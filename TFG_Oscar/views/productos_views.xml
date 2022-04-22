@@ -11,9 +11,10 @@
           <field name="id"/>
           <field name="nombre"/>
           <field name="img"/>
-          <field name="cargamento"/>
           <field name="precioCoste"/>
           <field name="precioVenta"/>
+          <field name="cantidad"/>
+          <field name="nuevoc"/>
         </tree>
       </field>
     </record>
@@ -40,14 +41,17 @@
                     <li><field name="img"/></li>
                   </ul>
                   <ul>
-                    <li><field name="cargamento"/></li>
-                  </ul>
-                  <ul>
                     <li><field name="precioCoste"/></li>
                   </ul>
                   <ul>
                     <li><field name="precioVenta"/></li>
                   </ul>
+                  <ul>
+                    <li><field name="cantidad"/></li>
+                  </ul> 
+                  <ul>
+                    <li><field name="nuevoc"/></li>
+                  </ul>                  
                 </div>
               </div>
             </t>
@@ -66,9 +70,10 @@
         <group>
           <field name="nombre"/>
           <field name="img"/>
-          <field name="cargamento"/>
           <field name="precioCoste"/>
           <field name="precioVenta"/>
+          <field name="cantidad"/>
+          <field name="nuevoc"/>
         </group>
 
       </group>

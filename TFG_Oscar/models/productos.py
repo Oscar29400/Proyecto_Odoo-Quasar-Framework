@@ -17,12 +17,21 @@ class Productos(models.Model):
    
     id = fields.Integer()
     nombre = fields.Char()
-    img = fields.Image()
-    cargamento = fields.Many2one('cargamento')
+    img = fields.Image(max_width=150,max_height=150)
+    descripcion = fields.Html(sanitaze=True,strp_style=False)
+    marca= fields.Many2one('proveedores')
+    cargamento = fields.Many2one('compras')
+    cantidad = fields.Integer()
     precioCoste = fields.Float()
     precioVenta = fields.Float(compute='_precio')
+    nuevoc = fields.Integer(compute='_cantidad', store=True)
 
     @api.depends('precioCoste')
     def _precio(self):
         for rec in self:
            rec.update({'precioVenta': rec.precioCoste*1.50})
+    
+    @api.depends('cantidad')
+    def _cantidad(self):
+        for rec in self:
+            rec.nuevoc = rec.cantidad
