@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Ejemplo de informe asociado a equipo (se genera al darle  aimprimir 
+        desde la vista Form de un equipo) -->
+    <template id="report_ventas_view">
+        <!-- Aqui la estructura a seguir -->
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Factura de Venta</h1><br/>
+                        
+                        <br/>
+                        <div t-foreach="doc.cliente" t-as="cliente">
+                            <h5>
+                            ID Venta: <span t-field="doc.idventa" /></h5>
+                            Nombre: <span t-field="cliente.nombre"/><br/>
+                            CIF: <span t-field="cliente.cif"/><br/>
+                            Dirección: <span t-field="cliente.direccion"/><br/>
+                            Ciudad: <span t-field="cliente.ciudad"/><br/>
+                            Email: <span t-field="cliente.email"/><br/>
+                            Tlfno: <span t-field="cliente.tlfno"/><br/>
+                        </div>
+                        <br/><br/>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">ID Venta</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.producto" t-as="producto">
+
+                                    <td>
+                                        <span t-field="producto.id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="producto.idventa" />
+                                    </td>
+                                    <td>
+                                        <span t-field="producto.producto" />
+                                    </td>
+                                    <td>
+                                        <span t-field="producto.cantidad" />
+                                    </td>
+                                    <td>
+                                        <span t-field="producto.precioVenta2" />
+                                    </td>                                  
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot class="table mb-0">
+                                <tr>
+                                    <td colspan="4">PRECIO TOTAL</td>
+                                    <td scope="row">
+                                        <span t-field="doc.precioTotal" />
+                                    </td> 
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Realmente, este es el informe, lo de arriba es la plantilla que utilizara el informe -->
+    <report id="report_ventas_view" model="ventacompleta" string="Factura de la Venta" name="TFG_Oscar.report_ventas_view" file="TFG_Oscar.report_ventas_view" report_type="qweb-pdf" />
+</odoo>

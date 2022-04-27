@@ -16,15 +16,15 @@ class Productos(models.Model):
     # https://www.odoo.com/documentation/14.0/developer/reference/addons/orm.html#fields
    
     id = fields.Integer()
-    nombre = fields.Char()
-    img = fields.Image(max_width=150,max_height=150)
+    nombre = fields.Char('Nombre')
+    img = fields.Image(max_width=100,max_height=100, string='Imagen')
     descripcion = fields.Html(sanitaze=True,strp_style=False)
-    marca= fields.Many2one('proveedores')
+    marca= fields.Many2one('proveedores', string='Marca')
     cargamento = fields.Many2one('compras')
     cantidad = fields.Integer()
-    precioCoste = fields.Float()
-    precioVenta = fields.Float(compute='_precio')
-    nuevoc = fields.Integer(compute='_cantidad', store=True)
+    precioCoste = fields.Float('Precio Coste')
+    precioVenta = fields.Float(compute='_precio',store=True,string='Precio Venta')
+    nuevoc = fields.Integer(compute='_cantidad', store=True,string='Cantidad')
 
     @api.depends('precioCoste')
     def _precio(self):

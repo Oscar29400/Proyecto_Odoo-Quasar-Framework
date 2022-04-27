@@ -28,10 +28,14 @@
         #Este primero indica la politica de acceso del modulo
         'security/ir.model.access.csv',
         #Cargamos las vistas y las plantillas
-        'views/empleados_views.xml',
+        'views/empleados_views2.xml',
         'views/productos_views.xml',
         'views/compras_views.xml',
         'views/ventar_views.xml',
         'views/proveedores_views.xml',
+        'views/clientes_views.xml',
+        'views/venta_completa_views.xml',
+        'report/report_ventas_view.xml',
+
     ]
 }

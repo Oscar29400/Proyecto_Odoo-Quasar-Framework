@@ -10,11 +10,11 @@
         <tree>
           <field name="id"/>
           <field name="nombre"/>
-          <field name="img"/>
           <field name="precioCoste"/>
           <field name="precioVenta"/>
-          <field name="cantidad"/>
           <field name="nuevoc"/>
+          <field name="img" widget="image" class="oe_avatar"/>
+
         </tree>
       </field>
     </record>
@@ -31,27 +31,22 @@
                 <div class = "oe_kanban_details">
                   <h4>
                       <a type="open">
-                        <field name="id"/>
+                        <b></b><field name="nombre"/>
                       </a>
                   </h4>
                   <ul>
-                    <li><field name="nombre"/></li>
+                    <li><b></b><field name="img" widget="image" class="oe_avatar"/></li>
                   </ul>
                   <ul>
-                    <li><field name="img"/></li>
+                    <li><b>Precio Coste: </b><field name="precioCoste"/></li>
                   </ul>
                   <ul>
-                    <li><field name="precioCoste"/></li>
+                    <li><b>Precio Venta: </b><field name="precioVenta"/></li>
                   </ul>
                   <ul>
-                    <li><field name="precioVenta"/></li>
-                  </ul>
-                  <ul>
-                    <li><field name="cantidad"/></li>
+                    <li><b>Cantidad: </b><field name="nuevoc"/></li>
                   </ul> 
-                  <ul>
-                    <li><field name="nuevoc"/></li>
-                  </ul>                  
+                 
                 </div>
               </div>
             </t>
@@ -69,11 +64,10 @@
       <group>
         <group>
           <field name="nombre"/>
-          <field name="img"/>
+          <field name="img" widget="image" class="oe_avatar"/>
           <field name="precioCoste"/>
           <field name="precioVenta"/>
           <field name="cantidad"/>
-          <field name="nuevoc"/>
         </group>
 
       </group>

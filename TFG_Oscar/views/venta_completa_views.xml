@@ -3,25 +3,27 @@
     <!-- Definicion Explicita de las Vistas -->
 
     <!-- Vista Tree-->
-   <record model="ir.ui.view" id="ventar_tree"> 
+   <record model="ir.ui.view" id="ventacompleta_tree"> 
       <field name="name">Listado de venta Reparacion </field>
-      <field name="model">ventar</field>
+      <field name="model">ventacompleta</field>
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
           <field name="idventa"/>
           <field name="producto"/>
-          <field name="precioVenta2"/>
-          <field name="cantidad"/>
+<!--          <field name="precioVenta2"/>
+          <field name="cantidad"/>-->
+          <field name="empleado"/>
+          <field name="cliente"/>
 
         </tree>
       </field>
     </record>
     
-    <!-- Vista Kanban-->
-    <record model="ir.ui.view" id="ventar_kanban"> 
+    <!-- Vista Kanban
+    <record model="ir.ui.view" id="ventacompleta_kanban"> 
       <field name="name">Listado de venta y Reparacion</field>
-      <field name="model">ventar</field>
+      <field name="model">ventacompleta</field>
       <field name="arch" type="xml">
         <kanban>
           <templates>
@@ -29,11 +31,20 @@
               <div class="oe_kanban_vignette">
                 <div class = "oe_kanban_details">
                   <h4>
+                      <a type="open">
+                        <b>ID Venta: </b><field name="idventa"/>
+                      </a>
                   </h4>
                   <ul>
-                    <li><b>ID Venta: </b><field name="idventa"/></li>
                     <li><b>Producto: </b><field name="producto"/></li>
                     <li><b>Cantidad: </b><field name="cantidad"/></li>
+                  </ul>
+                  <ul>
+                    <li><b>Precio Venta: </b><field name="precioVenta2"/></li>
+                  </ul>
+                  <ul>
+                    <li><b>Vendedor: </b><field name="empleado"/></li>
+                    <li><b>Cliente: </b><field name="cliente"/></li>
                   </ul>
                 </div>
               </div>
@@ -42,18 +53,19 @@
         </kanban>
       </field>
     </record>
-
+-->
     <!-- Vista Form-->
-    <record model="ir.ui.view" id="ventar_form_view">
+    <record model="ir.ui.view" id="ventacompleta_form_view">
     <field name="name">Crear ventas y Reparacion</field>
-    <field name="model">ventar</field>
+    <field name="model">ventacompleta</field>
     <field name="arch" type="xml">
     <form>
       <group>
         <group>
           <field name="idventa"/>
+          <field name="empleado"/>
+          <field name="cliente"/>
           <field name="producto"/>
-          <field name="cantidad"/>
         </group>
 
       </group>
@@ -67,9 +79,9 @@
     https://www.odoo.com/documentation/14.0/developer/reference/addons/actions.html
     -->
 
-    <record model="ir.actions.act_window" id="ventar_action_window">
+    <record model="ir.actions.act_window" id="ventacompleta_action_window">
       <field name="name">Listado de venta y Reparacion</field>
-      <field name="res_model">ventar</field>
+      <field name="res_model">ventacompleta</field>
       <!-- Declaramos que vistas se van a ver-->
       <field name="view_mode">tree,kanban,form</field>
     </record>
@@ -80,8 +92,8 @@
     
     <!-- actions -->
 
-    <menuitem name="Venta" id="ventar_menu" parent="botin_menu_root"
-              action="ventar_action_window"/>
+    <menuitem name="Venta Completa" id="ventacompleta_menu" parent="botin_menu_root"
+              action="ventacompleta_action_window"/>
 
   </data>
 </odoo>

@@ -22,4 +22,4 @@ class Proveedores(models.Model):
     email = fields.Char('Email')
     tlfno = fields.Char('Telefono')
     cif = fields.Char(string='CIF')
-    foto = fields.Image(max_width=50,max_height=50)
+    foto = fields.Image(max_width=100,max_height=100)

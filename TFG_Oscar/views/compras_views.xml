@@ -3,7 +3,7 @@
     <!-- Definicion Explicita de las Vistas -->
 
     <!-- Vista Tree-->
-   <record model="ir.ui.view" id="cargamento_tree"> 
+   <record model="ir.ui.view" id="compras_tree"> 
       <field name="name">Listado de compras </field>
       <field name="model">compras</field>
       <field name="arch" type="xml">
@@ -12,12 +12,14 @@
           <field name="idcompra"/>
           <field name="proveedor"/>
           <field name="productos"/>
+          <field name="precioCompra"/>
+          <field name="cantidad"/>
         </tree>
       </field>
     </record>
 
     <!-- Vista Kanban-->
-    <record model="ir.ui.view" id="cargamento_kanban"> 
+    <record model="ir.ui.view" id="compras_kanban"> 
       <field name="name">Listado de compras</field>
       <field name="model">compras</field>
       <field name="arch" type="xml">
@@ -32,8 +34,10 @@
                       </a>
                   </h4>
                   <ul>
-                    <li><b>Proveedor: </b><field name="proveedor"/></li>
-                    <li><field name="productos"/></li>
+                    <li><b>Proveedor: </b><field name="proveedor"/></li>                    
+                    <li><b>Producto: </b><field name="productos"/></li>
+                    <li><b>Precio Compra Unidad: </b><field name="precioCompra"/></li>
+                    <li><b>Cantidad: </b><field name="cantidad"/></li>
                   </ul>
                 </div>
               </div>
@@ -44,7 +48,7 @@
     </record>
    
     <!-- Vista Form-->
-    <record model="ir.ui.view" id="cargamento_form_view">
+    <record model="ir.ui.view" id="compras_form_view">
     <field name="name">Crear la compra</field>
     <field name="model">compras</field>
     <field name="arch" type="xml">
@@ -57,6 +61,7 @@
         <group>
           <field name="productos"/>
           <field name="precioCompra"/>
+          <field name="cantidad"/>
         </group>
       </group>
       </form>

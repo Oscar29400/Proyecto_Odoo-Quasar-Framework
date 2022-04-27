@@ -3,9 +3,9 @@
     <!-- Definicion Explicita de las Vistas -->
 
     <!-- Vista Tree-->
-   <record model="ir.ui.view" id="proveedores_tree"> 
-      <field name="name">Listado de Proveedores </field>
-      <field name="model">proveedores</field>
+   <record model="ir.ui.view" id="clientes_tree"> 
+      <field name="name">Listado de clientes </field>
+      <field name="model">clientes</field>
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
@@ -20,9 +20,9 @@
     </record>
 
     <!-- Vista Kanban-->
-    <record model="ir.ui.view" id="proveedores_kanban"> 
-      <field name="name">Listado del Proveedores</field>
-      <field name="model">proveedores</field>
+    <record model="ir.ui.view" id="clientes_kanban"> 
+      <field name="name">Listado del clientes</field>
+      <field name="model">clientes</field>
       <field name="arch" type="xml">
         <kanban>
           <templates>
@@ -50,9 +50,9 @@
     </record>
    
     <!-- Vista Form-->
-    <record model="ir.ui.view" id="proveedores_form_view">
+    <record model="ir.ui.view" id="clientes_form_view">
     <field name="name">Crear el Proveedor</field>
-    <field name="model">proveedores</field>
+    <field name="model">clientes</field>
     <field name="arch" type="xml">
     <form>
       <group>
@@ -77,9 +77,9 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="proveedores_action_window">
-      <field name="name">Listado del Proveedor</field>
-      <field name="res_model">proveedores</field>
+    <record model="ir.actions.act_window" id="clientes_action_window">
+      <field name="name">Listado del Cliente</field>
+      <field name="res_model">clientes</field>
       <!-- Declaramos que vistas se van a ver-->
       <field name="view_mode">tree,kanban,form</field>
     </record>
@@ -90,8 +90,8 @@
 
     <!-- actions -->
 
-    <menuitem name="proveedores" id="proveedores_menu" parent="botin_menu_root"
-              action="proveedores_action_window"/>
+    <menuitem name="clientes" id="clientes_menu" parent="botin_menu_root"
+              action="clientes_action_window"/>
 
   </data>
 </odoo>

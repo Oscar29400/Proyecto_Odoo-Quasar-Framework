@@ -5,7 +5,7 @@ from odoo import models, fields, api
 #Definimos el modelo de datos
 class ventar(models.Model):
     #Nombre y descripcion del modelo de datos
-    _name = 'ventar'
+    _name = 'ventacompleta'
     _description = 'Modelo de la lista de Venta y Reparacion'
     #Como no tenemos un atributo "name" en nuestro modelo, indicamos que cuando
     #se necesite un nombre, se usara el atributo tarea
@@ -19,18 +19,26 @@ class ventar(models.Model):
     idventa = fields.Char(string='ID Venta')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
-    producto = fields.Many2one('productos', string='Producto')
-    cantidad = fields.Integer(string='Cantidad')
+    producto = fields.Many2many('ventar', string='Producto')
+    precioTotal = fields.Float(compute='_precioT', string='Precio Total')
+
+
+    @api.depends('precioTotal')
+    def _precioT(self):
+        for rec in self:
+            for ventas in self.env['ventar'].search([]):
+                rec.precioTotal += ventas.precioVenta2
+
+    """cantidad = fields.Integer(string='Cantidad')
     precioVenta = fields.Float(related="producto.precioVenta" , string="Precio Venta")
     precioVenta2 = fields.Float(compute='_precio', store=True, string='Precio Venta')
+    
 
     @api.depends('precioVenta')
     def _precio(self):
         for rec in self:
            rec.update({'precioVenta2': rec.precioVenta*rec.cantidad})
     
-
-        
     @api.model
     def create(self, values):
         result= super().create(values)
@@ -57,4 +65,4 @@ class ventar(models.Model):
                             raise models.ValidationError('no se puede')
                         else:
                             producto.nuevoc = producto.nuevoc - ventas.cantidad
-                            break
+                            break"""
