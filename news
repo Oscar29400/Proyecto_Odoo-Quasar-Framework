@@ -1,0 +1,35 @@
+Ventacompleta.py
+
+precioTotal = fields.Float(compute='_precioT', string='Precio Total', store=True, digits=(12,2))
+precioNeto = fields.Float(compute='_precioN', string='Precio Neto', store=True, digits=(12,2))
+
+@api.depends('precioNeto')
+    def _precioN(self):
+        for rec in self:
+            for ventas in self.env['ventar'].search([]):
+                rec.precioNeto += ventas.precioVenta2
+
+    @api.depends('precioTotal')
+    def _precioT(self):
+        for rec in self:
+                rec.precioTotal = rec.precioNeto * 1.21
+
+
+ventacompleta_view
+
+   <record model="ir.ui.view" id="ventacompleta_tree"> 
+      <field name="name">Listado de venta Reparacion </field>
+      <field name="model">ventacompleta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="idventa"/>
+          <field name="producto"/>
+          <field name="empleado"/>
+          <field name="cliente"/>
+          <field name="precioNeto"/>
+          <field name="precioTotal"/>
+        
+        </tree>
+      </field>
+    </record>
