@@ -1,35 +1,21 @@
 Ventacompleta.py
+Guardar el informe
 
-precioTotal = fields.Float(compute='_precioT', string='Precio Total', store=True, digits=(12,2))
-precioNeto = fields.Float(compute='_precioN', string='Precio Neto', store=True, digits=(12,2))
-
-@api.depends('precioNeto')
-    def _precioN(self):
-        for rec in self:
-            for ventas in self.env['ventar'].search([]):
-                rec.precioNeto += ventas.precioVenta2
-
-    @api.depends('precioTotal')
-    def _precioT(self):
-        for rec in self:
-                rec.precioTotal = rec.precioNeto * 1.21
-
+    def action_get_attachment(self):
+        pdf = self.env.ref('TFG_Oscar.report_ventas_view')._render_qweb_pdf(self.ids)
+        self.report_file = base64.b64encode(pdf[0])
+        # save pdf as attachment
+        name = "informe"
+        return self.env['ir.attachment'].create({
+            'name': name,
+            'type': 'binary',
+            'datas': self.report_file,
+            'store_fname': name,
+            'res_model': self._name,
+            'res_id': self.id,
+            'mimetype': 'application/x-pdf'
+        })
 
 ventacompleta_view
 
-   <record model="ir.ui.view" id="ventacompleta_tree"> 
-      <field name="name">Listado de venta Reparacion </field>
-      <field name="model">ventacompleta</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="id"/>
-          <field name="idventa"/>
-          <field name="producto"/>
-          <field name="empleado"/>
-          <field name="cliente"/>
-          <field name="precioNeto"/>
-          <field name="precioTotal"/>
-        
-        </tree>
-      </field>
-    </record>
+          <button name="action_get_attachment" string="Generate Attachment" type="object"/>
