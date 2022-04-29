@@ -20,4 +20,8 @@ Guardar el informe
 
 ventacompleta_view
 
-          <button name="action_get_attachment" string="Generate Attachment" type="object"/>
+    <button name="action_get_attachment" string="Generate Attachment" type="object"/>
+
+SIGUIENTES PASOS
+    AVERIGUAR EMAIL FACTURAS
+    
