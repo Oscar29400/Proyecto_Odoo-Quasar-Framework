@@ -1,6 +1,8 @@
 Ventacompleta.py
 Guardar el informe
 
+    report_file = fields.Binary()
+
     def action_get_attachment(self):
         pdf = self.env.ref('TFG_Oscar.report_ventas_view')._render_qweb_pdf(self.ids)
         self.report_file = base64.b64encode(pdf[0])
