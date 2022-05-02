@@ -22,6 +22,26 @@ ventacompleta_view
 
     <button name="action_get_attachment" string="Generate Attachment" type="object"/>
 
+--------------------------------------------------------------------------------------------
+
+SOLUCION SUMA INCORRECTA PRECIO NETO Y TOTAL
+        VENTCOMPLETA.PY
+    @api.depends('precioNeto')
+    def _precioN(self):
+        for rec in self:
+            for ventas in self.env['ventar'].search([]):
+                for ventas2 in rec.producto:
+                    if ventas.idventa == ventas2.idventa:
+                        rec.precioNeto += ventas.precioVenta2
+
+-------------------------------------------------------------------------------------------------
+
+INVISIBILIDAD REPORT
+HAY QUE HACER INVISIBLE UN <t></t>
+
+<t t-if="doc.hide == True"></t>
+
+----------------------------------------------------------------------------------------------
 SIGUIENTES PASOS
     AVERIGUAR EMAIL FACTURAS
     
