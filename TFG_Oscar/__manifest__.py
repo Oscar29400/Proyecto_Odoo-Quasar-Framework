@@ -35,7 +35,9 @@
         'views/proveedores_views.xml',
         'views/clientes_views.xml',
         'views/venta_completa_views.xml',
+        'views/reparacion_views.xml',
         'report/report_ventas_view.xml',
+        'report/report_reparacion_view.xml',
 
     ]
 }

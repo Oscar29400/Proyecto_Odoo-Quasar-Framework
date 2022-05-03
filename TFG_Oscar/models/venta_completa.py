@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+import base64
 #Definimos el modelo de datos
 class ventar(models.Model):
     #Nombre y descripcion del modelo de datos
@@ -19,50 +19,36 @@ class ventar(models.Model):
     idventa = fields.Char(string='ID Venta')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
-    producto = fields.Many2many('ventar', string='Producto')
-    precioTotal = fields.Float(compute='_precioT', string='Precio Total')
+    producto = fields.Many2many('ventar', string='Producto', required=True)
+    precioTotal = fields.Float(compute='_precioT', string='Precio Total', digits=(12,2))
+    precioNeto = fields.Float(compute='_precioN', string='Precio Neto', digits=(12,2))
+    report_file = fields.Binary()
 
+    @api.depends('precioNeto')
+    def _precioN(self):
+        for rec in self:
+            if rec.producto:
+                for ventas in self.env['ventar'].search([]):
+                    for ventas2 in rec.producto:
+                        if ventas.idventa == ventas2.idventa:
+                            rec.precioNeto += ventas.precioVenta2
 
     @api.depends('precioTotal')
     def _precioT(self):
         for rec in self:
-            for ventas in self.env['ventar'].search([]):
-                rec.precioTotal += ventas.precioVenta2
+                rec.precioTotal = rec.precioNeto * 1.21        
 
-    """cantidad = fields.Integer(string='Cantidad')
-    precioVenta = fields.Float(related="producto.precioVenta" , string="Precio Venta")
-    precioVenta2 = fields.Float(compute='_precio', store=True, string='Precio Venta')
-    
-
-    @api.depends('precioVenta')
-    def _precio(self):
-        for rec in self:
-           rec.update({'precioVenta2': rec.precioVenta*rec.cantidad})
-    
-    @api.model
-    def create(self, values):
-        result= super().create(values)
-        self.actualizarVentas()
-        return result
-
-    def write(self, values):
-        result= super(ventar,self).write(values)
-        self.actualizarVentas()
-        return result
-
-    def unlink(self):
-        result= super(ventar,self).unlink()
-        self.actualizarVentas()
-        return result
-
-    def actualizarVentas(self):
-        for producto in self.env['productos'].search([]):
-            producto.nuevoc = producto.cantidad
-            for ventas in self.env['ventar'].search([]):
-                for prod in ventas.producto:
-                    if producto.id == prod.id:
-                        if (producto.nuevoc - ventas.cantidad) < 0:
-                            raise models.ValidationError('no se puede')
-                        else:
-                            producto.nuevoc = producto.nuevoc - ventas.cantidad
-                            break"""
+    def action_get_attachment(self):
+            pdf = self.env.ref('TFG_Oscar.report_ventas_view')._render_qweb_pdf(self.ids)
+            self.report_file = base64.b64encode(pdf[0])
+            # save pdf as attachment
+            name = "informe"
+            return self.env['ir.attachment'].create({
+                'name': name,
+                'type': 'binary',
+                'datas': self.report_file,
+                'store_fname': name,
+                'res_model': self._name,
+                'res_id': self.id,
+                'mimetype': 'application/x-pdf'
+            })

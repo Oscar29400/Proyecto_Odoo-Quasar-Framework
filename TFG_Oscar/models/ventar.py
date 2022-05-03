@@ -19,10 +19,10 @@ class ventar(models.Model):
     idventa = fields.Char(string='ID Venta')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
-    producto = fields.Many2one('productos', string='Producto')
+    producto = fields.Many2one('productos', string='Producto',required=True)
     cantidad = fields.Integer(string='Cantidad')
-    precioVenta = fields.Float(related="producto.precioVenta" , string="Precio Venta")
-    precioVenta2 = fields.Float(compute='_precio', store=True, string='Precio Venta')
+    precioVenta = fields.Float(related="producto.precioVenta" , string="Precio Venta",digits=(12,2))
+    precioVenta2 = fields.Float(compute='_precio', string='Precio Venta',digits=(12,2))
 
     @api.depends('precioVenta')
     def _precio(self):
