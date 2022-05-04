@@ -2,8 +2,14 @@ Ventacompleta.py
 Guardar el informe
 
     report_file = fields.Binary(readonly=True, string='Factura')
-    fecha_entrega = fields.Date()
-    fecha_compra = fields.Date(default=datetime.datetime.today())
+    fecha_entrega = fields.Date('Fecha de Entrega')
+    fecha_compra = fields.Date(default=datetime.datetime.today(),readonly=True, string='Fecha de Compra')
+    
+    @api.constrains('fecha_entrega')
+    def _check_fecha(self):
+        for record in self:
+            if record.fecha_entrega and record.fecha_entrega < record.fecha_compra:
+                raise models.ValidationError('La fecha de entrega debe ser posterior a la actual')
 
 ventacompleta_view
     TREEVIEW
@@ -11,6 +17,7 @@ ventacompleta_view
             
           <field name="fecha_compra" />          
           <field name="fecha_entrega" />
+          
       
       FORMVIEW
           <!-- Vista Form-->
