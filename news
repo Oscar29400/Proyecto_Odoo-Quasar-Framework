@@ -1,5 +1,5 @@
 Ventacompleta.py
-Guardar el informe
+LO NUEVO CREO QUE ES MEJOR PONER EN REPARACIÓN YA QUE COMO VENDEMOS A CLIENTES NO NOS HARIA FALTA 
 
     report_file = fields.Binary(readonly=True, string='Factura')
     fecha_entrega = fields.Date('Fecha de Entrega')
@@ -72,7 +72,17 @@ Actualizar venta, ventacompleta, reparacion y compras
 
 -------------------------------------------------------------------------------------------------
 
+DECORACION TREE VIEW
+        <tree decoration-muted ="estado == 'categoria1'" decoration-primary  = "estado == 'categoria2'"  
+        decoration-success = "estado == 'categoria3'">
 
+          <field name="estado" />
+.py
+           estado = fields.Selection(
+        [('categoria1', 'Recién entregado'),
+         ('categoria2', 'En proceso de reparación'),
+         ('categoria3', 'Entregado'),], required=True)
+        
 ----------------------------------------------------------------------------------------------
 SIGUIENTES PASOS
     PRECIO VENTA UNIDAD EN REPORT Y VENTACOMPLETA
