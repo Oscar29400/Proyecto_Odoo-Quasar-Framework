@@ -9,7 +9,12 @@ ventacompleta_view
     <button name="action_get_attachment" string="Generar Factura" type="object"/>          
 
 --------------------------------------------------------------------------------------------
-
+Actualizar venta, ventacompleta, reparacion y compras
+    @api.depends('idcompra')
+    def _idcompra(self):
+        for rec in self:
+            rec.idcompra = 'C-'+ str(rec.id)
+    compute='idcompra'
 
 
 -------------------------------------------------------------------------------------------------
