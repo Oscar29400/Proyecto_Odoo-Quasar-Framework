@@ -2,11 +2,15 @@ Ventacompleta.py
 Guardar el informe
 
     report_file = fields.Binary(readonly=True, string='Factura')
-
+    fecha_entrega = fields.Date()
+    fecha_compra = fields.Date(default=datetime.datetime.today())
 
 ventacompleta_view
-
-    <button name="action_get_attachment" string="Generar Factura" type="object"/>          
+    TREEVIEW
+    <button name="action_get_attachment" string="Generar Factura" type="object"/> 
+            
+          <field name="fecha_compra" />          
+          <field name="fecha_entrega" />
 
 --------------------------------------------------------------------------------------------
 Actualizar venta, ventacompleta, reparacion y compras
