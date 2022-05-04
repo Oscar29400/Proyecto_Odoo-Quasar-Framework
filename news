@@ -11,6 +11,34 @@ ventacompleta_view
             
           <field name="fecha_compra" />          
           <field name="fecha_entrega" />
+      
+      FORMVIEW
+          <!-- Vista Form-->
+    <record model="ir.ui.view" id="ventacompleta_form_view">
+    <field name="name">Crear ventas y Reparacion</field>
+    <field name="model">ventacompleta</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="idventa"/>
+          <field name="producto"/>
+
+        </group>
+        <group>
+          <field name="fecha_entrega"/>
+          <field name="fecha_compra"/>
+          <field name="empleado"/>
+          <field name="cliente" />
+        </group>
+      </group>
+      <group>
+        <field name="report_file" />
+        <button name="action_get_attachment" string="Generar Factura" type="object"/>
+      </group>
+      </form>
+    </field>
+  </record>
 
 --------------------------------------------------------------------------------------------
 Actualizar venta, ventacompleta, reparacion y compras
