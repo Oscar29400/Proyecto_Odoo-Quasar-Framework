@@ -1,7 +1,19 @@
 Backend Theme
 https://apps.odoo.com/apps/themes/14.0/vista_backend_theme/#
 --------------------------------------------------------------------------------------------
-
+APIREST PRODUCTOS -- PASAR IMAGENES
+    @http.route('/gestion/cargamento/<modelo>', auth='public', cors='*', type='http')
+    def obtenerDatosProductos(self, modelo, **kw):
+        # Obtenemos la referencia del modelo (pensado en este programa para ser "productos")
+        productos = request.env[modelo].sudo().search([])
+        base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        #Generamos la lista de cargamentos
+        lista_productos=[]
+        for s in productos:
+            imgurl = base_url + '/web/image?' + 'model=productos&id=' + str(s.id) + '&field=img'
+            lista_productos.append([str(s.id),s.nombre,imgurl])
+        json_result= json.dumps(lista_productos, default=str)
+        return json_result
 
 -------------------------------------------------------------------------------------------------
 
