@@ -1,87 +1,11 @@
-Ventacompleta.py
-LO NUEVO CREO QUE ES MEJOR PONER EN REPARACIÓN YA QUE COMO VENDEMOS A CLIENTES NO NOS HARIA FALTA 
-
-    report_file = fields.Binary(readonly=True, string='Factura')
-    fecha_entrega = fields.Date('Fecha de Entrega')
-    fecha_compra = fields.Date(default=datetime.datetime.today(),readonly=True, string='Fecha de Compra')
-    
-    @api.constrains('fecha_entrega')
-    def _check_fecha(self):
-        for record in self:
-            if record.fecha_entrega and record.fecha_entrega < record.fecha_compra:
-                raise models.ValidationError('La fecha de entrega debe ser posterior a la actual')
-
-ventacompleta_view
-    TREEVIEW
-    <button name="action_get_attachment" string="Generar Factura" type="object"/> 
-            
-          <field name="fecha_compra" />          
-          <field name="fecha_entrega" />
-          
-      
-      FORMVIEW
-          <!-- Vista Form-->
-    <record model="ir.ui.view" id="ventacompleta_form_view">
-    <field name="name">Crear ventas y Reparacion</field>
-    <field name="model">ventacompleta</field>
-    <field name="arch" type="xml">
-    <form>
-      <group>
-        <group>
-          <field name="idventa"/>
-          <field name="producto"/>
-
-        </group>
-        <group>
-          <field name="fecha_entrega"/>
-          <field name="fecha_compra"/>
-          <field name="empleado"/>
-          <field name="cliente" />
-        </group>
-      </group>
-      <group>
-        <field name="report_file" />
-        <button name="action_get_attachment" string="Generar Factura" type="object"/>
-      </group>
-      </form>
-    </field>
-  </record>
-  
-  VISTA CALENDAR
-     <!-- Vista Calendar-->
-    <record model="ir.ui.view" id="ventacompleta_calendar">
-    <field name="name">Listado de Ventas</field>
-    <field name="model">ventacompleta</field>
-    <field name="arch" type="xml">
-      <calendar string="Pedidos" date_start="fecha_compra" date_stop="fecha_entrega" mode="month">
-        <field name="idventa" />
-        <field name="cliente" />
-        <field name="producto" />
-      </calendar>
-    </field>
-    </record>
-
+Backend Theme
+https://apps.odoo.com/apps/themes/14.0/vista_backend_theme/#
 --------------------------------------------------------------------------------------------
-Actualizar venta, ventacompleta, reparacion y compras
-    @api.depends('idcompra')
-    def _idcompra(self):
-        for rec in self:
-            rec.idcompra = 'C-'+ str(rec.id)
-    compute='idcompra'
 
 
 -------------------------------------------------------------------------------------------------
 
-DECORACION TREE VIEW
-        <tree decoration-muted ="estado == 'categoria1'" decoration-primary  = "estado == 'categoria2'"  
-        decoration-success = "estado == 'categoria3'">
 
-          <field name="estado" />
-.py
-           estado = fields.Selection(
-        [('categoria1', 'Recién entregado'),
-         ('categoria2', 'En proceso de reparación'),
-         ('categoria3', 'Entregado'),], required=True)
         
 ----------------------------------------------------------------------------------------------
 SIGUIENTES PASOS
