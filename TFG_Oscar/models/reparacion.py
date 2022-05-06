@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-import base64
+import base64, datetime
 #Definimos el modelo de datos
 class reparacion(models.Model):
     #Nombre y descripcion del modelo de datos
@@ -16,7 +16,7 @@ class reparacion(models.Model):
     # https://www.odoo.com/documentation/14.0/developer/reference/addons/orm.html#fields
    
     id = fields.Integer()
-    idventa = fields.Char(string='ID Venta')
+    idventa = fields.Char(string='ID Venta', compute='_idventa')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
     reparar = fields.Selection([('cat1','Cambiar Suelas'),
@@ -25,7 +25,18 @@ class reparacion(models.Model):
     ,string='Tipo Reparación')
     precioRNeto = fields.Float(compute='_precioR',string='Precio Neto', digits=(12,2))
     precioRTotal = fields.Float( string='Precio Total', compute='_precioRT', digits=(12,2))
-    report_file = fields.Binary()
+    report_file = fields.Binary(readonly=True, string='Factura')
+    fecha_entrega = fields.Date('Fecha de Entrega')
+    fecha_compra = fields.Date(default=datetime.datetime.today(),readonly=True, string='Fecha de Recepción')
+    estado = fields.Selection(
+        [('categoria1', 'Recién entregado'),
+         ('categoria2', 'En proceso de reparación'),
+         ('categoria3', 'Entregado'),], required=True)
+
+    @api.depends('idventa')
+    def _idventa(self):
+        for rec in self:
+            rec.idventa = 'R-'+ str(rec.id)
 
     @api.depends('precioRNeto')
     def _precioR(self):
@@ -61,3 +72,9 @@ class reparacion(models.Model):
                 'res_id': self.id,
                 'mimetype': 'application/x-pdf'
             })
+
+    @api.constrains('fecha_entrega')
+    def _check_fecha(self):
+        for record in self:
+            if record.fecha_entrega and record.fecha_entrega < record.fecha_compra:
+                raise models.ValidationError('La fecha de entrega debe ser posterior a la actual')

@@ -16,11 +16,16 @@ class Compras(models.Model):
     # https://www.odoo.com/documentation/14.0/developer/reference/addons/orm.html#fields
    
     id = fields.Integer()
-    idcompra = fields.Char('ID Compra')
+    idcompra = fields.Char('ID Compra', compute='_idcompra')
     proveedor = fields.Many2one('proveedores')
     productos = fields.Many2one('productos')
     precioCompra = fields.Float(related="productos.precioCoste" ,string='Precio Coste Unidad')
     cantidad = fields.Integer('Cantidad')
+
+    @api.depends('idcompra')
+    def _idcompra(self):
+        for rec in self:
+            rec.idcompra = 'C-'+ str(rec.id)
 
     @api.model
     def create(self, values):

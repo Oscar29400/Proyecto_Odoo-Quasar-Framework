@@ -16,7 +16,7 @@ class ventar(models.Model):
     # https://www.odoo.com/documentation/14.0/developer/reference/addons/orm.html#fields
    
     id = fields.Integer()
-    idventa = fields.Char(string='ID Venta')
+    idventa = fields.Char(string='ID Venta', compute='_idventa')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
     producto = fields.Many2one('productos', string='Producto',required=True)
@@ -24,12 +24,15 @@ class ventar(models.Model):
     precioVenta = fields.Float(related="producto.precioVenta" , string="Precio Venta",digits=(12,2))
     precioVenta2 = fields.Float(compute='_precio', string='Precio Venta',digits=(12,2))
 
+    @api.depends('idventa')
+    def _idventa(self):
+        for rec in self:
+            rec.idventa = 'V-'+ str(rec.id)
+
     @api.depends('precioVenta')
     def _precio(self):
         for rec in self:
            rec.update({'precioVenta2': rec.precioVenta*rec.cantidad})
-    
-
         
     @api.model
     def create(self, values):

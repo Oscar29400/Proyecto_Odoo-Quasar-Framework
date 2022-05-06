@@ -16,14 +16,18 @@ class ventar(models.Model):
     # https://www.odoo.com/documentation/14.0/developer/reference/addons/orm.html#fields
    
     id = fields.Integer()
-    idventa = fields.Char(string='ID Venta')
+    idventa = fields.Char(string='ID Venta', compute='_idventa')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
     producto = fields.Many2many('ventar', string='Producto', required=True)
     precioTotal = fields.Float(compute='_precioT', string='Precio Total', digits=(12,2))
     precioNeto = fields.Float(compute='_precioN', string='Precio Neto', digits=(12,2))
-    report_file = fields.Binary()
+    report_file = fields.Binary(readonly=True, string='Factura')
 
+    @api.depends('idventa')
+    def _idventa(self):
+        for rec in self:
+            rec.idventa = 'V-'+ str(rec.id)
     @api.depends('precioNeto')
     def _precioN(self):
         for rec in self:
@@ -52,3 +56,4 @@ class ventar(models.Model):
                 'res_id': self.id,
                 'mimetype': 'application/x-pdf'
             })
+

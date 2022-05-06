@@ -3,42 +3,65 @@
     <!-- Definicion Explicita de las Vistas -->
 
     <!-- Vista Tree-->
-   <record model="ir.ui.view" id="reparacion_tree"> 
+    <record model="ir.ui.view" id="reparacion_tree">
       <field name="name">Listado de Reparacion </field>
       <field name="model">reparacion</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="id"/> 
-          <field name="idventa"/>
-          <field name="reparar"/>
-          <field name="empleado"/>
-          <field name="cliente"/>
-          <field name="report_file"/>
-          <button name="action_get_attachment" string="Generate Attachment" type="object"/>          
+        <tree decoration-muted ="estado == 'categoria1'" decoration-primary  = "estado == 'categoria2'"  
+        decoration-success = "estado == 'categoria3'">
+          <field name="id" />
+          <field name="idventa" />
+          <field name="reparar" />
+          <field name="estado" />
+          <field name="empleado" />
+          <field name="cliente" />
+          <field name="report_file" />
+          <button name="action_get_attachment" string="Generar Factura" type="object" />
         </tree>
       </field>
     </record>
- 
+
     <!-- Vista Form-->
     <record model="ir.ui.view" id="reparacion_form_view">
-    <field name="name">Crear Reparacion</field>
-    <field name="model">reparacion</field>
-    <field name="arch" type="xml">
-    <form>
-      <group>
-        <group>
-          <field name="idventa"/>
-          <field name="empleado"/>
-          <field name="cliente" />
-          <field name="reparar"/>
-          <field name="report_file" />
-          <button name="action_get_attachment" string="Generate Attachment" type="object"/>
-        </group>
+      <field name="name">Crear Reparacion</field>
+      <field name="model">reparacion</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="idventa" />
+              <field name="reparar" />
+              <field name="estado" />
 
-      </group>
-      </form>
-    </field>
-  </record>
+            </group>
+            <group>
+              <field name="fecha_compra" />
+              <field name="fecha_entrega" />
+              <field name="empleado" />
+              <field name="cliente" />
+            </group>
+          </group>
+          <group>
+            <field name="report_file" />
+            <button name="action_get_attachment" string="Generar Factura" type="object" />
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista Calendar-->
+    <record model="ir.ui.view" id="reparacion_calendar">
+      <field name="name">Listado de Reparación</field>
+      <field name="model">reparacion</field>
+      <field name="arch" type="xml">
+        <calendar string="Pedidos" date_start="fecha_compra" date_stop="fecha_entrega" mode="month">
+          <field name="idventa" />
+          <field name="cliente" />
+          <field name="reparar" />
+          <field name="estado" />
+        </calendar>
+      </field>
+    </record>
 
 
     <!-- actions opening views on models -->
@@ -47,20 +70,19 @@
     -->
 
     <record model="ir.actions.act_window" id="reparacion_action_window">
-      <field name="name">Listado de venta y Reparacion</field>
+      <field name="name">Listado de Reparacion</field>
       <field name="res_model">reparacion</field>
       <!-- Declaramos que vistas se van a ver-->
-      <field name="view_mode">tree,kanban,form</field>
+      <field name="view_mode">tree,kanban,form,calendar</field>
     </record>
 
     <!-- Top menu item -->
 
-    <menuitem name="Botín" id="botin_menu_root"/>
-    
+    <menuitem name="Botín" id="botin_menu_root" />
+
     <!-- actions -->
 
-    <menuitem name="Reparación" id="reparacion_menu" parent="botin_menu_root"
-              action="reparacion_action_window"/>
+    <menuitem name="Reparación" id="reparacion_menu" parent="botin_menu_root" action="reparacion_action_window" />
 
   </data>
 </odoo>
