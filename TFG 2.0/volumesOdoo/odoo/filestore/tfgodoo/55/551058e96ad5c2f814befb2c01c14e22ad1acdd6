@@ -1,0 +1,257 @@
+
+.o_Composer {
+  display: grid;
+  grid-template-areas: "sidebar-header core-header" "sidebar-main core-main" "sidebar-footer core-footer";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.o_Composer.o-has-current-partner-avatar {
+  grid-template-columns: 50px 1fr;
+  padding: 1rem 1rem 1.5rem 0.25rem;
+}
+
+.o_Composer.o-has-current-partner-avatar:not(.o-has-footer) {
+  padding-bottom: 20px;
+}
+
+.o_Composer.o-has-current-partner-avatar:not(.o-has-header) {
+  padding-top: 20px;
+}
+
+.o_Composer_actionButtons.o-composer-is-compact {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_Composer_actionButtons:not(.o-composer-is-compact) {
+  margin-top: 10px;
+}
+
+.o_Composer_attachmentList {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+}
+
+.o_Composer_attachmentList.o-composer-is-compact {
+  max-height: 100px;
+}
+
+.o_Composer_attachmentList:not(.o-composer-is-compact) {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.o_Composer_buttons {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  min-height: 41px;
+}
+
+.o_Composer_buttons:not(.o-composer-is-compact) {
+  border: 0;
+  height: auto;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.o_Composer_coreFooter {
+  grid-area: core-footer;
+  overflow-x: hidden;
+}
+
+.o_Composer_coreFooter:not(.o-composer-is-compact) {
+  margin-left: 0;
+}
+
+.o_Composer_coreHeader {
+  grid-area: core-header;
+}
+
+.o_Composer_coreMain {
+  grid-area: core-main;
+  min-width: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-wrap: nowrap; flex-wrap: nowrap;
+  align-items: flex-start;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+}
+
+.o_Composer_coreMain:not(.o-composer-is-compact) {
+  -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column;
+}
+
+.o_Composer_currentPartnerAvatar {
+  width: 36px;
+  height: 36px;
+}
+
+.o_Composer_followers,
+.o_Composer_suggestedPartners {
+  flex: 0 0 100%;
+  margin-bottom: 5px;
+}
+
+.o_Composer_primaryToolButtons {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+}
+
+.o_Composer_primaryToolButtons.o-composer-is-compact {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.o_Composer_sidebarMain {
+  grid-area: sidebar-main;
+  justify-self: center;
+}
+
+.o_Composer_subject {
+  border-top: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.o_Composer_subjectInput {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 0;
+}
+
+.o_Composer_textInput {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  align-self: stretch;
+}
+
+.o_Composer_textInput:not(.o-composer-is-compact) {
+  border: 0;
+  min-height: 40px;
+}
+
+.o_Composer_threadTextualTypingStatus {
+  font-size: 0.94791667rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_Composer_threadTextualTypingStatus:before {
+  content: "\200b";
+  /* unicode zero width space character */
+}
+
+.o_Composer_toolButton {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.o_Composer_toolButtons {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.o_Composer_toolButtons:not(.o-composer-is-compact) {
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 100%;
+}
+
+.o_Composer_toolButtonSeparator {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.o_is_open .o_Composer_toolButton {
+  background-color: #e9ecef;
+}
+
+.o_Composer {
+  background-color: #f2f4f5;
+}
+
+.o_Composer_actionButton.o-last.o-has-current-partner-avatar.o-composer-is-compact {
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+
+.o_Composer_button.o-composer-is-compact {
+  border-left: none;
+}
+
+.o_Composer_button.o-composer-is-compact :last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.o_Composer_buttonDiscard {
+  border: 1px solid #dde1e5;
+}
+
+.o_Composer_buttons {
+  border: 0;
+}
+
+.o_Composer_coreMain:not(.o-composer-is-compact) {
+  background: white;
+  border: 1px solid #dde1e5;
+}
+
+.o_Composer_coreMain:not(.o-composer-is-compact):not(.o-composer-is-extended) {
+  border-radius: 0.6rem;
+}
+
+.o_Composer_currentPartnerAvatar {
+  object-fit: cover;
+}
+
+.o_Composer_textInput {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  outline: none;
+  background-color: white;
+  border: 0;
+  border-top: 1px solid #dde1e5;
+  border-bottom: 1px solid #dde1e5;
+  border-left: 1px solid #dde1e5;
+}
+
+.o_Composer_textInput:not(.o-composer-is-compact) {
+  border: 0;
+  border-radius: 0.6rem;
+}
+
+.o_Composer_textInput.o-has-current-partner-avatar.o-composer-is-compact {
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.o_Composer_toolButton {
+  border: 0;
+  background-color: white;
+  color: #6c757d;
+  border-radius: 50%;
+}
+
+.o_Composer_toolButton.o-open {
+  background-color: #e9ecef;
+}
+
+.o_Composer_toolButtons {
+  background-color: white;
+  border-top: 1px solid #dde1e5;
+  border-bottom: 1px solid #dde1e5;
+}
+
+.o_Composer_toolButtons:not(.o-composer-is-compact) {
+  border-bottom: 0;
+  border-radius: initial;
+}
+
+.o_Composer_toolButtons:last-child:not(.o-composer-has-current-partner-avatar) {
+  border-right: 1px solid #dde1e5;
+}
+
+.o_Composer_toolButtonSeparator {
+  border-left: 1px solid #dde1e5;
+}
+

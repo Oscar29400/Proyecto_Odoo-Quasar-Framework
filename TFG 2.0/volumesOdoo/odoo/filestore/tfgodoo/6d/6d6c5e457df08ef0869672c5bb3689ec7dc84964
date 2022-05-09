@@ -1,0 +1,9 @@
+
+.o_ChatWindowManager {
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-direction: row-reverse;
+  z-index: 1000;
+}
+

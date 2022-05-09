@@ -1,0 +1,86 @@
+
+.o_ThreadTypingIcon {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+}
+
+.o_ThreadTypingIcon_dot {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadTypingIcon_separator {
+  min-width: 1px;
+  -webkit-box-flex: 1; -webkit-flex: 1 0 auto; flex: 1 0 auto;
+}
+
+.o_ThreadTypingIcon_dot {
+  border-radius: 50%;
+  background: #adb5bd;
+}
+
+.o_ThreadTypingIcon_dot.o-sizeMedium {
+  width: 5px;
+  height: 5px;
+}
+
+.o_ThreadTypingIcon_dot.o-sizeSmall {
+  width: 3px;
+  height: 3px;
+}
+
+.o_ThreadTypingIcon_dot.o-animationBounce.o-sizeMedium {
+  animation: o_ThreadTypingIcon_dot_animationBounce_sizeMedium_animation 1.5s linear infinite;
+}
+
+.o_ThreadTypingIcon_dot.o-animationBounce.o-sizeSmall {
+  animation: o_ThreadTypingIcon_dot_animationBounce_sizeSmall_animation 1.5s linear infinite;
+}
+
+.o_ThreadTypingIcon_dot.o-animationBounce.o_ThreadTypingIcon_dot2 {
+  animation-delay: -1.35s;
+}
+
+.o_ThreadTypingIcon_dot.o-animationBounce.o_ThreadTypingIcon_dot3 {
+  animation-delay: -1.2s;
+}
+
+.o_ThreadTypingIcon_dot.o-animationPulse {
+  animation: o_ThreadTypingIcon_dot_animationPulse_animation 1.5s linear infinite;
+}
+
+.o_ThreadTypingIcon_dot.o-animationPulse.o_ThreadTypingIcon_dot2 {
+  animation-delay: -1.35s;
+}
+
+.o_ThreadTypingIcon_dot.o-animationPulse.o_ThreadTypingIcon_dot3 {
+  animation-delay: -1.2s;
+}
+
+@keyframes o_ThreadTypingIcon_dot_animationBounce_sizeMedium_animation {
+  0%, 40%, 100% {
+    transform: initial;
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes o_ThreadTypingIcon_dot_animationBounce_sizeSmall_animation {
+  0%, 40%, 100% {
+    transform: initial;
+  }
+  20% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes o_ThreadTypingIcon_dot_animationPulse_animation {
+  0%, 40%, 100% {
+    opacity: initial;
+  }
+  20% {
+    opacity: 25%;
+  }
+}
+

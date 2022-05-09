@@ -1,0 +1,94 @@
+
+/*
+ IFRAME WRAPPER SCSS
+ */
+.o_preview_iframe_wrapper {
+  padding: 0;
+  overflow: hidden;
+  width: 397px;
+  height: 577.5px;
+  position: relative;
+}
+
+.o_preview_iframe {
+  width: 794px;
+  height: 1155px;
+  border: 2px solid lightgrey;
+  overflow: hidden;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -ms-zoom: 0.5;
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.5);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+}
+
+.o_iframe_wrapper_spinner {
+  position: absolute;
+  left: 158.5px;
+  top: 248.75px;
+}
+
+@media (max-width: 1488px) {
+  .o_preview_iframe_wrapper {
+    padding: 0;
+    overflow: hidden;
+    width: 317.6px;
+    height: 462px;
+    position: relative;
+  }
+  .o_preview_iframe {
+    width: 794px;
+    height: 1155px;
+    border: 2px solid lightgrey;
+    overflow: hidden;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    -ms-zoom: 0.5;
+    -moz-transform: scale(0.4);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.4);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.4);
+    -webkit-transform-origin: 0 0;
+  }
+  .o_iframe_wrapper_spinner {
+    position: absolute;
+    left: 118.8px;
+    top: 191px;
+  }
+}
+
+@media (max-width: 600px) {
+  .o_preview_iframe_wrapper {
+    padding: 0;
+    overflow: hidden;
+    width: 238.2px;
+    height: 346.5px;
+    position: relative;
+  }
+  .o_preview_iframe {
+    width: 794px;
+    height: 1155px;
+    border: 2px solid lightgrey;
+    overflow: hidden;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    -ms-zoom: 0.5;
+    -moz-transform: scale(0.3);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.3);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.3);
+    -webkit-transform-origin: 0 0;
+  }
+  .o_iframe_wrapper_spinner {
+    position: absolute;
+    left: 79.1px;
+    top: 133.25px;
+  }
+}
+

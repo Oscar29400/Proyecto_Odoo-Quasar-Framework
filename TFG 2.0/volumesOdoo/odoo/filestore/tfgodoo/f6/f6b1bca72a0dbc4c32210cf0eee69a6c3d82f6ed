@@ -1,0 +1,101 @@
+
+.sr-only, .bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="togglePeriod"]::after, .bootstrap-datetimepicker-widget .btn[data-action="clear"]::after, .bootstrap-datetimepicker-widget .btn[data-action="today"]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.prev::after, .bootstrap-datetimepicker-widget table th.next::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.o_datepicker {
+  position: relative;
+}
+
+.o_datepicker .o_datepicker_input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.o_datepicker .o_datepicker_button {
+  position: absolute;
+  top: 2px;
+  left: auto;
+  bottom: auto;
+  right: 4px;
+  pointer-events: none;
+}
+
+.o_datepicker .o_datepicker_button:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  border-top: 0.3em solid;
+  -moz-transform: scale(0.9999);
+}
+
+.o_datepicker .o_datepicker_warning {
+  top: 0;
+  right: 20px;
+}
+
+div.dropdown-menu.bootstrap-datetimepicker-widget {
+  z-index: 1051;
+  width: 19rem;
+}
+
+.datepicker .table-sm > thead {
+  color: white;
+  background-color: #7C7BAD;
+}
+
+.datepicker .table-sm > thead > tr:first-child th:hover {
+  color: white;
+  background-color: #5f5e97;
+}
+
+.datepicker .table-sm > thead > tr:last-child {
+  color: #8f8f8f;
+  background-color: #dcdbdb;
+}
+
+.datepicker .table-sm > thead > tr > th {
+  border-radius: 0;
+}
+
+.datepicker .table-sm > tbody > tr > td.active, .datepicker .table-sm > tbody > tr > td .active {
+  background-color: #7C7BAD;
+  border-radius: 100px;
+}
+
+.datepicker .table-sm > tbody > tr > td.today:before {
+  border-bottom-color: #7C7BAD;
+}
+
+.picker-switch span.fa {
+  margin: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .picker-switch span.fa {
+    transition: none;
+  }
+}
+
+.picker-switch span.fa.primary {
+  background-color: #7C7BAD;
+  color: white;
+}
+
+.picker-switch span.fa.primary:hover {
+  background-color: #5f5e97;
+}
+

@@ -1,0 +1,16 @@
+
+.o_view_nocontent .o_nocontent_help .o_view_nocontent_empty_folder:before, .o_nocontent_help .o_empty_folder_image:before, .o_view_nocontent .o_nocontent_help .o_view_nocontent_smiling_face:before, .o_view_nocontent .o_nocontent_help .o_view_nocontent_neutral_face:before, .o_mail_activity .o_thread_title.o_neutral_face_icon:before, .o_MessageList_emptyTitle.o-neutral-face-icon:before {
+  content: "";
+  display: block;
+  margin: auto;
+  background-size: cover;
+}
+
+.o_view_nocontent .o_nocontent_help .o_view_nocontent_empty_folder:before, .o_nocontent_help .o_empty_folder_image:before {
+  width: 120px;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: transparent url(/web/static/src/img/empty_folder.svg) no-repeat center;
+}
+

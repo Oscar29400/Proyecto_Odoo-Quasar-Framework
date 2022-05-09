@@ -1,0 +1,16 @@
+
+.o_EmojisPopover {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: row wrap; flex-flow: row wrap;
+  max-width: 200px;
+}
+
+.o_EmojisPopover_emoji {
+  font-size: 1.1em;
+  margin: 3px;
+}
+
+.o_EmojisPopover_emoji {
+  cursor: pointer;
+}
+

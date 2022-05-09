@@ -1,0 +1,17 @@
+
+.o_ActivityMarkDonePopover {
+  min-height: 100px;
+}
+
+.o_ActivityMarkDonePopover_buttons {
+  margin-top: 0.5rem;
+}
+
+.o_ActivityMarkDonePopover_doneButton {
+  margin: 0 0.5rem;
+}
+
+.o_ActivityMarkDonePopover_feedback {
+  min-height: 70px;
+}
+

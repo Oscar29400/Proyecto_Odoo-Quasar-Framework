@@ -1,0 +1,189 @@
+
+.o_ThreadPreview {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.o_ThreadPreview.o-mobile {
+  padding: 0.5rem;
+}
+
+.o_ThreadPreview:hover .o_ThreadPreview_markAsRead {
+  opacity: 1;
+}
+
+.o_ThreadPreview_content {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  align-self: flex-start;
+  min-width: 0;
+  margin: 0.5rem;
+}
+
+.o_ThreadPreview_core {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_ThreadPreview_coreItem {
+  margin: 0 0.5rem;
+}
+
+.o_ThreadPreview_coreItem:first-child {
+  margin-inline-start: 0;
+}
+
+.o_ThreadPreview_coreItem:last-child {
+  margin-inline-end: 0;
+}
+
+.o_ThreadPreview_counter {
+  margin: 0 0.5rem;
+}
+
+.o_ThreadPreview_date {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadPreview_header {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.o_ThreadPreview_image {
+  width: 100%;
+  height: 100%;
+}
+
+.o_ThreadPreview_imageContainer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.o_ThreadPreview_inlineText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_ThreadPreview_inlineText.o-empty::before {
+  content: '\00a0';
+}
+
+.o_ThreadPreview_markAsRead {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadPreview_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_ThreadPreview_name.o-mobile {
+  font-size: 1.1em;
+}
+
+.o_ThreadPreview_partnerImStatusIcon {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_ThreadPreview_sidebar {
+  margin: 0.25rem;
+}
+
+.o_ThreadPreview {
+  cursor: pointer;
+  user-select: none;
+  background-color: #FFFFFF;
+}
+
+.o_ThreadPreview:hover {
+  background-color: #ededed;
+}
+
+.o_ThreadPreview.o-muted {
+  background-color: #f8f9fa;
+}
+
+.o_ThreadPreview.o-muted:hover {
+  background-color: #e3e7eb;
+}
+
+.o_ThreadPreview:hover .o_ThreadPreview_partnerImStatusIcon {
+  color: #ededed;
+}
+
+.o_ThreadPreview.o-muted:hover .o_ThreadPreview_partnerImStatusIcon {
+  color: #e3e7eb;
+}
+
+.o_ThreadPreview_core {
+  color: #adb5bd;
+}
+
+.o_ThreadPreview_counter {
+  font-weight: bold;
+}
+
+.o_ThreadPreview_counter.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadPreview_date {
+  font-weight: bold;
+  font-size: x-small;
+  color: #7C7BAD;
+}
+
+.o_ThreadPreview_date.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadPreview_date.o-muted {
+  color: #adb5bd;
+}
+
+.o_ThreadPreview_image {
+  object-fit: cover;
+}
+
+.o_ThreadPreview_markAsRead {
+  opacity: 0;
+}
+
+.o_ThreadPreview_markAsRead:hover {
+  color: #6c757d;
+}
+
+.o_ThreadPreview_name {
+  font-weight: bold;
+}
+
+.o_ThreadPreview_name.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadPreview_partnerImStatusIcon {
+  color: #FFFFFF;
+}
+
+.o_ThreadPreview_partnerImStatusIcon:not(.o-mobile) {
+  font-size: x-small;
+}
+
+.o_ThreadPreview_partnerImStatusIcon.o-muted {
+  color: #f8f9fa;
+}
+

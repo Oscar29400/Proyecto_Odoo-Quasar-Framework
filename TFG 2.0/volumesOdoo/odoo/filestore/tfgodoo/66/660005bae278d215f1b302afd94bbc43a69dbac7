@@ -1,0 +1,31 @@
+
+.o_colorpicker_widget .o_opacity_slider, .o_colorpicker_widget .o_color_preview {
+  position: relative;
+  z-index: 0;
+}
+
+.o_colorpicker_widget .o_opacity_slider::before, .o_colorpicker_widget .o_color_preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-image: url("/web/static/src/img/transparent.png");
+  background-size: 10px auto;
+  border-radius: inherit;
+}
+
+.o_colorpicker_widget .o_opacity_slider::after, .o_colorpicker_widget .o_color_preview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: inherit;
+  border-radius: inherit;
+}
+

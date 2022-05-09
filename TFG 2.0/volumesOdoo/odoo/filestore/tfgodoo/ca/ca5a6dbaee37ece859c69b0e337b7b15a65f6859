@@ -1,0 +1,200 @@
+
+.o_field_color_picker {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  float: right;
+  margin-right: 7px;
+}
+
+.o_field_color_picker ul {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-pack: end; justify-content: flex-end;
+  -webkit-flex-wrap: wrap; flex-wrap: wrap;
+  max-width: 150px;
+  padding: 3px 15px 3px 20px;
+  width: 100%;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}
+
+.o_field_color_picker ul > li {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #dee2e6;
+}
+
+.o_field_color_picker ul > li > a {
+  display: block;
+}
+
+.o_field_color_picker ul > li > a::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 15px;
+}
+
+.o_field_color_picker ul > li:first-child > a {
+  position: relative;
+}
+
+.o_field_color_picker ul > li:first-child > a::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+  display: block;
+  width: 1px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: red;
+}
+
+.o_field_color_picker ul > li:first-child > a::after {
+  background-color: white;
+}
+
+.o_field_color_picker ul .oe_kanban_color_1::after {
+  background-color: #F06050;
+}
+
+.o_field_color_picker ul .oe_kanban_color_2::after {
+  background-color: #F4A460;
+}
+
+.o_field_color_picker ul .oe_kanban_color_3::after {
+  background-color: #F7CD1F;
+}
+
+.o_field_color_picker ul .oe_kanban_color_4::after {
+  background-color: #6CC1ED;
+}
+
+.o_field_color_picker ul .oe_kanban_color_5::after {
+  background-color: #814968;
+}
+
+.o_field_color_picker ul .oe_kanban_color_6::after {
+  background-color: #EB7E7F;
+}
+
+.o_field_color_picker ul .oe_kanban_color_7::after {
+  background-color: #2C8397;
+}
+
+.o_field_color_picker ul .oe_kanban_color_8::after {
+  background-color: #475577;
+}
+
+.o_field_color_picker ul .oe_kanban_color_9::after {
+  background-color: #D6145F;
+}
+
+.o_field_color_picker ul .oe_kanban_color_10::after {
+  background-color: #30C381;
+}
+
+.o_field_color_picker ul .oe_kanban_color_11::after {
+  background-color: #9365B8;
+}
+
+.o_field_color_picker ul > li {
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #dee2e6;
+}
+
+.o_field_color_picker ul > li > a:focus {
+  outline: none;
+}
+
+.o_field_color_picker_preview {
+  margin-right: 7px;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_1::after {
+  background-color: #F06050;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_2::after {
+  background-color: #F4A460;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_3::after {
+  background-color: #F7CD1F;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_4::after {
+  background-color: #6CC1ED;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_5::after {
+  background-color: #814968;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_6::after {
+  background-color: #EB7E7F;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_7::after {
+  background-color: #2C8397;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_8::after {
+  background-color: #475577;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_9::after {
+  background-color: #D6145F;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_10::after {
+  background-color: #30C381;
+}
+
+.o_field_color_picker_preview .oe_kanban_color_11::after {
+  background-color: #9365B8;
+}
+
+.o_field_color_picker_preview > li {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #dee2e6;
+}
+
+.o_field_color_picker_preview > li > a {
+  display: block;
+}
+
+.o_field_color_picker_preview > li > a::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 15px;
+}
+
+.o_field_color_picker_preview > li a.oe_kanban_color_0 {
+  position: relative;
+}
+
+.o_field_color_picker_preview > li a.oe_kanban_color_0::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+  display: block;
+  width: 1px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: red;
+}
+
+.o_field_color_picker_preview > li a.oe_kanban_color_0::after {
+  background-color: white;
+}
+

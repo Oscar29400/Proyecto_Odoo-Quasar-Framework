@@ -1,0 +1,138 @@
+
+.o_NotificationRequest {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.o_NotificationRequest.o-mobile {
+  padding: 0.5rem;
+}
+
+.o_NotificationRequest_content {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  align-self: flex-start;
+  min-width: 0;
+  margin: 0.5rem;
+}
+
+.o_NotificationRequest_core {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_NotificationRequest_coreItem {
+  margin: 0 0.5rem;
+}
+
+.o_NotificationRequest_coreItem:first-child {
+  margin-inline-start: 0;
+}
+
+.o_NotificationRequest_coreItem:last-child {
+  margin-inline-end: 0;
+}
+
+.o_NotificationRequest_header {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.o_NotificationRequest_image {
+  width: 100%;
+  height: 100%;
+}
+
+.o_NotificationRequest_imageContainer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.o_NotificationRequest_inlineText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_NotificationRequest_inlineText.o-empty::before {
+  content: '\00a0';
+}
+
+.o_NotificationRequest_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_NotificationRequest_name.o-mobile {
+  font-size: 1.1em;
+}
+
+.o_NotificationRequest_partnerImStatusIcon {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_NotificationRequest_sidebar {
+  margin: 0.25rem;
+}
+
+.o_NotificationRequest {
+  cursor: pointer;
+  user-select: none;
+  background-color: #FFFFFF;
+}
+
+.o_NotificationRequest:hover {
+  background-color: #ededed;
+}
+
+.o_NotificationRequest.o-muted {
+  background-color: #f8f9fa;
+}
+
+.o_NotificationRequest.o-muted:hover {
+  background-color: #e3e7eb;
+}
+
+.o_NotificationRequest:hover .o_NotificationRequest_partnerImStatusIcon {
+  color: #ededed;
+}
+
+.o_NotificationRequest_core {
+  color: #adb5bd;
+}
+
+.o_NotificationRequest_image {
+  object-fit: cover;
+}
+
+.o_NotificationRequest_name {
+  font-weight: bold;
+}
+
+.o_NotificationRequest_name.o-muted {
+  font-weight: initial;
+}
+
+.o_NotificationRequest_partnerImStatusIcon {
+  color: #FFFFFF;
+}
+
+.o_NotificationRequest_partnerImStatusIcon:not(.o-mobile) {
+  font-size: x-small;
+}
+
+.o_NotificationRequest_partnerImStatusIcon.o-muted {
+  color: #f8f9fa;
+}
+

@@ -1,0 +1,103 @@
+
+.o_DiscussSidebar {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  width: 250px;
+}
+
+@media (min-width: 1200px) {
+  .o_DiscussSidebar {
+    width: 300px;
+  }
+}
+
+.o_DiscussSidebar_group {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_DiscussSidebar_groupHeader {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.o_DiscussSidebar_groupHeaderItem {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.o_DiscussSidebar_groupHeaderItem:first-child {
+  margin-left: 10px;
+}
+
+.o_DiscussSidebar_groupHeaderItem:last-child {
+  margin-right: 15px;
+}
+
+.o_DiscussSidebar_itemNew {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  justify-content: center;
+}
+
+.o_DiscussSidebar_itemNewInput {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  margin-left: 13px;
+  margin-right: 15px;
+}
+
+.o_DiscussSidebar_quickSearch {
+  border-radius: 10px;
+  margin: 0 15px 10px;
+  padding: 3px 10px;
+}
+
+.o_DiscussSidebar_separator {
+  width: 100%;
+}
+
+.o_DiscussSidebar {
+  background-color: #212529;
+  color: #dee2e6;
+}
+
+.o_DiscussSidebar_groupHeader {
+  font-size: 0.94791667rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.o_DiscussSidebar_groupHeaderItemAdd {
+  cursor: pointer;
+}
+
+.o_DiscussSidebar_groupHeaderItemAdd:not(:hover) {
+  color: #6c757d;
+}
+
+.o_DiscussSidebar_groupTitle:not(.o-clickable) {
+  color: #6c757d;
+}
+
+.o_DiscussSidebar_groupTitle.o-clickable {
+  cursor: pointer;
+}
+
+.o_DiscussSidebar_groupTitle.o-clickable:not(:hover) {
+  color: #6c757d;
+}
+
+.o_DiscussSidebar_itemNewInput {
+  outline: none;
+}
+
+.o_DiscussSidebar_quickSearch {
+  border: none;
+  outline: none;
+}
+
+.o_DiscussSidebar_separator {
+  background-color: #6c757d;
+}
+

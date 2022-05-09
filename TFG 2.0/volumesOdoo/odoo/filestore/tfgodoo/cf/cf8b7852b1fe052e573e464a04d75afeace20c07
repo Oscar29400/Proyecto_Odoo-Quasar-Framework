@@ -1,0 +1,36 @@
+
+.o_Chatter {
+  position: relative;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column;
+  width: 100%;
+}
+
+.o_Chatter_composer {
+  border-bottom: 1px solid;
+}
+
+.o_Chatter_composer.o-bordered {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.o_Chatter_scrollPanel {
+  overflow-y: auto;
+}
+
+.o_Chatter {
+  background-color: white;
+  border-color: #dee2e6;
+}
+
+.o_Chatter_composer {
+  border-bottom-color: #dee2e6;
+}
+
+.o_Chatter_composer.o-bordered {
+  border-left-color: #dee2e6;
+  border-right-color: #dee2e6;
+}
+

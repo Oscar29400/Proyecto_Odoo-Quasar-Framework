@@ -1,0 +1,141 @@
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.o_popover {
+  max-width: 100vw;
+  position: fixed;
+  z-index: 1060;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.o_popover .o_popover_header {
+  background-color: #e9ecef;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.o_popover .o_popover_header:empty {
+  display: none;
+}
+
+.o_popover--top {
+  animation: 0.2s slide-top;
+}
+
+.o_popover--top::before, .o_popover--top::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border: 8px solid transparent;
+  border-top-color: #e9ecef;
+}
+
+.o_popover--top::before {
+  margin-top: 1px;
+  border-top-color: #dee2e6;
+}
+
+.o_popover--right {
+  animation: 0.2s slide-right;
+}
+
+.o_popover--right::before, .o_popover--right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -8px;
+  border: 8px solid transparent;
+  border-right-color: #e9ecef;
+}
+
+.o_popover--right::before {
+  margin-right: 1px;
+  border-right-color: #dee2e6;
+}
+
+.o_popover--bottom {
+  animation: 0.2s slide-bottom;
+}
+
+.o_popover--bottom::before, .o_popover--bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border: 8px solid transparent;
+  border-bottom-color: #e9ecef;
+}
+
+.o_popover--bottom::before {
+  margin-bottom: 1px;
+  border-bottom-color: #dee2e6;
+}
+
+.o_popover--left {
+  animation: 0.2s slide-left;
+}
+
+.o_popover--left::before, .o_popover--left::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -8px;
+  border: 8px solid transparent;
+  border-left-color: #e9ecef;
+}
+
+.o_popover--left::before {
+  margin-left: 1px;
+  border-left-color: #dee2e6;
+}
+

@@ -1,0 +1,55 @@
+
+.o_colorpicker_widget .o_color_pick_area {
+  height: 125px;
+  background-image: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 50%, black 100%), linear-gradient(to right, #807f7f 0%, rgba(128, 127, 127, 0) 100%);
+  cursor: crosshair;
+}
+
+.o_colorpicker_widget .o_color_slider {
+  background: linear-gradient(#F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%);
+}
+
+.o_colorpicker_widget .o_color_slider, .o_colorpicker_widget .o_opacity_slider {
+  width: 4%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+
+.o_colorpicker_widget .o_slider_pointer, .o_colorpicker_widget .o_opacity_pointer {
+  position: absolute;
+  top: auto;
+  left: -50%;
+  bottom: auto;
+  right: auto;
+  width: 200%;
+  height: 8px;
+  margin-top: -2px;
+}
+
+.o_colorpicker_widget .o_slider_pointer, .o_colorpicker_widget .o_opacity_pointer, .o_colorpicker_widget .o_picker_pointer, .o_colorpicker_widget .o_color_preview {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.o_colorpicker_widget .o_slider_pointer, .o_colorpicker_widget .o_opacity_pointer, .o_colorpicker_widget .o_picker_pointer, .o_colorpicker_widget .o_color_preview, .o_colorpicker_widget .o_hex_div, .o_colorpicker_widget .o_rgba_div {
+  border: 1px solid black;
+}
+
+.o_colorpicker_widget .o_color_picker_inputs {
+  font-size: 10px;
+}
+
+.o_colorpicker_widget .o_color_picker_inputs input {
+  font-family: monospace !important;
+  height: 18px;
+  font-size: 11px;
+}
+
+.o_colorpicker_widget .o_color_picker_inputs .o_hex_div input {
+  width: 7ch;
+}
+
+.o_colorpicker_widget .o_color_picker_inputs .o_rgba_div input {
+  margin-right: 3px;
+  width: 3ch;
+}
+

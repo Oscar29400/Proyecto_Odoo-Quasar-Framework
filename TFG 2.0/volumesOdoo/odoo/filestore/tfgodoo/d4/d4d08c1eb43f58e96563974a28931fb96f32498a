@@ -1,0 +1,124 @@
+
+.o_MessagingMenu_counter {
+  position: relative;
+  transform: translate(-5px, -5px);
+  margin-right: -10px;
+}
+
+.o_MessagingMenu_dropdownMenu {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow-y: auto;
+  /**
+     * Override from bootstrap .dropdown-menu to fix top alignment with other
+     * systray menu.
+     */
+  margin-top: 0;
+}
+
+.o_MessagingMenu_dropdownMenu.o-messaging-not-initialized {
+  align-items: center;
+  justify-content: center;
+}
+
+.o_MessagingMenu_dropdownMenu:not(.o-mobile) {
+  -webkit-box-flex: 0; -webkit-flex: 0 1 auto; flex: 0 1 auto;
+  width: 350px;
+  min-height: 50px;
+  max-height: 400px;
+  z-index: 1100;
+}
+
+.o_MessagingMenu_dropdownMenu.o-mobile {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  position: fixed;
+  top: 46px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  max-height: none;
+}
+
+.o_MessagingMenu_dropdownMenuHeader:not(.o-mobile) {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-shrink: 0;
+}
+
+.o_MessagingMenu_dropdownMenuHeader.o-mobile {
+  display: grid;
+  grid-template-areas: "top" "bottom";
+  grid-template-rows: auto auto;
+  padding: 5px;
+}
+
+.o_MessagingMenu_dropdownLoadingIcon {
+  margin-right: 3px;
+}
+
+.o_MessagingMenu_icon {
+  font-size: larger;
+}
+
+.o_MessagingMenu_loading {
+  font-size: small;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+}
+
+.o_MessagingMenu_newMessageButton.o-mobile {
+  grid-area: top;
+  justify-self: start;
+}
+
+.o_MessagingMenu_mobileNewMessageInput {
+  grid-area: bottom;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.o_MessagingMenu_notificationList.o-mobile {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.o_MessagingMenu.o-is-open {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.o_MessagingMenu_counter {
+  background-color: #00A09D;
+}
+
+.o_MessagingMenu_dropdownMenu.o-mobile {
+  border: 0;
+}
+
+.o_MessagingMenu_dropdownMenuHeader {
+  border-bottom: 1px solid #ced4da;
+  z-index: 1;
+}
+
+.o_MessagingMenu_mobileNewMessageInput {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+}
+
+.o_MessagingMenu_tabButton.o-desktop.o-active {
+  font-weight: bold;
+}
+
+.o_MessagingMenu_tabButton.o-desktop:not(:hover):not(.o-active) {
+  color: #adb5bd;
+}
+
+.o_MessagingMenu_toggler.o-no-notification {
+  opacity: 0.5;
+}
+

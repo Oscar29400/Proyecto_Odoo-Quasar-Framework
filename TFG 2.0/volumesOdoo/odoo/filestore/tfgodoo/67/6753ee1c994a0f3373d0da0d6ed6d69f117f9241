@@ -1,0 +1,104 @@
+
+.o-autogrow {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+}
+
+.o_Discuss {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  height: 100%;
+  min-height: 0;
+}
+
+.o_Discuss.o-mobile {
+  flex-flow: column;
+  align-items: center;
+}
+
+.o_Discuss_chatWindowHeader {
+  width: 100%;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_Discuss_content {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+}
+
+.o_Discuss_messagingNotInitialized {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_Discuss_messagingNotInitializedIcon {
+  margin-right: 3px;
+}
+
+.o_Discuss_mobileAddItemHeader {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.o_Discuss_mobileAddItemHeaderInput {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.o_Discuss_mobileMailboxSelection {
+  width: 100%;
+}
+
+.o_Discuss_mobileNavbar {
+  width: 100%;
+}
+
+.o_Discuss_noThread {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_Discuss_replyingToMessageComposer {
+  width: 100%;
+}
+
+.o_Discuss_sidebar {
+  height: 100%;
+  overflow: auto;
+  padding-top: 10px;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_Discuss_thread {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 0; flex: 1 1 0;
+}
+
+.o_Discuss_thread.o-mobile {
+  width: 100%;
+}
+
+.o_Discuss_notificationList {
+  width: 100%;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 0; flex: 1 1 0;
+}
+
+.o_Discuss.o-mobile {
+  background-color: white;
+}
+
+.o_Discuss_mobileAddItemHeaderInput {
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+}
+

@@ -1,0 +1,354 @@
+
+.o_Message {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  padding: 0.5rem;
+}
+
+.o_Message_authorAvatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.o_Message_authorAvatarContainer {
+  position: relative;
+  height: 36px;
+  width: 36px;
+}
+
+.o_Message_authorName {
+  margin-inline-end: 0.5rem;
+}
+
+.o_Message_checkbox {
+  margin-inline-end: 0.5rem;
+}
+
+.o_Message_commandStar {
+  font-size: 1.3em;
+}
+
+.o_Message_Composer {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+}
+
+.o_Message_commands {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+}
+
+.o_Message_content {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.o_Message_content *:not(li) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.o_Message_content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.o_Message_core {
+  min-width: 0;
+  margin-inline-end: 1rem;
+}
+
+.o_Message_footer {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column;
+}
+
+.o_Message_header {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: row wrap; flex-flow: row wrap;
+  align-items: baseline;
+}
+
+.o_Message_headerCommands {
+  margin-inline-end: 0.5rem;
+  align-self: center;
+}
+
+.o_Message_headerCommands .o_Message_headerCommand {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.o_Message_headerCommands .o_Message_headerCommand.o-mobile {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.o_Message_headerCommands .o_Message_headerCommand.o-mobile:first-child {
+  padding-left: 0.5rem;
+}
+
+.o_Message_headerCommands .o_Message_headerCommand.o-mobile:last-child {
+  padding-right: 0.5rem;
+}
+
+.o_Message_headerDate {
+  margin-inline-end: 0.5rem;
+  font-size: 0.8em;
+}
+
+.o_Message_moderationAction {
+  margin-inline-end: 1rem;
+}
+
+.o_Message_moderationPending {
+  margin-inline-end: 1rem;
+}
+
+.o_Message_moderationSubHeader {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: row wrap; flex-flow: row wrap;
+  align-items: center;
+}
+
+.o_Message_originThread {
+  margin-inline-end: 0.5rem;
+}
+
+.o_Message_partnerImStatusIcon {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_Message_prettyBody > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.o_Message_readMoreLess {
+  display: block;
+}
+
+.o_Message_seenIndicator {
+  margin-inline-end: 0.25rem;
+}
+
+.o_Message_sidebar {
+  flex: 0 0 50px;
+  max-width: 50px;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  margin-inline-end: 0.5rem;
+  justify-content: center;
+}
+
+.o_Message_sidebar.o-message-squashed {
+  align-items: flex-start;
+}
+
+.o_Message_sidebarItem {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.o_Message_sidebarItem.o-message-squashed {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_Message_trackingValues {
+  margin-top: 0.5rem;
+}
+
+.o_Message_trackingValue {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  -webkit-flex-wrap: wrap; flex-wrap: wrap;
+}
+
+.o_Message_trackingValueItem {
+  margin-inline-end: 0.25rem;
+}
+
+.o_Message {
+  background-color: white;
+}
+
+.o_Message:hover .o_Message_commands, .o_Message.o-clicked .o_Message_commands {
+  opacity: 1;
+}
+
+.o_Message:hover .o_Message_sidebarItem.o-message-squashed, .o_Message.o-clicked .o_Message_sidebarItem.o-message-squashed {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_Message:hover .o_Message_seenIndicator.o-message-squashed, .o_Message.o-clicked .o_Message_seenIndicator.o-message-squashed {
+  display: none;
+}
+
+.o_Message .o_Message_partnerImStatusIcon {
+  color: white;
+}
+
+.o_Message.o-not-discussion {
+  background-color: #edeff1;
+  border-bottom: 1px solid #cfd5db;
+}
+
+.o_Message.o-not-discussion .o_Message_partnerImStatusIcon {
+  color: #edeff1;
+}
+
+.o_Message.o-not-discussion.o-selected {
+  border-bottom: 1px solid #bfc7cf;
+}
+
+.o_Message.o-selected {
+  background-color: #ced4da;
+}
+
+.o_Message.o-selected .o_Message_partnerImStatusIcon {
+  color: #ced4da;
+}
+
+.o_Message.o-starred .o_Message_commandStar {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_Message.o-starred .o_Message_commands {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_Message_authorName {
+  font-weight: bold;
+}
+
+.o_Message_authorRedirect {
+  cursor: pointer;
+}
+
+.o_Message_command {
+  cursor: pointer;
+  color: #ced4da;
+}
+
+.o_Message_command:not(.o-mobile):hover {
+  filter: brightness(0.8);
+}
+
+.o_Message_command.o-mobile {
+  filter: brightness(0.8);
+}
+
+.o_Message_command.o-mobile:hover {
+  filter: brightness(0.75);
+}
+
+.o_Message_command.o-message-selected {
+  color: #adb5bd;
+}
+
+.o_Message_commandStar.o-message-starred {
+  color: gold;
+}
+
+.o_Message_commandStar.o-message-starred:hover {
+  filter: brightness(0.9);
+}
+
+.o_Message_content .o_mention {
+  color: #7C7BAD;
+  cursor: pointer;
+}
+
+.o_Message_content .o_mention:hover {
+  color: #555487;
+}
+
+.o_Message_date {
+  color: #adb5bd;
+}
+
+.o_Message_date.o-message-selected {
+  color: #6c757d;
+}
+
+.o_Message_headerCommands:not(.o-mobile) {
+  opacity: 0;
+}
+
+.o_Message_originThread {
+  font-size: 0.8em;
+  color: #adb5bd;
+}
+
+.o_Message_originThread.o-message-selected {
+  color: #6c757d;
+}
+
+.o_Message_originThreadLink {
+  font-size: 1.25em;
+}
+
+.o_Message_partnerImStatusIcon:not(.o_Message_partnerImStatusIcon-mobile) {
+  font-size: x-small;
+}
+
+.o_Message_moderationAction {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.o_Message_moderationAction.o-accept, .o_Message_moderationAction.o-allow {
+  color: #28a745;
+}
+
+.o_Message_moderationAction.o-accept:hover, .o_Message_moderationAction.o-accept:focus, .o_Message_moderationAction.o-allow:hover, .o_Message_moderationAction.o-allow:focus {
+  color: #19692c;
+}
+
+.o_Message_moderationAction.o-ban, .o_Message_moderationAction.o-discard, .o_Message_moderationAction.o-reject {
+  color: #dc3545;
+}
+
+.o_Message_moderationAction.o-ban:hover, .o_Message_moderationAction.o-ban:focus, .o_Message_moderationAction.o-discard:hover, .o_Message_moderationAction.o-discard:focus, .o_Message_moderationAction.o-reject:hover, .o_Message_moderationAction.o-reject:focus {
+  color: #a71d2a;
+}
+
+.o_Message_moderationPending {
+  font-style: italic;
+}
+
+.o_Message_moderationPending.o-author {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.o_Message_notificationIconClickable {
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.o_Message_notificationIconClickable.o-error {
+  color: #dc3545;
+}
+
+.o_Message_sidebarCommands {
+  display: none;
+}
+
+.o_Message_sidebarItem.o-message-squashed {
+  display: none;
+}
+
+.o_Message_subject {
+  font-style: italic;
+}
+
+.o_Message_content [summary~="o_mail_notification"] {
+  display: none;
+}
+

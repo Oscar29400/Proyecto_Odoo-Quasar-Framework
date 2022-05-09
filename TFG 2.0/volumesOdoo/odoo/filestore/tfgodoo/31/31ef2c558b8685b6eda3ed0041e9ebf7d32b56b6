@@ -1,0 +1,130 @@
+
+.o_attachment {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .o_attachment {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .o_attachment {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .o_attachment.o_attachment_many2many {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .o_attachment.o_attachment_many2many {
+    width: 62%;
+  }
+}
+
+.o_attachment .o_attachment_wrap {
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 4px 6px 0 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.o_attachment .o_attachment_wrap .o_attachment_delete_cross {
+  float: right;
+  cursor: pointer;
+}
+
+.o_attachment.o_attachment_editable .o_attachment_wrap {
+  padding-right: 40px;
+}
+
+.o_attachment .o_image {
+  width: 38px;
+  height: 38px;
+  image-orientation: from-image;
+}
+
+.o_attachment .o_image.o_hover {
+  opacity: 1;
+}
+
+.o_attachment .o_image.o_hover:hover, .o_attachment .o_image.o_hover:focus, .o_attachment .o_image.o_hover.focus {
+  opacity: 0.7;
+}
+
+.o_attachment .o_attachment_view {
+  cursor: zoom-in;
+}
+
+.o_attachment .caption {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.o_attachment .caption a {
+  color: #4c4c4c;
+}
+
+.o_attachment .o_attachment_progress_bar {
+  display: none;
+}
+
+.o_attachment .o_attachment_uploaded, .o_attachment .o_attachment_delete {
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+}
+
+.o_attachment .o_attachment_delete {
+  background: #949494;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  transform: translateX(100%);
+  transition: all 0.3s ease 0s;
+}
+
+.o_attachment .o_attachment_delete:hover {
+  background: #7C7BAD;
+}
+
+.o_attachment.o_attachment_uploading .o_attachment_progress_bar {
+  display: inline-block;
+  margin: 0 0 0 8px;
+  border-radius: 2px;
+  vertical-align: bottom;
+}
+
+.o_attachment.o_attachment_uploading .o_attachment_progress_bar > div {
+  font-size: 11px;
+  padding: 0 7px;
+}
+
+.o_attachment.o_attachment_uploading .o_attachment_delete, .o_attachment.o_attachment_uploading .o_attachment_uploaded {
+  display: none;
+}
+
+.o_attachment:hover .o_attachment_delete {
+  transition: all 0.1s ease 0s;
+  transform: translateX(0);
+}
+

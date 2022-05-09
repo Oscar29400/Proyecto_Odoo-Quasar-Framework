@@ -1,0 +1,43 @@
+
+.o_PartnerImStatusIcon {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.3em;
+}
+
+.o_PartnerImStatusIcon_outerBackground {
+  transform: scale(1.5);
+}
+
+.o-background {
+  transform: scale(1);
+  margin-inline-end: 0.25rem;
+  margin-top: 2px;
+}
+
+.o_PartnerImStatusIcon.o-has-open-chat {
+  cursor: pointer;
+}
+
+.o_PartnerImStatusIcon_innerBackground {
+  color: white;
+}
+
+.o_PartnerImStatusIcon_icon.o-away {
+  color: #ffc107;
+}
+
+.o_PartnerImStatusIcon_icon.o-bot {
+  color: #00A09D;
+}
+
+.o_PartnerImStatusIcon_icon.o-offline {
+  color: #495057;
+}
+
+.o_PartnerImStatusIcon_icon.o-online {
+  color: #00A09D;
+}
+

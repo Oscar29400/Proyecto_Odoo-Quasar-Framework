@@ -1,0 +1,40 @@
+
+.o_AttachmentBox {
+  position: relative;
+}
+
+.o_AttachmentBox_buttonAdd {
+  align-self: center;
+}
+
+.o_AttachmentBox_content {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column;
+}
+
+.o_AttachmentBox_dashedLine {
+  flex-grow: 1;
+}
+
+.o_AttachmentBox_fileInput {
+  display: none;
+}
+
+.o_AttachmentBox_title {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+}
+
+.o_AttachmentBox_titleText {
+  padding: 1rem;
+}
+
+.o_AttachmentBox_dashedLine {
+  border-style: dashed;
+  border-color: #dee2e6;
+}
+
+.o_AttachmentBox_title {
+  font-weight: bold;
+}
+

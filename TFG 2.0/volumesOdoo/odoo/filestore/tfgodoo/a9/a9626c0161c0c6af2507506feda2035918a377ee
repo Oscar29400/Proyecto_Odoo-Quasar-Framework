@@ -1,0 +1,108 @@
+
+/**
+ * This file regroups the rules which apply on elements which are shared between
+ * all renderers. For field default rules, see the fields.scss file.
+ */
+.o_invisible_modifier {
+  display: none !important;
+}
+
+.o_status {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  vertical-align: middle;
+  background-color: #dee2e6;
+}
+
+.o_status.o_status_green {
+  background-color: #28a745;
+}
+
+.o_status.o_status_red {
+  background-color: #dc3545;
+}
+
+.o_btn-link-as-button {
+  padding: 2px;
+  font-size: 12px;
+}
+
+.o_btn-link-as-button > a {
+  margin-bottom: -4px !important;
+  margin-left: 3px;
+}
+
+.o_view_nocontent {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.o_view_nocontent .o_nocontent_help {
+  pointer-events: auto;
+  max-width: 650px;
+  margin: auto;
+  padding: 15px;
+  z-index: 1000;
+  text-align: center;
+  color: #777777;
+  font-size: 115%;
+}
+
+.o_view_nocontent .o_nocontent_help > p:first-of-type {
+  margin-top: 0;
+  color: black;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.o_view_nocontent .o_nocontent_help a {
+  cursor: pointer;
+}
+
+.o_view_nocontent .o_nocontent_help .o_view_nocontent_smiling_face:before {
+  width: 120px;
+  height: 140px;
+  background: transparent url(/web/static/src/img/smiling_face.svg) no-repeat center;
+}
+
+.o_view_nocontent .o_nocontent_help .o_view_nocontent_neutral_face:before {
+  width: 120px;
+  height: 140px;
+  background: transparent url(/web/static/src/img/neutral_face.svg) no-repeat center;
+}
+
+.o_view_nocontent .o_nocontent_help .o_empty_custom_dashboard {
+  min-height: 327px;
+  margin-left: -16px;
+  margin-top: -16px;
+  padding: 100px 0 0 137px;
+  background: transparent url(/web/static/src/img/graph_background.png) no-repeat 0 0;
+}
+
+.o_view_sample_data .o_list_table {
+  cursor: default !important;
+}
+
+.o_view_sample_data .o_list_table > thead .o_list_record_selector {
+  pointer-events: none;
+}
+
+.o_view_sample_data .o_nocontent_help {
+  border-radius: 20%;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 120px 100px #f9f9f9;
+}
+
+.o_view_sample_data .o_sample_data_disabled {
+  opacity: 0.33;
+  pointer-events: none;
+  user-select: none;
+}
+

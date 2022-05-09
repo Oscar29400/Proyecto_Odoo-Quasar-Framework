@@ -1,0 +1,24 @@
+
+.o_widget_Discuss {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex: 0 0 100%;
+  flex-flow: column;
+  height: 100%;
+}
+
+.o_widget_Discuss .o_control_panel {
+  border-bottom: 0;
+}
+
+.o_widget_Discuss .o_Discuss_content {
+  border-top: 1px solid #cccccc;
+}
+
+.o_widget_Discuss .o_Discuss.o-mobile:not(.o-adding-item) {
+  border-top: 1px solid #cccccc;
+}
+
+.o_widget_Discuss .o_Discuss.o-mobile.o-adding-item .o_Discuss_mobileAddItemHeader {
+  border-bottom: 1px solid #cccccc;
+}
+

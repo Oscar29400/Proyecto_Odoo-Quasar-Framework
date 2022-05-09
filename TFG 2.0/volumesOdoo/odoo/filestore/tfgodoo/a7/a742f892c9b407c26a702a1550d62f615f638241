@@ -1,0 +1,30 @@
+
+.o_MessageSeenIndicator {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  position: relative;
+  -webkit-flex-wrap: nowrap; flex-wrap: nowrap;
+}
+
+.o_MessageSeenIndicator_icon.o-first {
+  padding-left: 0.25rem;
+}
+
+.o_MessageSeenIndicator_icon.o-second {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.o_MessageSeenIndicator {
+  opacity: 0.6;
+}
+
+.o_MessageSeenIndicator.o-all-seen {
+  color: #7C7BAD;
+}
+
+.o_MessageSeenIndicator:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+

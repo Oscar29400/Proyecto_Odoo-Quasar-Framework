@@ -1,0 +1,18 @@
+
+.o_ChatterContainer {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  width: 100%;
+}
+
+.o_ChatterContainer_noChatter {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_ChatterContainer_noChatterIcon {
+  margin-right: 0.5rem;
+}
+

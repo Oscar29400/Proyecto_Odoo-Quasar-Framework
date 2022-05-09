@@ -1,0 +1,60 @@
+
+.o_web_sign_name_and_signature {
+  position: relative;
+}
+
+/* Signature Dialog */
+.card.o_web_sign_auto_font_selection {
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+}
+
+.card.o_web_sign_auto_font_selection .o_web_sign_auto_font_list {
+  overflow: auto;
+}
+
+.card.o_web_sign_auto_font_selection .o_web_sign_auto_font_list > a {
+  height: 100px;
+}
+
+.card.o_web_sign_auto_font_selection .o_web_sign_auto_font_list > a > img {
+  height: 100%;
+}
+
+.o_field_widget .o_signature {
+  outline: 1px solid rgba(108, 117, 125, 0.3);
+  position: relative;
+}
+
+.o_field_widget .o_signature.o_signature_empty {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_field_widget .o_signature > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.o_field_invalid .o_signature {
+  outline: 3px solid #dc3545;
+  cursor: pointer;
+}
+
+.o_form_editable .o_signature:hover {
+  outline: 3px solid #00A09D;
+  cursor: pointer;
+}
+
+.o_signature_stroke {
+  position: absolute;
+  border-top: #D1D0CE solid 2px;
+  bottom: 16%;
+  width: 72%;
+  left: 14%;
+}
+

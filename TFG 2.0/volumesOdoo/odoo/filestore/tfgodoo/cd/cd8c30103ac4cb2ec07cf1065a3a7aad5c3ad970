@@ -1,0 +1,31 @@
+
+.o_NotificationList {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  overflow: auto;
+}
+
+.o_NotificationList.o-empty {
+  justify-content: center;
+}
+
+.o_NotificationList_noConversation {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.5rem;
+}
+
+.o_NotificationList_separator {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  width: 100%;
+}
+
+.o_NotificationList_separator {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.o_NotificationList_noConversation {
+  color: #adb5bd;
+}
+

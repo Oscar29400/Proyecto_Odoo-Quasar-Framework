@@ -1,0 +1,49 @@
+
+.o_Follower {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.o_Follower_avatar {
+  width: 24px;
+  height: 24px;
+  margin-inline-end: 0.5rem;
+}
+
+.o_Follower_details {
+  align-items: center;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.o_Follower_avatar {
+  border-radius: 50%;
+}
+
+.o_Follower_button {
+  border-radius: 0;
+}
+
+.o_Follower_button:hover {
+  background: #ced4da;
+  color: #000000;
+}
+
+.o_Follower_details {
+  color: #495057;
+}
+
+.o_Follower_details:hover {
+  background: #ced4da;
+  color: #000000;
+}
+
+.o_Follower_details.o-inactive {
+  opacity: 0.25;
+  font-style: italic;
+}
+

@@ -1,0 +1,21 @@
+
+.o_FollowButton {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_FollowButton_follow {
+  color: #6c757d;
+}
+
+.o_FollowButton_unfollow {
+  color: #6c757d;
+}
+
+.o_FollowButton_unfollow.o-following {
+  color: #28a745;
+}
+
+.o_FollowButton_unfollow.o-unfollow {
+  color: #fd7e14;
+}
+

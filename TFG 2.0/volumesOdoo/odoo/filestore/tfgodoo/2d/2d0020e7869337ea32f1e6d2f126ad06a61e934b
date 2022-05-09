@@ -1,0 +1,182 @@
+
+.o_form_view.o_form_nosheet.o_base_settings {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: column nowrap; flex-flow: column nowrap;
+  padding: 0px;
+}
+
+.o_base_settings {
+  height: 100%;
+}
+
+.o_base_settings .o_control_panel {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_base_settings .o_control_panel .o_panel {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: row wrap; flex-flow: row wrap;
+  width: 100%;
+}
+
+.o_base_settings .o_control_panel .o_panel .title, .o_base_settings .o_control_panel .o_panel .o_setting_search {
+  -webkit-box-flex: 1; -webkit-flex: 1 0 auto; flex: 1 0 auto;
+  width: 237.5px;
+}
+
+.o_base_settings .o_control_panel .o_panel .o_setting_search {
+  position: relative;
+}
+
+.o_base_settings .o_control_panel .o_panel .o_setting_search .searchInput {
+  height: 28px;
+  padding: 0px;
+  border: 0px;
+  border-bottom: 1px solid #ced4da;
+  border-color: #495057;
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.o_base_settings .o_control_panel .o_panel .o_setting_search .searchIcon {
+  position: absolute;
+  top: 4px;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  color: #495057;
+}
+
+.o_base_settings .o_control_panel .o_form_statusbar {
+  padding: 0;
+  margin: 5px 0px;
+  border: 0;
+}
+
+.o_base_settings .o_control_panel .o_form_statusbar .btn-primary, .o_base_settings .o_control_panel .o_form_statusbar .btn-link {
+  padding: 0.25rem 0.5rem;
+}
+
+.o_base_settings .o_control_panel .o_form_statusbar .btn-link {
+  color: #7C7BAD;
+}
+
+.o_base_settings .o_control_panel .o_form_statusbar .btn-link:hover, .o_base_settings .o_control_panel .o_form_statusbar .btn-link:focus, .o_base_settings .o_control_panel .o_form_statusbar .btn-link.focus {
+  color: #555487;
+}
+
+.o_base_settings .o_setting_container {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  overflow: auto;
+}
+
+.o_base_settings .o_setting_container .settings_tab {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  -webkit-flex-flow: column nowrap; flex-flow: column nowrap;
+  background: #212529;
+  overflow: auto;
+  padding-top: 8px;
+}
+
+.o_base_settings .o_setting_container .settings_tab .selected {
+  background-color: #212529;
+  box-shadow: inset 3px 0 0 #7C7BAD;
+}
+
+.o_base_settings .o_setting_container .settings_tab .selected .app_name {
+  color: white;
+}
+
+.o_base_settings .o_setting_container .settings_tab .tab {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  padding: 0 32px 0 16px;
+  height: 40px;
+  color: #ced4da;
+  font-size: 13px;
+  line-height: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.o_base_settings .o_setting_container .settings_tab .tab .icon {
+  width: 23px;
+  min-width: 23px;
+  margin-right: 10px;
+}
+
+.o_base_settings .o_setting_container .settings {
+  position: relative;
+  flex: 1 1 100%;
+  background-color: white;
+  overflow: auto;
+}
+
+.o_base_settings .o_setting_container .settings > .app_settings_block h2 {
+  margin-bottom: 0;
+  padding: 0.25rem 16px;
+  background-color: #e9ecef;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .o_base_settings .o_setting_container .settings > .app_settings_block h2 {
+    padding-left: 32px;
+  }
+}
+
+.o_base_settings .o_setting_container .settings > .app_settings_block h2:first-of-type {
+  margin-top: 10px !important;
+}
+
+.o_base_settings .o_setting_container .settings > .app_settings_block .o_settings_container {
+  max-width: 992px;
+  padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+  .o_base_settings .o_setting_container .settings > .app_settings_block .o_settings_container {
+    padding-left: 32px;
+  }
+}
+
+.o_base_settings .o_setting_container .settings .settingSearchHeader {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  margin: 30px 0 10px;
+  padding: 0.25rem 16px;
+  background-color: #e9ecef;
+}
+
+@media (min-width: 1200px) {
+  .o_base_settings .o_setting_container .settings .settingSearchHeader {
+    padding-left: 32px;
+  }
+}
+
+.o_base_settings .o_setting_container .settings .settingSearchHeader .icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.o_base_settings .o_setting_container .settings .settingSearchHeader .appName {
+  font-size: 17px;
+}
+
+.o_base_settings .o_setting_container .settings .notFound {
+  color: #adb5bd;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 50px;
+}
+
+.o_base_settings .o_setting_container .settings .highlighter {
+  background: yellow;
+}
+
+.o_base_settings .o_setting_container .d-block {
+  display: block !important;
+}
+

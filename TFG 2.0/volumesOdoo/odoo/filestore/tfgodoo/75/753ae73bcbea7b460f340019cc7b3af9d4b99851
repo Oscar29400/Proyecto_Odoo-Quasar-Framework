@@ -1,0 +1,34 @@
+
+.o_ComposerSuggestion {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+}
+
+.o_ComposerSuggestion_part1 {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  padding-inline-end: 0.5rem;
+  text-overflow: ellipsis;
+}
+
+.o_ComposerSuggestion_part2 {
+  -webkit-box-flex: 0; -webkit-flex: 0 1 auto; flex: 0 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_ComposerSuggestion_partnerImStatusIcon {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ComposerSuggestion_part1 {
+  font-weight: 700;
+}
+
+.o_ComposerSuggestion_part2 {
+  font-style: italic;
+  color: #6c757d;
+}
+

@@ -1,0 +1,32 @@
+
+.o_ComposerTextInput {
+  min-width: 0;
+  position: relative;
+}
+
+.o_ComposerTextInput_mirroredTextarea {
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  top: -10000px;
+}
+
+.o_ComposerTextInput_textareaStyle {
+  padding: 10px;
+  resize: none;
+  border-radius: 0.6rem;
+  border: none;
+  overflow: auto;
+}
+
+.o_ComposerTextInput_textareaStyle.o-composer-is-compact {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  max-height: 100px;
+}
+
+.o_ComposerTextInput_textareaStyle:not(.o-composer-is-compact) {
+  max-height: 400px;
+}
+

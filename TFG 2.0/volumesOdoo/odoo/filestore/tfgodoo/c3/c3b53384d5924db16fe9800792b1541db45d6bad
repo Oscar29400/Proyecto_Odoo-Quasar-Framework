@@ -1,0 +1,98 @@
+
+.o_DiscussSidebarItem {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.o_DiscussSidebarItem:hover .o_DiscussSidebarItem_commands {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_DiscussSidebarItem_activeIndicator {
+  width: 3px;
+  align-self: stretch;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_DiscussSidebarItem_command {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.o_DiscussSidebarItem_command:first-child {
+  margin-left: 0px;
+}
+
+.o_DiscussSidebarItem_command:last-child {
+  margin-right: 0px;
+}
+
+.o_DiscussSidebarItem_commands {
+  display: none;
+}
+
+.o_DiscussSidebarItem_item {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.o_DiscussSidebarItem_item:first-child {
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+.o_DiscussSidebarItem_item:last-child {
+  margin-right: 15px;
+}
+
+.o_DiscussSidebarItem_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.o_DiscussSidebarItem_name.o-editable {
+  margin-left: 13px;
+  margin-right: 15px;
+}
+
+.o_DiscussSidebarItem_nameInput {
+  width: 100%;
+}
+
+.o_DiscussSidebarItem {
+  cursor: pointer;
+}
+
+.o_DiscussSidebarItem:hover {
+  background-color: #16181b;
+}
+
+.o_DiscussSidebarItem.o-starred-box .o_DiscussSidebarItem_counter {
+  border-color: #6c757d;
+  background-color: #6c757d;
+}
+
+.o_DiscussSidebarItem_activeIndicator.o-item-active {
+  background-color: #7C7BAD;
+}
+
+.o_DiscussSidebarItem_command:not(:hover) {
+  color: #6c757d;
+}
+
+.o_DiscussSidebarItem_counter {
+  background-color: #7C7BAD;
+}
+
+.o_DiscussSidebarItem_name.o-item-unread {
+  font-weight: bold;
+}
+
+.o_DiscussSidebarItem_nameInput {
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}
+

@@ -1,0 +1,39 @@
+
+.o_ActivityBox_title {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.o_ActivityBox_titleBadge {
+  padding: 0 0.5rem;
+}
+
+.o_ActivityBox_titleBadges {
+  margin-inline-end: 1rem;
+}
+
+.o_ActivityBox_titleLine {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  width: auto;
+}
+
+.o_ActivityBox_titleText {
+  margin: 0 1rem;
+}
+
+.o_ActivityBox_title {
+  font-weight: bold;
+}
+
+.o_ActivityBox_titleBadge {
+  font-size: 11px;
+}
+
+.o_ActivityBox_titleLine {
+  border-color: #ced4da;
+  border-style: dashed;
+}
+

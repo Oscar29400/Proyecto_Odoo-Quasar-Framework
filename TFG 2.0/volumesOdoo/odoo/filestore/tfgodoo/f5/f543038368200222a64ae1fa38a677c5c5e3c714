@@ -1,0 +1,101 @@
+
+.ui-autocomplete .ui-menu-item > a, .show .dropdown-menu .dropdown-item, .show .dropdown-menu .dropdown-header, .navbar-nav .show .dropdown-menu .dropdown-item, .navbar-nav .show .dropdown-menu .dropdown-header {
+  padding: 3px 20px;
+}
+
+.ui-autocomplete {
+  background-image: none;
+  background-color: #FFFFFF;
+  border: 1px solid #dee2e6;
+  font-size: 1.08333333rem;
+  padding: 5px 0px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+}
+
+.ui-autocomplete .ui-menu-item {
+  padding: 0;
+}
+
+.ui-autocomplete .ui-menu-item > a {
+  display: block;
+  color: #4c4c4c;
+}
+
+.ui-autocomplete .ui-menu-item > a.ui-state-active {
+  border: none;
+  font-weight: normal;
+  margin: 0;
+}
+
+.ui-autocomplete .ui-menu-item.o_m2o_dropdown_option, .ui-autocomplete .ui-menu-item.o_m2o_start_typing {
+  text-indent: 20px;
+}
+
+.ui-autocomplete .ui-menu-item.o_m2o_start_typing {
+  font-style: italic;
+  cursor: default;
+}
+
+.ui-autocomplete .ui-menu-item.o_m2o_start_typing a.ui-menu-item-wrapper, .ui-autocomplete .ui-menu-item.o_m2o_start_typing a.ui-state-active, .ui-autocomplete .ui-menu-item.o_m2o_start_typing a.ui-state-active:hover {
+  background: none;
+}
+
+.dropdown-menu {
+  box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-menu .o_inline_dropdown {
+  position: relative;
+}
+
+.dropdown-menu .o_inline_dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%;
+}
+
+.dropdown-menu .o_inline_dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.show .dropdown-menu > * {
+  position: relative;
+}
+
+.show .dropdown-menu .dropdown-item:focus, .show .dropdown-menu .dropdown-item:active, .show .dropdown-menu .dropdown-item:focus:active {
+  outline: none;
+}
+
+.show .dropdown-menu .dropdown-header {
+  color: #4c4c4c;
+}
+
+@media (max-width: 767.98px) {
+  .show .dropdown-menu .dropdown-header {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.navbar-nav .show .dropdown-menu > * {
+  position: relative;
+}
+
+.navbar-nav .show .dropdown-menu .dropdown-item:focus, .navbar-nav .show .dropdown-menu .dropdown-item:active, .navbar-nav .show .dropdown-menu .dropdown-item:focus:active {
+  outline: none;
+}
+
+.navbar-nav .show .dropdown-menu .dropdown-header {
+  color: #4c4c4c;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-nav .show .dropdown-menu .dropdown-header {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.o_rtl .dropdown-menu {
+  left: auto;
+}
+

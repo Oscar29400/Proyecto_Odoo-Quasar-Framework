@@ -1,0 +1,31 @@
+
+.o_ThreadView {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  position: relative;
+  flex-flow: column;
+  overflow: auto;
+}
+
+.o_ThreadView_composer {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadView_loading {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-self: center;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  align-items: center;
+}
+
+.o_ThreadView_messageList {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+}
+
+.o_ThreadView {
+  background-color: #f8f9fa;
+}
+
+.o_ThreadView_loadingIcon {
+  margin-right: 3px;
+}
+

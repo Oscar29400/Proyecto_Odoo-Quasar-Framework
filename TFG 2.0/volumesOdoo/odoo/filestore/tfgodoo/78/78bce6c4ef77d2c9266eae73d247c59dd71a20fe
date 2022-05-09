@@ -1,0 +1,21 @@
+
+.o_MailTemplate {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  align-items: center;
+}
+
+.o_MailTemplate_button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.o_MailTemplate_name {
+  margin-inline-start: 0.5rem;
+}
+
+.o_MailTemplate_text {
+  color: #adb5bd;
+  font-style: italic;
+}
+

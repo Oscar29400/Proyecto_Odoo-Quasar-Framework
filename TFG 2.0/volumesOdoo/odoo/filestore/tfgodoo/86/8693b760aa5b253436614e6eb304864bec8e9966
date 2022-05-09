@@ -1,0 +1,71 @@
+
+.o_web_client .o_export {
+  padding: 20px;
+}
+
+.o_web_client .o_export .o-export-panel {
+  height: 100%;
+}
+
+.o_web_client .o_export .o_left_panel {
+  padding-right: 10px;
+  -webkit-flex-flow: column nowrap; flex-flow: column nowrap;
+  height: 100%;
+}
+
+.o_web_client .o_export .o_left_panel .o_left_field_panel {
+  flex: 1;
+  overflow: auto;
+}
+
+.o_web_client .o_export .o_left_panel .o_export_tree_item {
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+}
+
+.o_web_client .o_export .o_left_panel .o_export_tree_item.o_selected > .o_tree_column {
+  background-color: #7C7BAD;
+  color: white;
+}
+
+.o_web_client .o_export .o_left_panel .o_export_tree_item .o_expand_parent {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  bottom: auto;
+  right: auto;
+  font-size: 10px;
+}
+
+.o_web_client .o_export .o_left_panel .o_export_tree_item .o_required {
+  border-bottom: 2px solid #4c4c4c;
+}
+
+.o_web_client .o_export .o_right_panel {
+  padding-left: 10px;
+  -webkit-flex-flow: column nowrap; flex-flow: column nowrap;
+  height: 100%;
+}
+
+.o_web_client .o_export .o_right_panel .o_save_list {
+  display: none;
+}
+
+.o_web_client .o_export .o_right_panel .o_right_field_panel {
+  flex: 1;
+  overflow: auto;
+}
+
+.o_web_client .o_export .o_right_panel .o_right_field_panel .o_short_field {
+  cursor: ns-resize;
+}
+
+.o_web_client .o_export .o_right_panel .o_right_field_panel .o-field-placeholder {
+  border: 1px dashed #7C7BAD;
+}
+
+.o_web_client .o_export .o_right_panel .o_right_field_panel .o_remove_field {
+  cursor: pointer;
+}
+

@@ -1,0 +1,244 @@
+
+.o_searchview {
+  align-items: flex-end;
+  padding: 0 20px 1px 0;
+  position: relative;
+}
+
+.o_searchview .o_searchview_input_container {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-flex-flow: row wrap; flex-flow: row wrap;
+  position: relative;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  margin: 1px 3px 0 0;
+  max-width: 100%;
+  position: relative;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_searchview_facet_label {
+  align-items: center;
+  color: white;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  padding: 0 3px;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_facet_values {
+  direction: ltr/*rtl:ignore*/;
+  padding: 0 18px 0 5px;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_facet_values .o_facet_values_sep {
+  font-style: italic;
+  margin: 0 0.3rem;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_facet .o_facet_remove {
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  justify-content: center;
+  width: 18px;
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_input {
+  -webkit-box-flex: 1; -webkit-flex: 1 0 auto; flex: 1 0 auto;
+  width: 75px;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_autocomplete {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_autocomplete .o_menu_item {
+  align-items: center;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  padding-left: 25px;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_autocomplete .o_menu_item.o_indent {
+  padding-left: 50px;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_autocomplete .o_menu_item a:hover {
+  background-color: inherit;
+}
+
+.o_searchview .o_searchview_input_container .o_searchview_autocomplete .o_menu_item a.o_expand {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  justify-content: center;
+  width: 25px;
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: auto;
+  right: auto;
+}
+
+.o_search_options .o_dropdown_toggler_btn:first-child {
+  margin-right: 15px;
+}
+
+.o_dropdown {
+  color: #4c4c4c;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.o_dropdown .o_dropdown_title {
+  padding: 0 0.3rem;
+}
+
+.o_dropdown .o_dropdown_caret {
+  font-size: 12px;
+  width: 1rem;
+}
+
+.o_dropdown:hover .o_dropdown_toggler_btn, .o_dropdown.show .o_dropdown_toggler_btn {
+  color: #333232;
+}
+
+.o_dropdown .o_dropdown_menu ul.o_embed_menu {
+  padding: 0;
+}
+
+.o_dropdown .o_dropdown_menu a.dropdown-item {
+  align-items: center;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  position: relative;
+}
+
+.o_dropdown .o_dropdown_menu a.dropdown-item .o_item_description {
+  flex: 1;
+}
+
+.o_dropdown .o_dropdown_menu a.dropdown-item .o_icon_right {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: 0.75rem;
+}
+
+.o_dropdown .o_dropdown_menu a.dropdown-item .o_icon_right + .o_icon_right {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: 1.875rem;
+}
+
+.o_dropdown .o_dropdown_menu .o_menu_item_options {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.o_closed_menu {
+  position: relative;
+}
+
+.o_closed_menu:before {
+  margin-top: -0.3em;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+  border-right: 0;
+  border-top: 0.3em solid transparent;
+  -moz-transform: scale(0.9999);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+}
+
+.o_open_menu {
+  position: relative;
+}
+
+.o_open_menu:before {
+  margin-top: -0.3em;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  border-top: 0.3em solid;
+  -moz-transform: scale(0.9999);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+}
+
+.o_filter_menu .o_filter_condition {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.o_filter_menu .o_filter_condition .o_or_filter {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  bottom: auto;
+  right: auto;
+}
+
+.o_filter_menu .o_filter_condition .o_generator_menu_operator {
+  margin: 3px 0px;
+}
+
+.o_filter_menu .o_filter_condition .o_generator_menu_value .datepickerbutton {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: auto;
+  bottom: auto;
+  right: -20px;
+}
+
+.o_filter_menu .o_filter_condition .o_generator_menu_delete {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  left: auto;
+  bottom: auto;
+  right: 4px;
+}
+
+.o_filter_menu .o_add_filter_menu {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  justify-content: space-between;
+}
+

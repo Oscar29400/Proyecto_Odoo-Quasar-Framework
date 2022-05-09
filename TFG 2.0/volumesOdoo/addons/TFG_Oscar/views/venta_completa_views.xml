@@ -1,0 +1,68 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="ventacompleta_tree"> 
+      <field name="name">Listado de venta Reparacion </field>
+      <field name="model">ventacompleta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/> 
+          <field name="idventa"/>
+          <field name="producto" />
+          <field name="precioNeto"/>
+          <field name="precioTotal" />
+          <field name="empleado"/>
+          <field name="cliente"/>
+          <field name="report_file"/>
+          <button name="action_get_attachment" string="Generar Factura" type="object"/> 
+        </tree>
+      </field>
+    </record>
+ 
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="ventacompleta_form_view">
+    <field name="name">Crear ventas</field>
+    <field name="model">ventacompleta</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="idventa"/>
+          <field name="empleado"/>
+          <field name="cliente" />
+          <field name="producto"/>
+          <field name="report_file" />
+          <button name="action_get_attachment" string="Generar Factura" type="object"/> 
+        </group>
+
+      </group>
+      </form>
+    </field>
+  </record>
+
+
+    <!-- actions opening views on models -->
+    <!-- Acciones al abrir las vistas en los modelos 
+    https://www.odoo.com/documentation/14.0/developer/reference/addons/actions.html
+    -->
+
+    <record model="ir.actions.act_window" id="ventacompleta_action_window">
+      <field name="name">Listado de venta y Reparacion</field>
+      <field name="res_model">ventacompleta</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Botín" id="botin_menu_root"/>
+    
+    <!-- actions -->
+
+    <menuitem name="Venta Completa" id="ventacompleta_menu" parent="botin_menu_root"
+              action="ventacompleta_action_window"/>
+
+  </data>
+</odoo>

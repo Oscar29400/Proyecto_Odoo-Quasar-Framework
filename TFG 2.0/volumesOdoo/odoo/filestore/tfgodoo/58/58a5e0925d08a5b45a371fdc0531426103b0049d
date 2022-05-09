@@ -1,0 +1,121 @@
+
+.o_MessageList {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  overflow: auto;
+}
+
+.o_MessageList.o-empty {
+  align-items: center;
+  justify-content: center;
+}
+
+.o_MessageList:not(.o-empty) {
+  padding-bottom: 15px;
+}
+
+.o_MessageList_empty {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 2.5rem;
+}
+
+.o_MessageList_isLoadingMore {
+  align-self: center;
+}
+
+.o_MessageList_isLoadingMoreIcon {
+  margin-right: 3px;
+}
+
+.o_MessageList_loadMore {
+  align-self: center;
+}
+
+.o_MessageList_separator {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  padding: 0 0;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_MessageList_separatorDate {
+  padding: 15px 0;
+}
+
+.o_MessageList_separatorLine {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  width: auto;
+}
+
+.o_MessageList_separatorNewMessages {
+  padding: 0 0;
+  margin-right: 15px;
+}
+
+.o_MessageList_separatorLabel {
+  padding: 0 10px;
+}
+
+.o_MessageList {
+  background-color: white;
+}
+
+.o_MessageList_empty {
+  text-align: center;
+}
+
+.o_MessageList_emptyTitle {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.o_MessageList_emptyTitle.o-neutral-face-icon:before {
+  width: 120px;
+  height: 140px;
+  background: transparent url(/web/static/src/img/neutral_face.svg) no-repeat center;
+}
+
+.o_MessageList_loadMore {
+  cursor: pointer;
+}
+
+.o_MessageList_message.o-has-message-selection:not(.o-selected) {
+  opacity: 0.5;
+}
+
+.o_MessageList_separator {
+  font-weight: bold;
+}
+
+.o_MessageList_separatorLine {
+  border-color: #ced4da;
+}
+
+.o_MessageList_separatorLineNewMessages {
+  border-color: #abaaca;
+}
+
+.o_MessageList_separatorNewMessages {
+  color: #abaaca;
+}
+
+.o_MessageList_separatorLabel {
+  background-color: white;
+}
+
+.o_MessageList_separatorNewMessages:not(.o-disable-animation).fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.o_MessageList_separatorNewMessages:not(.o-disable-animation).fade-leave-to {
+  opacity: 0;
+}
+

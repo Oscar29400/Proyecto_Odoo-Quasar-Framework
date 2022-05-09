@@ -1,0 +1,9 @@
+
+.o_ThreadTextualTypingStatus {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_ThreadTextualTypingStatus_separator {
+  width: 0.25rem;
+}
+

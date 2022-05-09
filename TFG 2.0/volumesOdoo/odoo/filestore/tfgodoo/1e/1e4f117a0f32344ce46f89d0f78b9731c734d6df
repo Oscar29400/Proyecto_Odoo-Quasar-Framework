@@ -1,0 +1,186 @@
+
+@font-face {
+  font-family: 'emojifont';
+  src: local("Segoe UI"), local("Apple Color Emoji"), local("Android Emoji"), local("Noto Color Emoji"), local("Twitter Color Emoji"), local("Twitter Color"), local("EmojiOne Color"), local("EmojiOne"), local(EmojiSymbols), local(Symbola);
+}
+
+.o_mail_emoji {
+  display: inline-block;
+  padding: 0;
+  font-size: 1.3rem;
+  font-family: emojifont;
+}
+
+.o_mail_preview .o_mail_emoji {
+  font-size: 100%;
+}
+
+.o_modal_fullscreen {
+  z-index: 1052;
+}
+
+.o_modal_fullscreen .o_viewer_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: 0;
+  height: 45px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  color: #FFFFFF;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer-header a {
+  color: rgba(248, 249, 250, 0.6);
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer-header a:hover, .o_modal_fullscreen .o_viewer_content .o_viewer-header a:focus, .o_modal_fullscreen .o_viewer_content .o_viewer-header a.focus {
+  color: white;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer-header .o_close_btn {
+  position: absolute;
+  top: -1px;
+  left: auto;
+  bottom: auto;
+  right: 16px;
+  font-size: 2.16666667rem;
+  font-weight: 300;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer-header .o_image_caption {
+  bottom: 20%;
+  position: absolute;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_loading_img {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  bottom: auto;
+  right: 0;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper {
+  cursor: pointer;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 0;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer img {
+  image-orientation: from-image;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer img, .o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer video {
+  cursor: auto;
+  max-width: 100%;
+  max-height: 100%;
+  transition: 0.2s cubic-bezier(0, 0, 0.49, 1.6) 0s, opacity 0.15s;
+  box-shadow: 0 0 40px black;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer .o_viewer_pdf {
+  width: 80%;
+  height: 100%;
+  border: 0px;
+  box-shadow: 1px 1px 20px 1px #000;
+}
+
+@media (max-width: 767.98px) {
+  .o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer .o_viewer_pdf, .o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer .o_viewer_text {
+    width: 100%;
+  }
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer .o_viewer_text {
+  width: 80%;
+  height: 100%;
+  border: 0px;
+  box-shadow: 1px 1px 20px 1px #000;
+  background-color: white;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_img_wrapper .o_viewer_zoomer .o_viewer_video {
+  height: 80%;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_toolbar {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 16px;
+  right: auto;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_toolbar > .btn-group {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_toolbar .o_viewer_toolbar_btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(248, 249, 250, 0.7);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_toolbar .o_viewer_toolbar_btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.o_modal_fullscreen .o_viewer_content .o_viewer_toolbar .o_viewer_toolbar_btn.disabled {
+  color: #6c757d;
+  background: none;
+}
+
+.o_modal_fullscreen .arrow {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  bottom: auto;
+  right: 16px;
+  border-radius: 100%;
+  padding: 12px 16px 11px 18px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(248, 249, 250, 0.7);
+}
+
+.o_modal_fullscreen .arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.o_modal_fullscreen .arrow.disabled {
+  color: #6c757d;
+  background: none;
+}
+
+.o_modal_fullscreen .arrow-left {
+  left: 16px;
+  right: auto;
+  padding: 12px 18px 11px 16px;
+}
+

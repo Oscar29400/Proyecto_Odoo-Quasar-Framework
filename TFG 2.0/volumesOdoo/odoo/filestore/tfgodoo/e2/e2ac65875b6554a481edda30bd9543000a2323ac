@@ -1,0 +1,60 @@
+
+.daterangepicker .drp-calendar .calendar-table thead tr:first-child {
+  color: #FFFFFF;
+  background-color: #7C7BAD;
+}
+
+.daterangepicker .drp-calendar .calendar-table thead tr:first-child th.prev span, .daterangepicker .drp-calendar .calendar-table thead tr:first-child th.next span {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.daterangepicker .drp-calendar .calendar-table thead tr:first-child th.prev:hover, .daterangepicker .drp-calendar .calendar-table thead tr:first-child th.next:hover {
+  background-color: #5f5e97;
+}
+
+.daterangepicker .drp-calendar .calendar-table thead tr:last-child {
+  color: #8f8f8f;
+  background-color: #dcdbdb;
+}
+
+.daterangepicker .drp-calendar .calendar-table thead th {
+  border-radius: 0;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr {
+  border-bottom: 1px solid #dcdbdb;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr td {
+  border-width: 0px;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr td:not(.off).in-range {
+  background-color: #e9ecef;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr td:not(.off).available:hover {
+  background-color: #e9ecef;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr td:not(.off).active, .daterangepicker .drp-calendar .calendar-table tbody tr td:not(.off).active:hover {
+  background-color: #7C7BAD;
+}
+
+.daterangepicker .drp-calendar .calendar-table tbody tr td.off:hover {
+  background: #FFFFFF;
+  color: #999;
+}
+
+.daterangepicker .drp-calendar .calendar-time select.hourselect, .daterangepicker .drp-calendar .calendar-time select.minuteselect, .daterangepicker .drp-calendar .calendar-time select.secondselect, .daterangepicker .drp-calendar .calendar-time select.ampmselect {
+  display: initial;
+  -webkit-appearance: menulist-button;
+  -moz-appearance: menulist-button;
+  appearance: menulist-button;
+}
+
+.daterangepicker .drp-buttons .drp-selected {
+  display: none;
+}
+

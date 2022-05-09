@@ -1,0 +1,31 @@
+
+.o_notification_manager {
+  position: absolute;
+  top: 3.5rem;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  position: fixed;
+  z-index: 1055;
+  width: 320px;
+  margin-right: 8px;
+  max-width: 100%;
+}
+
+.o_notification_manager .toast:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.o_notification_manager .o_notification {
+  width: 100%;
+}
+
+.o_notification_manager .o_notification .toast-body {
+  padding: 8px 10px;
+}
+
+.o_notification_manager .o_notification .toast-body .o_notification_close {
+  height: 20px;
+  margin-left: 1rem;
+}
+

@@ -1,0 +1,23 @@
+
+.o_DropZone {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_DropZone {
+  color: #00A09D;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #00A09D;
+}
+
+.o_DropZone.o-dragging-inside {
+  border-width: 5px;
+}
+

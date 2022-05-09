@@ -1,0 +1,222 @@
+
+@keyframes move-left-right {
+  0% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(3px, 0);
+  }
+}
+
+@keyframes move-bottom-top {
+  0% {
+    transform: translate(0, -3px);
+  }
+  100% {
+    transform: translate(0, 3px);
+  }
+}
+
+.o_tooltip_parent {
+  position: relative !important;
+  opacity: 0.999 !important;
+}
+
+.o_tooltip {
+  /*rtl:begin:ignore*/
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  /*rtl:end:ignore*/
+  z-index: 1070 !important;
+  opacity: 0 !important;
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: opacity 400ms ease 0ms !important;
+}
+
+.o_tooltip.o_animated {
+  animation: move-bottom-top 500ms ease-in 0ms infinite alternate !important;
+}
+
+.o_tooltip.o_animated.right, .o_tooltip.o_animated.left {
+  animation-name: move-left-right !important;
+}
+
+.o_tooltip.o_tooltip_visible {
+  opacity: 1 !important;
+}
+
+.o_tooltip.o_tooltip_fixed {
+  position: fixed !important;
+}
+
+.o_tooltip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border: 3px solid white;
+  border-radius: 0 50% 50% 50%;
+  background: radial-gradient(#9b698e, #875A7B);
+  box-shadow: 0 0 40px 2px rgba(255, 255, 255, 0.5);
+}
+
+.o_tooltip.top::before {
+  transform: rotate(180deg) translateY(8.25979621px) scaleY(1.12430027) rotate(45deg);
+}
+
+.o_tooltip.right::before {
+  transform: rotate(270deg) translateY(8.25979621px) scaleY(1.12430027) rotate(45deg);
+}
+
+.o_tooltip.bottom::before {
+  transform: rotate(0deg) translateY(8.25979621px) scaleY(1.12430027) rotate(45deg);
+}
+
+.o_tooltip.left::before {
+  transform: rotate(90deg) translateY(8.25979621px) scaleY(1.12430027) rotate(45deg);
+}
+
+.o_tooltip > .o_tooltip_overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.o_tooltip > .o_tooltip_content {
+  overflow: hidden;
+  direction: ltr;
+  position: relative;
+  padding: 7px 14px;
+  background-color: inherit;
+  color: transparent;
+  visibility: hidden;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: normal;
+}
+
+.o_tooltip > .o_tooltip_content .o_skip_tour {
+  display: inline-block;
+  margin-top: 4px;
+  cursor: pointer;
+  color: gray;
+}
+
+.o_tooltip > .o_tooltip_content .o_skip_tour:hover {
+  color: #4d4d4d;
+}
+
+.o_tooltip > .o_tooltip_content > p:last-child {
+  margin-bottom: 0;
+}
+
+.o_tooltip.active {
+  border: 3px solid #875A7B !important;
+  background-color: white !important;
+  transition: width 150ms ease 50ms, height 150ms ease 50ms, margin 150ms ease 50ms !important;
+}
+
+.o_tooltip.active::before {
+  width: 12px;
+  height: 12px;
+  border-color: #875A7B;
+  border-radius: 0;
+  background: white;
+  box-shadow: none;
+}
+
+.o_tooltip.active > .o_tooltip_overlay {
+  display: block;
+}
+
+.o_tooltip.active > .o_tooltip_content {
+  color: black;
+  visibility: visible;
+  transition: color 0ms ease 200ms;
+}
+
+.o_tooltip.active.right {
+  transform: translateX(6px) !important;
+}
+
+.o_tooltip.active.right::before {
+  position: absolute;
+  top: 5px;
+  left: -12px;
+  bottom: auto;
+  right: auto;
+  transform: translateX(50%) rotate(45deg);
+}
+
+.o_tooltip.active.top {
+  transform: translateY(-6px) !important;
+}
+
+.o_tooltip.active.top::before {
+  /*rtl:begin:ignore*/
+  position: absolute;
+  top: auto;
+  left: 5px;
+  bottom: -12px;
+  right: auto;
+  /*rtl:end:ignore*/
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.o_tooltip.active.left {
+  transform: translateX(-6px) !important;
+}
+
+.o_tooltip.active.left::before {
+  position: absolute;
+  top: 5px;
+  left: auto;
+  bottom: auto;
+  right: -12px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.o_tooltip.active.bottom {
+  transform: translateY(6px) !important;
+}
+
+.o_tooltip.active.bottom::before {
+  /*rtl:begin:ignore*/
+  position: absolute;
+  top: -12px;
+  left: 5px;
+  bottom: auto;
+  right: auto;
+  /*rtl:end:ignore*/
+  transform: translateY(50%) rotate(45deg);
+}
+
+.o_tooltip.active.inverse.left::before, .o_tooltip.active.inverse.right::before {
+  top: auto;
+  bottom: 5px;
+}
+
+.o_tooltip.active.inverse.top::before, .o_tooltip.active.inverse.bottom::before {
+  left: auto/*rtl:ignore*/;
+  right: 5px/*rtl:ignore*/;
+}
+
+@media print {
+  .o_tooltip {
+    display: none !important;
+  }
+}
+

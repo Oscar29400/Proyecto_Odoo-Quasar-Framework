@@ -1,0 +1,68 @@
+
+.o_content .o_kanban_progress_card {
+  position: relative;
+  padding: 0;
+  min-height: 80px;
+  cursor: pointer;
+}
+
+.o_content .o_kanban_progress_card .o_kanban_record_bottom {
+  color: #212529;
+}
+
+.o_content .o_kanban_progress_card .o_kanban_image_wrapper {
+  opacity: 0.7;
+}
+
+.o_content .o_list_progress_card {
+  height: 25px;
+  border: 1px solid #dfdfdf;
+  position: relative;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.o_content .o_list_progress_card .o_file_upload_upload_title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.o_content .o_file_upload_progress_bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: auto;
+  right: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.o_content .o_file_upload_progress_bar .o_file_upload_progress_bar_value {
+  transition: width 0.1s;
+  border-right: 1px solid #65639e;
+  height: 100%;
+  width: 100%;
+  background-color: #7C7BAD;
+  opacity: 0.5;
+}
+
+.o_content .o_file_upload_progress_bar .o_upload_cross {
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  padding: 4px;
+  color: #963535;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.o_content .o_file_upload_progress_bar .o_upload_cross:active {
+  opacity: 0.7;
+}
+
+.o_content .o_file_upload_progress_bar:not(:hover) .o_upload_cross {
+  display: none;
+}
+

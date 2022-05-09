@@ -1,0 +1,22 @@
+
+.o_FollowerSubtype_checkbox {
+  margin-inline-end: 0.5rem;
+}
+
+.o_FollowerSubtype_label {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0.5rem;
+}
+
+.o_FollowerSubtype_label {
+  cursor: pointer;
+}
+
+.o_FollowerSubtype_label:hover {
+  background-color: #e9ecef;
+}
+

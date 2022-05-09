@@ -1,0 +1,12 @@
+
+.o_has_banner .o_view_nocontent {
+  top: 30%;
+}
+
+@media (max-width: 767.98px) {
+  .o_has_banner .o_view_nocontent {
+    position: relative;
+    margin: auto;
+  }
+}
+

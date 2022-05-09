@@ -1,0 +1,182 @@
+
+.o_mail_activity .o_thread_date_separator {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ced4da;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .o_mail_activity .o_thread_date_separator {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+.o_mail_activity .o_thread_date_separator .o_thread_date {
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  padding: 0 10px;
+  font-weight: bold;
+  background: white;
+}
+
+.o_mail_activity .o_thread_message {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  padding: 4px 16px;
+  margin-bottom: 0px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar {
+  flex: 0 0 36px;
+  margin-right: 10px;
+  margin-top: 2px;
+  text-align: center;
+  font-size: smaller;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_sidebar_image {
+  position: relative;
+  height: 36px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_sidebar_image .o_updatable_im_status {
+  width: 36px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_sidebar_image .o_mail_user_status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_sidebar_image .o_mail_user_status.fa-circle-o {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .o_mail_activity .o_thread_message .o_thread_message_sidebar {
+    margin-top: 4px;
+    font-size: x-small;
+  }
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_avatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+.o_mail_activity .o_thread_message .o_thread_icon {
+  cursor: pointer;
+  opacity: 0;
+}
+
+.o_mail_activity .o_thread_message:hover .o_thread_icon {
+  display: inline-block;
+  opacity: 0.6;
+}
+
+.o_mail_activity .o_thread_message:hover .o_thread_icon:hover {
+  opacity: 1;
+}
+
+.o_mail_activity .o_thread_message .o_mail_redirect {
+  cursor: pointer;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core {
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_thread_message_content > pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_note_title {
+  margin-top: 9px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_subject {
+  font-style: italic;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_notification {
+  font-style: italic;
+  color: gray;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core [summary~=o_mail_notification] {
+  display: none;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core p {
+  margin: 0 0 9px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core p:last-child {
+  margin-bottom: 0;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core a {
+  display: inline-block;
+  word-break: break-all;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core :not(.o_image_box) > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_body_long {
+  display: none;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_info {
+  margin-bottom: 2px;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_thread_message_needaction, .o_mail_activity .o_thread_message .o_thread_message_core .o_thread_message_reply {
+  padding: 4px;
+}
+
+.o_mail_activity .o_thread_title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.o_mail_activity .o_thread_title.o_neutral_face_icon:before {
+  width: 120px;
+  height: 140px;
+  background: transparent url(/web/static/src/img/neutral_face.svg) no-repeat center;
+}
+
+.o_mail_activity .o_mail_no_content {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 115%;
+}
+
+.o_mail_activity .o_thread_message .o_thread_message_core .o_mail_read_more {
+  display: block;
+}
+
+.o_web_client .popover .o_thread_tooltip_icon {
+  min-width: 1rem;
+}
+
+.o_web_client.o_touch_device .o_mail_thread .o_thread_icon {
+  opacity: 0.6;
+}
+

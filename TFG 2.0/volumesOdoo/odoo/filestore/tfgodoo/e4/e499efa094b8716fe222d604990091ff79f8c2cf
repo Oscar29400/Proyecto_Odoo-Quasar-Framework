@@ -1,0 +1,14 @@
+
+.o_FormRenderer_chatterContainer {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 1rem 1rem 3rem;
+  width: 100%;
+}
+
+.modal .modal-dialog .o_form_view .o_FormRenderer_chatterContainer {
+  display: none;
+}
+

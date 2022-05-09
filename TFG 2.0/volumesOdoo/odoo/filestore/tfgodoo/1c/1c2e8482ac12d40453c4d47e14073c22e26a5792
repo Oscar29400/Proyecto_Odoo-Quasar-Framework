@@ -1,0 +1,5 @@
+
+.o_NotificationPopover_notificationIcon {
+  margin-inline-end: 0.5rem;
+}
+

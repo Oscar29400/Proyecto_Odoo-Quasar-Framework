@@ -1,0 +1,6 @@
+
+.o_FollowerSubtypeList_subtypes {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+}
+

@@ -1,0 +1,186 @@
+
+.o_ThreadNeedactionPreview {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.o_ThreadNeedactionPreview.o-mobile {
+  padding: 0.5rem;
+}
+
+.o_ThreadNeedactionPreview:hover .o_ThreadNeedactionPreview_markAsRead {
+  opacity: 1;
+}
+
+.o_ThreadNeedactionPreview_content {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-flow: column;
+  -webkit-box-flex: 1; -webkit-flex: 1 1 auto; flex: 1 1 auto;
+  align-self: flex-start;
+  min-width: 0;
+  margin: 0.5rem;
+}
+
+.o_ThreadNeedactionPreview_core {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_ThreadNeedactionPreview_coreItem {
+  margin: 0 0.5rem;
+}
+
+.o_ThreadNeedactionPreview_coreItem:first-child {
+  margin-inline-start: 0;
+}
+
+.o_ThreadNeedactionPreview_coreItem:last-child {
+  margin-inline-end: 0;
+}
+
+.o_ThreadNeedactionPreview_counter {
+  margin: 0 0.5rem;
+}
+
+.o_ThreadNeedactionPreview_date {
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadNeedactionPreview_header {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.o_ThreadNeedactionPreview_image {
+  width: 100%;
+  height: 100%;
+}
+
+.o_ThreadNeedactionPreview_imageContainer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.o_ThreadNeedactionPreview_inlineText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_ThreadNeedactionPreview_inlineText.o-empty::before {
+  content: '\00a0';
+}
+
+.o_ThreadNeedactionPreview_markAsRead {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 0; -webkit-flex: 0 0 auto; flex: 0 0 auto;
+}
+
+.o_ThreadNeedactionPreview_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.o_ThreadNeedactionPreview_name.o-mobile {
+  font-size: 1.1em;
+}
+
+.o_ThreadNeedactionPreview_partnerImStatusIcon {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o_ThreadNeedactionPreview_sidebar {
+  margin: 0.25rem;
+}
+
+.o_ThreadNeedactionPreview {
+  cursor: pointer;
+  user-select: none;
+  background-color: #FFFFFF;
+  background-color: rgba(124, 123, 173, 0.1);
+}
+
+.o_ThreadNeedactionPreview:hover {
+  background-color: #ededed;
+}
+
+.o_ThreadNeedactionPreview.o-muted {
+  background-color: #f8f9fa;
+}
+
+.o_ThreadNeedactionPreview.o-muted:hover {
+  background-color: #e3e7eb;
+}
+
+.o_ThreadNeedactionPreview:hover {
+  background-color: rgba(124, 123, 173, 0.2);
+}
+
+.o_ThreadNeedactionPreview:hover .o_ThreadNeedactionPreview_partnerImStatusIcon {
+  color: #ededed;
+}
+
+.o_ThreadNeedactionPreview_core {
+  color: #adb5bd;
+}
+
+.o_ThreadNeedactionPreview_counter {
+  font-weight: bold;
+}
+
+.o_ThreadNeedactionPreview_counter.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadNeedactionPreview_date {
+  font-weight: bold;
+  font-size: x-small;
+  color: #7C7BAD;
+}
+
+.o_ThreadNeedactionPreview_date.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadNeedactionPreview_image {
+  object-fit: cover;
+}
+
+.o_ThreadNeedactionPreview_markAsRead {
+  opacity: 0;
+}
+
+.o_ThreadNeedactionPreview_markAsRead:hover {
+  color: #6c757d;
+}
+
+.o_ThreadNeedactionPreview_name {
+  font-weight: bold;
+}
+
+.o_ThreadNeedactionPreview_name.o-muted {
+  font-weight: initial;
+}
+
+.o_ThreadNeedactionPreview_partnerImStatusIcon {
+  color: #FFFFFF;
+}
+
+.o_ThreadNeedactionPreview_partnerImStatusIcon:not(.o-mobile) {
+  font-size: x-small;
+}
+
+.o_ThreadNeedactionPreview_partnerImStatusIcon.o-muted {
+  color: #f8f9fa;
+}
+

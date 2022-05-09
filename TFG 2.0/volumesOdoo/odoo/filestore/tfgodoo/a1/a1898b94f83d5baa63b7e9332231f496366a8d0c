@@ -1,0 +1,96 @@
+
+.o_ChatterTopbar {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 34px;
+}
+
+.o_ChatterTopbar_actions {
+  border-bottom: 1px solid;
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+.o_ChatterTopbar_button {
+  margin-bottom: -1px;
+  /* Needed to allow "overriding" of the bottom border */
+}
+
+.o_ChatterTopbar_buttonAttachmentsCountLoader {
+  margin-left: 2px;
+}
+
+.o_ChatterTopbar_buttonCount {
+  padding-left: 0.25rem;
+}
+
+.o_ChatterTopbar_buttonClose {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+}
+
+.o_ChatterTopbar_followerListMenu {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+}
+
+.o_ChatterTopbar_rightSection {
+  display: -webkit-box; display: -webkit-flex; display: flex;
+  -webkit-box-flex: 1; -webkit-flex: 1 0 auto; flex: 1 0 auto;
+  -webkit-box-pack: end; justify-content: flex-end;
+}
+
+.o_ChatterTopbar_actions {
+  border-color: transparent;
+}
+
+.o_ChatterTopbar_actions.o-has-active-button {
+  border-color: #dee2e6;
+}
+
+.o_ChatterTopbar_button {
+  border-radius: 0;
+}
+
+.o_ChatterTopbar_button:hover {
+  background-color: #dee2e6;
+}
+
+.o_ChatterTopbar_button.o-active {
+  color: #7C7BAD;
+  background-color: #f2f4f5;
+  border-right-color: #dee2e6;
+}
+
+.o_ChatterTopbar_button.o-active:not(:first-of-type), .o_ChatterTopbar_button.o-active:first-of-type.o-bordered {
+  border-left-color: #dee2e6;
+}
+
+.o_ChatterTopbar_button.o-active.o-bordered {
+  border-top-color: #dee2e6;
+}
+
+.o_ChatterTopbar_button.o-active:hover {
+  background-color: #dee2e6;
+  color: #555487;
+}
+
+.o_ChatterTopbar_buttonClose {
+  border-radius: 0 0 10px 10px;
+  font-size: 1.35416667rem;
+  background-color: #495057;
+  color: #f8f9fa;
+  cursor: pointer;
+}
+
+.o_ChatterTopbar_buttonClose:hover {
+  background-color: #6c757d;
+  color: #FFFFFF;
+}
+

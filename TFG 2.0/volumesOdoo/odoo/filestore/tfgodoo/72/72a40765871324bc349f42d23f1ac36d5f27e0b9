@@ -1,0 +1,27 @@
+
+.o_main_navbar .o_switch_company_menu > a .oe_topbar_name {
+  display: inline-block;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item {
+  cursor: pointer;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item:hover {
+  background-color: white;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item .o_py {
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+.o_main_navbar .o_switch_company_menu .dropdown-item .o_py:hover {
+  background-color: #e9ecef !important;
+}
+
