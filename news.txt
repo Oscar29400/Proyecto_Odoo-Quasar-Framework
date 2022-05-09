@@ -1,0 +1,32 @@
+Backend Theme
+https://apps.odoo.com/apps/themes/14.0/vista_backend_theme/#
+--------------------------------------------------------------------------------------------
+APIREST PRODUCTOS -- PASAR IMAGENES
+    @http.route('/gestion/cargamento/productos', auth='public', cors='*', type='http')
+    def obtenerDatosProductos(self, **kw):
+        # Obtenemos la referencia del modelo (pensado en este programa para ser "productos")
+        productos = request.env['productos'].sudo().search([])
+        base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        #Generamos la lista de cargamentos
+        lista_productos=[]
+        for s in productos:
+            imgurl = base_url + '/web/image?' + 'model=productos&id=' + str(s.id) + '&field=img'
+            pdfurl = base_url + '/web/pdf?' + 'model=ventacompleta&id=' + str(s.id) + '&field=report_file'
+            lista_productos.append({'id':s.id,'nombre':s.nombre,'descripcion':s.descripcion,
+            'marca':s.marca.nombre,'cantidad':s.nuevoc,'precioCoste':s.precioCoste,'precioVenta':s.precioVenta,'img':imgurl})
+        json_result= http.Response(json.dumps(lista_productos, default=str)
+        ,status=200,mimetype='application/json')
+        return json_result
+
+
+-------------------------------------------------------------------------------------------------
+
+
+        
+----------------------------------------------------------------------------------------------
+SIGUIENTES PASOS
+   ARREGLAR VISTAS Y COMENTAR
+        --PRODUCTOS ESTA MAL HAY QUE REPARAR
+    AVERIGUAR EMAIL FACTURAS
+    CAMBIAR VENTACOMPLETA Y REPARACION --FECHAS
+    SEPARAR PODUCTOS DE VENTACOMPLETA API
