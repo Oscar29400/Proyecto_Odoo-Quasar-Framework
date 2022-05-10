@@ -35,3 +35,114 @@ class ListaProductos(http.Controller):
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
         return json_result
+
+    #TROZO APIREST PARA EMPLEADOS
+
+    #Definimos la operacion para metodos POST, PUT y MATCH
+    @http.route('/gestion/apirest/proveedores', auth="none", cors='*', csrf=False,
+                methods=["POST", "PUT", "PATCH"], type='http')
+    def apiPost(self, **args):
+        #Obtenemos el modelo de los argumentos
+
+        #Pasamos lo recibido en "data" a un diccionario
+        dicDatos=json.loads(args['data'])
+        #Si se ha indicado id, hay busqueda
+        if dicDatos["id"]:
+            search = [('id', '=', int(dicDatos["id"]))]
+        else:
+            return "{'estado':'CARGAMENTO NO INDICADO'}"
+        #Si la peticion es de tipo POST,ejecutamos esto
+        #En este caso, crearemos un nuevo registro con los datos indicados en "data"
+        if (http.request.httprequest.method == 'POST'):
+            #Creamos el nuevo registro
+            record = request.env['proveedores'].sudo().create(
+                #Proporcionamos un diccionario con los datos del registro a crear
+                dicDatos
+                )
+            
+            #Devolvemos el registro creado, siguiendo este esquema
+            return http.Response(
+                json.dumps(
+                
+                    record.read(), #Lectura del registro
+                    default=str #Funcion de conversion por defecto (str, para convertir a String elementos como los datetime)
+                    ),
+                    status=200, # Respuesta de la aplicación al navegador
+                    mimetype='application/json'
+                )
+        #Si la peticion es de tipo PUT o PATCH, ejecutamos esto
+        #En este caso, modificaremos un registro con un numero de socio concreto, cambiando 
+        #a los valores pasados en "data"
+        if (http.request.httprequest.method == 'PUT' or http.request.httprequest.method == 'PATCH'):
+
+            record = http.request.env['proveedores'].sudo().search(search)
+            if record and record[0]:
+                record[0].write(dicDatos)
+                #Devolvemos el registro creado, siguiendo este esquema
+                return http.Response(
+                    json.dumps(
+                    
+                        record.read(), #Lectura del registro
+                        default=str #Funcion de conversion por defecto (str, para convertir a String elementos como los datetime)
+                        ),
+                        status=200, # Respuesta de la aplicación al navegador
+                        mimetype='application/json'
+                    )
+            #Caso de que el registro no sea encontrado
+            return "Registro no encontrado"
+        #Si no es POST, PUT ni PATCH
+        return http.request.env['ir.http'].session_info()
+    
+    #TROZO GET PARA PROVEEDORES    
+    @http.route('/gestion/apirest/proveedores', auth="none", cors='*', csrf=False, methods=["GET", "DELETE"],
+                type='http')
+    def apiGet(self, **args):
+        #Obtenemos el modelo y si hay id, hacemos la busqueda
+        search = []
+        #Pasamos lo recibido en "data" a un diccionario
+        dicDatos=json.loads(args['data'])
+        #Si se ha indicado id, hay busqueda
+        if dicDatos["id"]:
+            search = [('id', '=', int(dicDatos["id"]))]
+        else:
+            return "{'estado':'CARGAMENTO NO INDICADO'}"
+
+        #Si es GET, devolvemos el registro de la busqueda
+        if (http.request.httprequest.method == 'GET'):
+            record = http.request.env['proveedores'].sudo().search(search)
+            if record and record[0]:
+                lista_proveedores=[]
+                base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+                for s in record:
+                    imgurl = base_url + '/web/image?' + 'model=proveedores&id=' + str(s.id) + '&field=foto'
+                    lista_proveedores.append({'id':s.id,'nombre':s.nombre,'direccion':s.direccion,
+                    'ciudad':s.ciudad,'email':s.email,'tlfno':s.tlfno,'cif':s.cif,'img':imgurl})
+                return http.Response( 
+                json.dumps(lista_proveedores, default=str)[1:-1], 
+                    status=200,
+                    mimetype='application/json'
+                )
+
+            return "{'estado':'NO ENCONTRADO'}"
+        #Si es delete, cogemos el primer elemento de la busqueda
+        if (http.request.httprequest.method == 'DELETE'):
+
+            record = http.request.env[ 'proveedores'].sudo().search(search)
+            #Si hay algun elemento
+            if record and record[0]:
+                #Eliminamos el registro encontrado
+                record[0].unlink()
+                #Devolvemos el registro eliminado, siguiendo este esquema
+                return http.Response(
+                    json.dumps(
+                    
+                        record[0].read(), #Lectura del registro
+                        default=str #Funcion de conversion por defecto (str, para convertir a String elementos como los datetime)
+                        ),
+                        status=200, # Respuesta de la aplicación al navegador
+                        mimetype='application/json'
+                    )
+            return "{'estado':'NO ENCONTRADO'}"
+        #Si no es GET ni DELETE
+        return http.request.env['ir.http'].session_info()
+
