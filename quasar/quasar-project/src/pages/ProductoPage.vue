@@ -13,9 +13,7 @@
                     {{ nombre }}
                   </div>
                 </div>
-                <div class="text-body text-grey-9">{{descripcion}}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                <div class="text-body text-grey-9">{{descripcion}}
 
                   <ul>
                     <li>Stock {{ cantidad }}</li>
@@ -38,7 +36,7 @@
               <q-card-section class="col-5 flex flex-center">
                 <q-img
                   class="rounded-borders"
-                  style="border: 1px solid darkgrey"
+                  style="border: 1px solid darkgrey; max-width:70%; min-width: 50%;"
                   :src="url"
                 />
               </q-card-section>
@@ -75,7 +73,7 @@ export default {
   methods: {
     getProductos() {
       this.$axios
-        .get('http://localhost:8069/gestion/apirest/productos?data={"id":"1"}')
+        .get('http://localhost:8069/gestion/apirest/productos?data={"id":"' + this.$route.query.id +'"}')
         .then((res) => {
           (this.url = res.data.img),
             (this.nombre = res.data.nombre),

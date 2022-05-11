@@ -11,7 +11,7 @@ const routes = [
       { path: 'reparacion', component: () => import('pages/ReparacionPage.vue') },
       { path: 'ventacompleta', component: () => import('pages/VentacompletaPage.vue') },
       { path: 'compras', component: () => import('pages/ComprasPage.vue') },
-      { path: 'producto/:id', component: () => import('pages/ProductoPage.vue') },
+      { path: 'producto', component: () => import('pages/ProductoPage.vue') },
       { path: 'aboutus', component: () => import('pages/AboutPage.vue') }
     ]
   },

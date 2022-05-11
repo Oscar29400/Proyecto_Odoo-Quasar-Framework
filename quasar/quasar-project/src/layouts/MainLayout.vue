@@ -1,52 +1,38 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Botin App
-        </q-toolbar-title>
-        <div class="q-pa-md q-gutter-sm">
-          <q-btn class="btn-fixed-width" round color="primary" icon="shopping_cart" href="http://localhost:8080/#/" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="shopping_cart" href="http://localhost:8080/#/proveedores" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/compras" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/clientes" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/empleados" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/reparacion" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/ventacompleta" />
-          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/aboutus" />
-        </div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oscar Murciano Gomez</div>
+      <q-toolbar class="text-h4">
+        <q-tabs v-model="selected_tab" shrink>
+          <q-tab :style="[selected_tab == 't_0' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('')" style="width:120px;min-height:auto !important;color: white"
+            label="Productos" />
+          <q-tab :style="[selected_tab == 't_1' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('compras')" style="width:120px;min-height:auto !important;color: white"
+            label="Compras" />
+          <q-tab :style="[selected_tab == 't_2' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('ventacompleta')" style="width:120px;min-height:auto !important;color: white"
+            label="Ventas" />
+          <q-tab :style="[selected_tab == 't_3' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('clientes')" style="width:120px;min-height:auto !important;color: white"
+            label="Clientes" />
+          <q-tab :style="[selected_tab == 't_4' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('proveedores')" style="width:120px;min-height:auto !important;color: white"
+            label="Proveedores" />
+          <q-tab :style="[selected_tab == 't_4' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('empleados')" style="width:120px;min-height:auto !important;color: white"
+            label="Empleados" />
+          <q-tab :style="[selected_tab == 't_4' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('reparacion')" style="width:120px;min-height:auto !important;color: white"
+            label="Reparacion" />
+          <q-tab :style="[selected_tab == 't_4' ? { backgroundColor: 'green' } : {}]" class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('aboutus')" style="width:120px;min-height:auto !important;color: white"
+            label="Sobre Nosotros" />
+        </q-tabs>
       </q-toolbar>
+      
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -106,15 +92,16 @@ export default defineComponent({
   components: {
     EssentialLink
   },
-  setup () {
+  setup() {
     const leftDrawerOpen = ref(false)
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+
     }
-  }
+  },
+  methods: {
+    scrollToElement(id) {
+      this.$router.push("/" + id);
+    }
+  },
 })
 </script>

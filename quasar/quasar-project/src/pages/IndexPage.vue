@@ -104,7 +104,7 @@ export default {
         });
     },
     goTo(event, row) {
-      this.$router.push("/producto/" + row.id);
+      this.$router.push("/producto?id=" + row.id);
     },
   },
 };
