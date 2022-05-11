@@ -22,8 +22,8 @@ class Productos(models.Model):
     marca= fields.Many2one('proveedores', string='Marca')
     cargamento = fields.Many2one('compras')
     cantidad = fields.Integer()
-    precioCoste = fields.Float('Precio Coste')
-    precioVenta = fields.Float(compute='_precio',store=True,string='Precio Venta')
+    precioCoste = fields.Float('Precio Coste', digits=(12,2))
+    precioVenta = fields.Float(compute='_precio',store=True,string='Precio Venta', digits=(12,2))
     nuevoc = fields.Integer(compute='_cantidad', store=True,string='Cantidad')
 
     @api.depends('precioCoste')

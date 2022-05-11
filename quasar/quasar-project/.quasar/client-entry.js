@@ -19,6 +19,8 @@ import { createApp } from 'vue'
 
 
 
+import '@quasar/extras/themify/themify.css'
+
 import '@quasar/extras/roboto-font/roboto-font.css'
 
 import '@quasar/extras/material-icons/material-icons.css'

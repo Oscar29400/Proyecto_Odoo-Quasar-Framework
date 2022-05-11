@@ -95,8 +95,9 @@ export default {
         .then((res) => {
           this.rows = res.data;
           var image = new Image(200, 200);
-          image.src = this.rows[0].img;
-          this.rows[0].foto = image;
+          image.src = 'chrome://new-tab-page/icons/google_logo.svg';
+          res.data[0].img = image;
+          console.log(res.data[0].img)
         })
         .catch((err) => {
           console.log(err);

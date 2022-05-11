@@ -22,6 +22,7 @@
           <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/empleados" />
           <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/reparacion" />
           <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/ventacompleta" />
+          <q-btn class="btn-fixed-width" round color="primary" icon="layers_clear" href="http://localhost:8080/#/aboutus" />
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oscar Murciano Gomez</div>
       </q-toolbar>
