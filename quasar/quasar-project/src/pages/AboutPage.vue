@@ -30,25 +30,5 @@ export default {
 
     };
   },
-  mounted() {
-    this.getProductos();
-  },
-  setup () {
-    return {
-    }
-  },
-  methods: {
-    getProductos() {
-      this.$axios
-        .get('http://localhost:8069/gestion/apirest/productos?data={"id":"1"}')
-        .then((res) => {
-          console.log(this.url);
-
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-  },
 };
 </script>

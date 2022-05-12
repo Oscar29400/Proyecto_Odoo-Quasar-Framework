@@ -1,7 +1,8 @@
 <template>
-  <q-page>
+  <q-page >
     <div
       class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl flex flex-center q-pt-xl"
+      style="float:inherit"
     >
       <q-card class="my-card">
         <q-card-section>
@@ -16,12 +17,12 @@
                 <div class="text-body text-grey-9">{{descripcion}}
 
                   <ul>
-                    <li>Stock {{ cantidad }}</li>
+                    <li>Stock: <b>{{ cantidad }}</b></li>
                     <li>
-                      Precio Coste <b>{{ precioCoste }} €</b>
+                      Precio Coste: <b>{{ precioCoste }} €</b>
                     </li>
                     <li>
-                      Precio Venta <b>{{ precioVenta }} €</b>
+                      Precio Venta: <b>{{ precioVenta }} €</b>
                     </li>
                   </ul>
                 </div>
@@ -36,7 +37,7 @@
               <q-card-section class="col-5 flex flex-center">
                 <q-img
                   class="rounded-borders"
-                  style="border: 1px solid darkgrey; max-width:70%; min-width: 50%;"
+                  style="border: 1px solid darkgrey; max-width:500px; min-width: 250px;"
                   :src="url"
                 />
               </q-card-section>
