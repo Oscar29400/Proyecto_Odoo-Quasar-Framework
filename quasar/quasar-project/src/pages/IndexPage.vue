@@ -1,22 +1,17 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table
-        dense
-
-        title="Productos"
-        :rows="rows"
-        :columns="columns"
-        row-key="id"
-        class="col"
-        selection="multiple"
-        v-model:selected="selected"
-      >
+      <q-table dense title="Productos" :rows="rows" :columns="columns" row-key="id" class="col" selection="multiple"
+        v-model:selected="selected">
         <template v-slot:body-cell-action="props">
-          <q-td><q-img :src="url" /></q-td>
           <q-td :props="props">
-            <q-btn icon="ti-trash" color="negative" size="sm" @click="deletePosts(props.row)" dense/>
-            <q-btn icon="ti-new-window" color="teal" size="sm" @click="goTo(props.row.id)" dense/>
+            <q-btn icon="ti-trash" color="negative" size="sm" @click="deletePosts(props.row)" dense />
+            <q-btn icon="ti-new-window" color="teal" size="sm" @click="goTo(props.row.id)" dense />
+          </q-td>
+        </template>
+        <template v-slot:body-cell-img="props">
+          <q-td>
+            <q-img :src="url" />
           </q-td>
         </template>
       </q-table>
@@ -82,10 +77,9 @@ export default {
           sortable: true,
         },
         {
-          name: "name",
+          name: "img",
           label: "Imagen",
           align: "left",
-          field: "img",
           sortable: true,
         },
         {
@@ -115,7 +109,7 @@ export default {
         .then((res) => {
           this.rows = res.data;
           for (let i = 0; i < this.rows.length; i++) {
-            this.url ="http://localhost:8069/web/image?model=productos&id=" +this.rows[i].id +"&field=img";
+            this.url = "http://localhost:8069/web/image?model=productos&id=" + this.rows[i].id + "&field=img";
           }
         })
         .catch((err) => {
@@ -125,10 +119,10 @@ export default {
     goTo(row) {
       this.$router.push("/producto?id=" + row);
     },
-    deletePosts (idPosts) {
+    deletePosts(idPosts) {
       this.$axios
-        .delete('http://localhost:8069/gestion/apirest/productos?data={"id":"'+idPosts.id+'"}')
-          console.log(idPosts);
+        .get('http://localhost:8069/gestion/apirest/delete/productos?data={"id":"' + idPosts.id + '"}')
+      console.log(idPosts);
 
     }
   },
