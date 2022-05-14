@@ -1,0 +1,97 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="proveedores_tree"> 
+      <field name="name">Listado de Proveedores </field>
+      <field name="model">proveedores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="cif"/>
+          <field name="nombre"/>
+          <field name="ciudad"/>
+          <field name="email"/>
+          <field name="tlfno"/>
+          <field name="foto" widget="image" class="oe_avatar"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Kanban-->
+    <record model="ir.ui.view" id="proveedores_kanban"> 
+      <field name="name">Listado del Proveedores</field>
+      <field name="model">proveedores</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_vignette">
+                <div class = "oe_kanban_details">
+                  <h4>
+                      <a type="open">
+                        <b>CIF: </b><field name="cif"/>
+                      </a>
+                  </h4>
+                  <ul>
+                    <field name="foto" widget="image" class="oe_avatar"/>
+                    <li><b>Nombre: </b><field name="nombre"/></li>
+                    <li><b>Drección: </b><field name="direccion"/></li>
+                    <li><b>Ciudad: </b><field name="ciudad"/></li>
+                    <li><b>Email: </b><field name="email"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+   
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="proveedores_form_view">
+    <field name="name">Crear el Proveedor</field>
+    <field name="model">proveedores</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="nombre"/>
+          <field name="direccion"/>
+          <field name="ciudad"/>          
+        </group>
+        <group>
+          <field name="cif"/>
+          <field name="email"/>
+          <field name="tlfno"/>
+        </group>
+        <group>
+       <field name="foto" widget="image" class="oe_avatar"/>
+        </group>
+      </group>
+      </form>
+    </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="proveedores_action_window">
+      <field name="name">Listado del Proveedor</field>
+      <field name="res_model">proveedores</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+
+    
+
+    <!-- actions -->
+
+    <menuitem name="proveedores" id="proveedores_menu" parent="botin_menu_root"
+              action="proveedores_action_window"/>
+
+  </data>
+</odoo>

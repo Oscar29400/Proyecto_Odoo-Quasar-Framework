@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="compras_tree"> 
+      <field name="name">Listado de compras </field>
+      <field name="model">compras</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="idcompra"/>
+          <field name="proveedor"/>
+          <field name="productos"/>
+          <field name="precioCompra"/>
+          <field name="cantidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista Kanban-->
+    <record model="ir.ui.view" id="compras_kanban"> 
+      <field name="name">Listado de compras</field>
+      <field name="model">compras</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_vignette">
+                <div class = "oe_kanban_details">
+                  <h4>
+                      <a type="open">
+                        <b>ID compra: </b><field name="idcompra"/>
+                      </a>
+                  </h4>
+                  <ul>
+                    <li><b>Proveedor: </b><field name="proveedor"/></li>                    
+                    <li><b>Producto: </b><field name="productos"/></li>
+                    <li><b>Precio Compra Unidad: </b><field name="precioCompra"/></li>
+                    <li><b>Cantidad: </b><field name="cantidad"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+   
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="compras_form_view">
+    <field name="name">Crear la compra</field>
+    <field name="model">compras</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="idcompra"/>
+          <field name="proveedor"/>
+        </group>
+        <group>
+          <field name="productos"/>
+          <field name="precioCompra"/>
+          <field name="cantidad"/>
+        </group>
+      </group>
+      </form>
+    </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="compras_action_window">
+      <field name="name">Listado de Compras</field>
+      <field name="res_model">compras</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+
+    
+
+    <!-- actions --> 
+
+    <menuitem name="compras" id="compras_menu" parent="botin_menu_root"
+              action="compras_action_window"/>
+
+  </data>
+</odoo>
