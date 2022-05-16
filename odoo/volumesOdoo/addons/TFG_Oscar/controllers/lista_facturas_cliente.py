@@ -20,7 +20,7 @@ class ListaProductos(http.Controller):
 
     '''
     #TROZO GET PARA PRODUCTOS
-    @http.route('/gestion/apirest/facturas/', auth="none", cors='*', csrf=False, methods=["GET"], type='http')
+    @http.route('/gestion/apirest/facturas', auth="none", cors='*', csrf=False, methods=["GET"], type='http')
     def apiGet(self, **args):  
         #Obtenemos el modelo y si hay id, hacemos la busqueda
         search = []
@@ -34,14 +34,15 @@ class ListaProductos(http.Controller):
 
         record = request.env['ventacompleta'].sudo().search(search)
     #Si hay algun elemento
+        lista_ventas=[]
+
         if record and record[0]:
-            lista_ventas=[]
             for s in record:
                 pdfurl = str(s.report_file)[2:-1]
                 pdfurl = 'data:application/pdf;base64,'+pdfurl
                 lista_ventas.append({'id':s.id,'cliente':s.cliente.id,'pdf':pdfurl})
-            json_result= http.Response(json.dumps(lista_ventas, default=str)
-            ,status=200,mimetype='application/json')
+        json_result= http.Response(json.dumps(lista_ventas, default=str)
+        ,status=200,mimetype='application/json')
         return json_result
     #Si es delete, cogemos el primer elemento de la busqueda
     #Si no es GET ni DELETE

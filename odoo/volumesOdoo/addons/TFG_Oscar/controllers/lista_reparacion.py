@@ -27,9 +27,11 @@ class ListaProductos(http.Controller):
         #Generamos la lista de cargamentos
         lista_productos=[]
         for s in productos:
+            pdfurl = str(s.report_file)[2:-1]
+            pdfurl = 'data:application/pdf;base64,'+pdfurl
             lista_productos.append({'id':s.id,'idventa':s.idventa,'empleado':s.empleado.nombre,'cliente':s.cliente.nombre,
-            'reparacion':s.reparar,'precioTotal':s.precioRTotal,
-            'precioNeto':s.precioRNeto,'fechaEntrega':s.fecha_entrega,'fechaCompra':s.fecha_compra})
+            'reparacion':s.reparar,'estado':s.estado,'precioTotal':s.precioRTotal,
+            'precioNeto':s.precioRNeto,'fechaEntrega':s.fecha_entrega,'fechaCompra':s.fecha_compra, 'pdf':pdfurl})
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
         return json_result
@@ -110,10 +112,11 @@ class ListaProductos(http.Controller):
             record = http.request.env['reparacion'].sudo().search(search)
             if record and record[0]:
                 lista_reparacion=[]
-                base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
                 for s in record:
+                    pdfurl = str(s.report_file)[2:-1]
+                    pdfurl = 'data:application/pdf;base64,'+pdfurl
                     lista_reparacion.append({'id':s.id,'idventa':s.idventa,'empleado':s.empleado.nombre,'cliente':s.cliente.nombre,
-                    'reparacion':s.reparar,'precioTotal':s.precioRTotal,
+                    'reparacion':s.reparar,'estado':s.estado,'precioTotal':s.precioRTotal,
                     'precioNeto':s.precioRNeto,'fechaEntrega':s.fecha_entrega,'fechaCompra':s.fecha_compra})
                 return http.Response( 
                 json.dumps(lista_reparacion, default=str)[1:-1], 

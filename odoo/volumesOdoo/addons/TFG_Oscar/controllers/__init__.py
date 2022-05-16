@@ -11,3 +11,5 @@ from . import lista_reparacion
 from . import lista_productos_delete
 from . import lista_facturas_cliente
 from . import lista_clientes_delete
+from . import lista_empleados_delete
+from . import lista_proveedores_delete

@@ -20,7 +20,7 @@ class EliminarEmpleados(http.Controller):
 
     '''
     #TROZO GET PARA PRODUCTOS
-    @http.route('/gestion/apirest/delete/empleados', auth="none", cors='*', csrf=False, methods=["GET"],
+    @http.route('/gestion/apirest/delete/proveedores', auth="none", cors='*', csrf=False, methods=["GET"],
                 type='http')
     def apiGet(self, **args):
         #Obtenemos el modelo y si hay id, hacemos la busqueda
@@ -35,7 +35,7 @@ class EliminarEmpleados(http.Controller):
 
         #Si es GET, devolvemos el registro de la busqueda
         if (http.request.httprequest.method == 'GET'):
-            record = http.request.env[ 'empleados'].sudo().search(search)
+            record = http.request.env[ 'proveedores'].sudo().search(search)
         #Si hay algun elemento
             if record and record[0]:
                 #Eliminamos el registro encontrado

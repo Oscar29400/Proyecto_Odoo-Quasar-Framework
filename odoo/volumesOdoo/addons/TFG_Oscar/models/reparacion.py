@@ -19,9 +19,9 @@ class reparacion(models.Model):
     idventa = fields.Char(string='ID Venta', compute='_idventa')
     empleado = fields.Many2one('empleados', string='Vendedor')
     cliente = fields.Many2one('clientes', string='Cliente')
-    reparar = fields.Selection([('cat1','Cambiar Suelas'),
-    ('cat2','Pintar Zapatos'),('cat3','Coser Pantalon'),('cat4','Coser Pantalon'),
-    ('cat5','Reparacion Completa y Limpieza')]
+    reparar = fields.Selection([('Cambiar Suelas','Cambiar Suelas'),
+    ('Pintar Zapatos','Pintar Zapatos'),('Coser Pantalon','Coser Pantalon'),('Limpieza Zapatos','Limpieza Zapatos'),
+    ('c','Reparacion Completa y Limpieza')]
     ,string='Tipo Reparación')
     precioRNeto = fields.Float(compute='_precioR',string='Precio Neto', digits=(12,2))
     precioRTotal = fields.Float( string='Precio Total', compute='_precioRT', digits=(12,2))
@@ -29,9 +29,9 @@ class reparacion(models.Model):
     fecha_entrega = fields.Date('Fecha de Entrega')
     fecha_compra = fields.Date(default=datetime.datetime.today(),readonly=True, string='Fecha de Recepción')
     estado = fields.Selection(
-        [('categoria1', 'Recién entregado'),
-         ('categoria2', 'En proceso de reparación'),
-         ('categoria3', 'Entregado'),], required=True)
+        [('Limpieza Zapatos', 'Recién entregado'),
+         ('En proceso de reparación', 'En proceso de reparación'),
+         ('Entregado', 'Entregado'),], required=True)
 
     @api.depends('idventa')
     def _idventa(self):
@@ -42,15 +42,15 @@ class reparacion(models.Model):
     def _precioR(self):
         for record in self:
              #Para cada registro
-            if record.reparar == "cat1":
+            if record.reparar == "Cambiar Suelas":
                 record.precioRNeto = 8.20
-            elif record.reparar == "cat2":
+            elif record.reparar == "Pintar Zapatos":
                 record.precioRNeto = 12.40
-            elif record.reparar == "cat3":
+            elif record.reparar == "Coser Pantalon":
                 record.precioRNeto = 15.50
-            elif record.reparar == "cat4":
+            elif record.reparar == "Limpieza Zapatos":
                 record.precioRNeto = 2.40
-            elif record.reparar == "cat5":
+            elif record.reparar == "Limpieza Zapatos":
                 record.precioRNeto = 35.50
 
     @api.depends('precioRTotal')
