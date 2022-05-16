@@ -2,21 +2,61 @@
   <q-page>
     <div class="row">
       <q-table
-        @row-click="goTo"
         title="Clientes"
         :rows="rows"
         :columns="columns"
         row-key="name"
         class="col"
-      />
-      <img :src="url">
-
+      >
+        <template v-slot:body-cell-img="props">
+          <q-tr :props="props">
+            <q-td v-for="col in props.cols" :key="col.name" :props="props">
+              <span v-if="col.name != 'img'">
+                {{ col.value }}
+              </span>
+              <img
+                :src="props.row.img"
+                style="max-width: 100px"
+                v-if="col.name == 'img'"
+                size="100px"
+              />
+            </q-td>
+          </q-tr>
+        </template>
+        <template v-slot:body-cell-action="props">
+          <q-td :props="props">
+            <q-btn
+              icon="ti-trash"
+              color="negative"
+              size="md"
+              @click="deletePosts(props.row)"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Eliminar Cliente</q-tooltip
+              > </q-btn
+            >&nbsp;
+            <q-btn
+              icon="ti-new-window"
+              color="teal"
+              size="md"
+              @click="goTo(props.row.id)"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Mas Información</q-tooltip
+              >
+            </q-btn>
+          </q-td>
+        </template>
+      </q-table>
     </div>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
+import { useQuasar } from "quasar";
 export default {
   name: "ClientessPage",
   data() {
@@ -68,7 +108,12 @@ export default {
           name: "img",
           label: "Imagen",
           align: "left",
-          field: "img",
+          sortable: true,
+        },
+        {
+          name: "action",
+          label: "Acciones",
+          align: "left",
           sortable: true,
         },
       ],
@@ -78,10 +123,35 @@ export default {
         rowsPerPage: 10,
       },
       rows: [],
+      url: [],
     };
   },
   mounted() {
     this.getProductos();
+  },
+setup() {
+    const $q = useQuasar();
+    return {
+      showNotif() {
+        $q.notify({
+          message:
+            "Foreign Key ERROR.\n" +
+            "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+    };
   },
   methods: {
     getProductos() {
@@ -89,17 +159,29 @@ export default {
         .get("http://localhost:8069/gestion/cargamento/clientes")
         .then((res) => {
           this.rows = res.data;
-          var image = new Image(200, 200);
-          image.src = this.rows[0].img;
-         image = this.rows[0].foto;
-
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    goTo(event, row) {
-      this.$router.push("/producto/" + row.id);
+    goTo(row) {
+      this.$router.push("/cliente?id=" + row);
+    },
+    deletePosts(idPosts) {
+      this.$axios
+        .get(
+          'http://localhost:8069/gestion/apirest/delete/clientes?data={"id":"' +
+            idPosts.id +
+            '"}'
+        )
+        .then((response) => {
+          console.log("Everything is awesome.");
+        })
+        .catch((error) => {
+          console.warn("Not good man :(");
+          this.showNotif();
+        });
+      console.log(idPosts.id);
     },
   },
 };

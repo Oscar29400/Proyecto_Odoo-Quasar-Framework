@@ -1,22 +1,53 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table dense title="Productos" :rows="rows" :columns="columns" row-key="id" class="col">
-
+      <q-table
+        dense
+        title="Productos"
+        :rows="rows"
+        :columns="columns"
+        row-key="id"
+        class="col"
+      >
         <template v-slot:body-cell-img="props">
           <q-tr :props="props">
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
               <span v-if="col.name != 'img'">
                 {{ col.value }}
               </span>
-              <img :src="props.row.img" style="max-width:100px;" v-if="col.name == 'img'" size="100px">
+              <img
+                :src="props.row.img"
+                style="max-width: 100px"
+                v-if="col.name == 'img'"
+                size="100px"
+              />
             </q-td>
           </q-tr>
         </template>
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
-            <q-btn icon="ti-trash" color="negative" size="sm" @click="deletePosts(props.row)" dense />&nbsp;
-            <q-btn icon="ti-new-window" color="teal" size="sm" @click="goTo(props.row.id)" dense />
+            <q-btn
+              icon="ti-trash"
+              color="negative"
+              size="md"
+              @click="deletePosts(props.row)"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Eliminar Producto</q-tooltip
+              > </q-btn
+            >&nbsp;
+            <q-btn
+              icon="ti-new-window"
+              color="teal"
+              size="md"
+              @click="goTo(props.row.id)"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Mas Información</q-tooltip
+              >
+            </q-btn>
           </q-td>
         </template>
       </q-table>
@@ -27,8 +58,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import { Notify } from 'quasar';
-import { useQuasar } from 'quasar'
+import { Notify } from "quasar";
+import { useQuasar } from "quasar";
 
 export default {
   name: "PageProductos",
@@ -110,21 +141,28 @@ export default {
     this.getProductos();
   },
   setup() {
-    const $q = useQuasar()
+    const $q = useQuasar();
     return {
       showNotif() {
         $q.notify({
-          message: 'Foreign Key ERROR.\n' +
-            'Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.',
-          color: 'primary',
+          message:
+            "Foreign Key ERROR.\n" +
+            "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
           progress: true,
           multiLine: true,
           actions: [
-            { label: 'Aceptar', color: 'yellow', handler: () => { /* ... */ } }
-          ]
-        })
-      }
-    }
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+    };
   },
   methods: {
     getProductos() {
@@ -132,9 +170,6 @@ export default {
         .get("http://localhost:8069/gestion/cargamento/productos")
         .then((res) => {
           this.rows = res.data;
-          for (let i = 0; i < this.rows.length; i++) {
-            this.url = "http://localhost:8069/web/image?model=productos&id=" + this.rows[i].id + "&field=img";
-          }
         })
         .catch((err) => {
           console.log(err);
@@ -145,15 +180,20 @@ export default {
     },
     deletePosts(idPosts) {
       this.$axios
-        .get('http://localhost:8069/gestion/apirest/delete/productos?data={"id":"' + idPosts.id + '"}').then((response) => {
-          console.log('Everything is awesome.');
-        }).catch((error) => {
-          console.warn('Not good man :(');
-          this.showNotif();
+        .get(
+          'http://localhost:8069/gestion/apirest/delete/productos?data={"id":"' +
+            idPosts.id +
+            '"}'
+        )
+        .then((response) => {
+          console.log("Everything is awesome.");
         })
+        .catch((error) => {
+          console.warn("Not good man :(");
+          this.showNotif();
+        });
       console.log(idPosts.id);
-
-    }
+    },
   },
 };
 </script>

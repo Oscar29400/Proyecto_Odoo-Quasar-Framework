@@ -12,6 +12,9 @@ const routes = [
       { path: 'ventacompleta', component: () => import('pages/VentacompletaPage.vue') },
       { path: 'compras', component: () => import('pages/ComprasPage.vue') },
       { path: 'producto', component: () => import('pages/ProductoPage.vue') },
+      { path: 'cliente', component: () => import('pages/ClientePage.vue') },
+      { path: 'proveedor', component: () => import('pages/ProveedorPage.vue') },
+      { path: 'empleado', component: () => import('pages/EmpleadoPage.vue') },
       { path: 'venta', component: () => import('pages/VentaPage.vue') },
       { path: 'aboutus', component: () => import('pages/AboutPage.vue') }
     ]

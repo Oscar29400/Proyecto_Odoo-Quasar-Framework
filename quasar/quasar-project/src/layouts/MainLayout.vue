@@ -12,7 +12,7 @@
             @click="scrollToElement('')"
             style="width: 120px; min-height: auto !important; color: white"
             label="Productos"
-          />                     
+          />
           <q-tab
             class="q-mr-sm q-py-xs custom_tab"
             @click="scrollToElement('compras')"
@@ -119,7 +119,7 @@ export default defineComponent({
   },
   data() {
     return {
-      selected_tab: "t_0",
+      selected_tab: "t_1",
     };
   },
   methods: {
