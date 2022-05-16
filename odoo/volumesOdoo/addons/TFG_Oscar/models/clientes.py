@@ -22,4 +22,4 @@ class Clientes(models.Model):
     email = fields.Char('Email')
     tlfno = fields.Char('Telefono')
     cif = fields.Char(string='CIF/DNI')
-    foto = fields.Image(max_width=100,max_height=100)
+    foto = fields.Image(max_width=1000,max_height=1000)

@@ -20,4 +20,4 @@ class Empleados(models.Model):
     apellidos = fields.Char()
     seguridadSocial = fields.Char(string='Nº Seguridad Social')
     dni = fields.Char(string='DNI')
-    foto = fields.Image(max_width=50,max_height=50)
+    foto = fields.Image(max_width=1000,max_height=1000)

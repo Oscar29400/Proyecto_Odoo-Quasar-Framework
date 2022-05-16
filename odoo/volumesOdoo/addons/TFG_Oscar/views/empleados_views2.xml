@@ -13,7 +13,7 @@
           <field name="apellidos"/>
           <field name="seguridadSocial"/>
           <field name="dni"/>
-          <field name="foto" widget="image" class="oe_avatar"/>
+          <field name="foto" widget="image" class="oe_avatar" height="100"/>
         </tree>
       </field>
     </record>

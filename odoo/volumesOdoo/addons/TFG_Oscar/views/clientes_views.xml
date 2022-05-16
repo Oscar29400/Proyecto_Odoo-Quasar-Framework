@@ -14,7 +14,7 @@
           <field name="ciudad"/>
           <field name="email"/>
           <field name="tlfno"/>
-          <field name="foto" widget="image" class="oe_avatar"/>
+          <field name="foto" widget="image" class="oe_avatar"  height="100"/>
         </tree>
       </field>
     </record>

@@ -25,7 +25,6 @@ class ListaProductos(http.Controller):
         # Obtenemos la referencia del modelo (pensado en este programa para ser "productos")
         productos = request.env['ventacompleta'].sudo().search([])
         ventar = request.env['ventar'].sudo().search([])
-        base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
         #Generamos la lista de cargamentos
         lista_productos=[]
         produc= []
@@ -38,9 +37,10 @@ class ListaProductos(http.Controller):
                 i +=1
             stringa = stringa[:-1]
             x = stringa.split(",")
-            pdfurl = base64.b64encode(s.report_file)
+            pdfurl = str(s.report_file)[2:-1]
+            pdfurl = 'data:application/pdf;base64,'+pdfurl
             lista_productos.append({'id':s.id,'idventa':s.idventa,'empleado':s.empleado.nombre,'cliente':s.cliente.nombre,'producto':x,
-            'precioTotal':s.precioTotal,'precioNeto':s.precioNeto})
+            'precioTotal':s.precioTotal,'precioNeto':s.precioNeto,'pdf':pdfurl})
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
         return json_result
