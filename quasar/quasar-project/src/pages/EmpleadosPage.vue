@@ -1,55 +1,27 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table
-        @row-click="goTo"
-        title="Empleados"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        class="col"
-      >
+      <q-table title="Empleados" :rows="rows" :columns="columns" row-key="name" class="col">
         <template v-slot:body-cell-img="props">
           <q-tr :props="props">
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
               <span v-if="col.name != 'img'">
                 {{ col.value }}
               </span>
-              <img
-                :src="props.row.img"
-                style="max-width: 100px"
-                v-if="col.name == 'img'"
-                size="100px"
-              />
+              <img :src="props.row.img" style="max-width: 100px" v-if="col.name == 'img'" size="100px" />
             </q-td>
           </q-tr>
         </template>
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
-            <q-btn
-              icon="ti-trash"
-              color="negative"
-              size="md"
-              @click="deletePosts(props.row)"
-              dense
-            >
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
-                >Eliminar Cliente</q-tooltip
-              > </q-btn
-            >&nbsp;
-            <q-btn
-              icon="ti-new-window"
-              color="teal"
-              size="md"
-              @click="goTo(props.row.id)"
-              dense
-            >
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
-                >Mas Información</q-tooltip
-              >
+            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
+            </q-btn>&nbsp;
+            <q-btn icon="ti-new-window" color="teal" size="md" @click="goTo(props.row.id)" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Mas Información</q-tooltip>
             </q-btn>
           </q-td>
-          </template>
+        </template>
       </q-table>
     </div>
   </q-page>
@@ -103,7 +75,6 @@ export default {
           name: "img",
           label: "Imagen",
           align: "left",
-          field: "img",
           sortable: true,
         },
         {
@@ -151,12 +122,9 @@ export default {
   methods: {
     getProductos() {
       this.$axios
-        .get("http://localhost:8069/gestion/cargamento/empleados")
+        .get("http://localhost:8069/gestion/cargamento/reparacion")
         .then((res) => {
           this.rows = res.data;
-          var image = new Image(200, 200);
-          image.src = this.rows[0].img;
-          image = this.rows[0].foto;
         })
         .catch((err) => {
           console.log(err);
@@ -168,9 +136,9 @@ export default {
     deletePosts(idPosts) {
       this.$axios
         .get(
-          'http://localhost:8069/gestion/apirest/delete/empleados?data={"id":"' +
-            idPosts.id +
-            '"}'
+          'http://localhost:8069/gestion/apirest/delete/reparacion?data={"id":"' +
+          idPosts.id +
+          '"}'
         )
         .then((response) => {
           console.log("Everything is awesome.");

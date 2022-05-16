@@ -1,14 +1,7 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table
-        @row-click="goTo"
-        title="Compras"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        class="col"
-      />
+      <q-table @row-click="goTo" title="Compras" :rows="rows" :columns="columns" row-key="name" class="col" />
       <img :src="url">
 
     </div>
@@ -70,7 +63,7 @@ export default {
           this.rows = res.data;
           var image = new Image(200, 200);
           image.src = this.rows[0].img;
-         image = this.rows[0].foto;
+          image = this.rows[0].foto;
 
         })
         .catch((err) => {

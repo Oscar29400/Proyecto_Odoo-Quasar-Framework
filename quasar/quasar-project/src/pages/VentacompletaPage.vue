@@ -1,32 +1,14 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table
-        title="Ventas"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        class="col"
-      >
+      <q-table title="Ventas" :rows="rows" :columns="columns" row-key="name" class="col">
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
-            <q-btn
-              icon="ti-trash"
-              color="negative"
-              size="md"
-              @click="deletePosts(props.row)"
-              dense
-            >
-            <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
+            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
             </q-btn>&nbsp;
-            <q-btn
-              icon="ti-new-window"
-              color="teal"
-              size="md"
-              :href="props.row.pdf"
-              dense
-            >
-            <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Descargar Factura</q-tooltip>
+            <q-btn icon="ti-new-window" color="teal" size="md" :href="props.row.pdf" target="_blank" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Descargar Factura</q-tooltip>
             </q-btn>
           </q-td>
         </template>

@@ -16,6 +16,7 @@ const routes = [
       { path: 'proveedor', component: () => import('pages/ProveedorPage.vue') },
       { path: 'empleado', component: () => import('pages/EmpleadoPage.vue') },
       { path: 'venta', component: () => import('pages/VentaPage.vue') },
+      { path: 'facturas', component: () => import('pages/ClienteFacturaPage.vue') },
       { path: 'aboutus', component: () => import('pages/AboutPage.vue') }
     ]
   },

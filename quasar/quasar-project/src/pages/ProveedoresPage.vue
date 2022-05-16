@@ -1,51 +1,24 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table
-        title="Proveedores"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        class="col"
-      >
+      <q-table title="Proveedores" :rows="rows" :columns="columns" row-key="name" class="col">
         <template v-slot:body-cell-img="props">
           <q-tr :props="props">
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
               <span v-if="col.name != 'img'">
                 {{ col.value }}
               </span>
-              <img
-                :src="props.row.img"
-                style="max-width: 100px"
-                v-if="col.name == 'img'"
-                size="100px"
-              />
+              <img :src="props.row.img" style="max-width: 100px" v-if="col.name == 'img'" size="100px" />
             </q-td>
           </q-tr>
         </template>
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
-            <q-btn
-              icon="ti-trash"
-              color="negative"
-              size="md"
-              @click="deletePosts(props.row)"
-              dense
-            >
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
-                >Eliminar Cliente</q-tooltip
-              > </q-btn
-            >&nbsp;
-            <q-btn
-              icon="ti-new-window"
-              color="teal"
-              size="md"
-              @click="goTo(props.row.id)"
-              dense
-            >
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
-                >Mas Información</q-tooltip
-              >
+            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Proveedor</q-tooltip>
+            </q-btn>&nbsp;
+            <q-btn icon="ti-new-window" color="teal" size="md" @click="goTo(props.row.id)" dense>
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Mas Información</q-tooltip>
             </q-btn>
           </q-td>
         </template>
@@ -169,8 +142,8 @@ export default {
       this.$axios
         .get(
           'http://localhost:8069/gestion/apirest/delete/proveedores?data={"id":"' +
-            idPosts.id +
-            '"}'
+          idPosts.id +
+          '"}'
         )
         .then((response) => {
           console.log("Everything is awesome.");

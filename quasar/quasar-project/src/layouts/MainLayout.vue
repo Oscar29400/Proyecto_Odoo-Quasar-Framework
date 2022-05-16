@@ -49,12 +49,6 @@
             style="width: 120px; min-height: auto !important; color: white"
             label="Reparacion"
           />
-          <q-tab
-            class="q-mr-sm q-py-xs custom_tab"
-            @click="scrollToElement('aboutus')"
-            style="width: 120px; min-height: auto !important; color: white"
-            label="Sobre Nosotros"
-          />
         </q-tabs>
       </q-toolbar>
     </q-header>
