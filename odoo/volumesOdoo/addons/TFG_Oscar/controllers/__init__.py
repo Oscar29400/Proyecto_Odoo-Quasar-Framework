@@ -15,3 +15,5 @@ from . import lista_empleados_delete
 from . import lista_proveedores_delete
 from . import lista_compras_delete
 from . import addProducto
+from . import lista_reparacion_delete
+from . import lista_ventacompleta_delete
