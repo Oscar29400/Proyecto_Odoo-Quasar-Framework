@@ -21,7 +21,7 @@ class reparacion(models.Model):
     cliente = fields.Many2one('clientes', string='Cliente')
     reparar = fields.Selection([('Cambiar Suelas','Cambiar Suelas'),
     ('Pintar Zapatos','Pintar Zapatos'),('Coser Pantalon','Coser Pantalon'),('Limpieza Zapatos','Limpieza Zapatos'),
-    ('c','Reparacion Completa y Limpieza')]
+    ('Reparacion Completa y Limpieza','Reparacion Completa y Limpieza')]
     ,string='Tipo Reparación')
     precioRNeto = fields.Float(compute='_precioR',string='Precio Neto', digits=(12,2))
     precioRTotal = fields.Float( string='Precio Total', compute='_precioRT', digits=(12,2))

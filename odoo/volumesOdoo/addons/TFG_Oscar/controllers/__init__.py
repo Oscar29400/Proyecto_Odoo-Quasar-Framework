@@ -13,3 +13,5 @@ from . import lista_facturas_cliente
 from . import lista_clientes_delete
 from . import lista_empleados_delete
 from . import lista_proveedores_delete
+from . import lista_compras_delete
+from . import addProducto

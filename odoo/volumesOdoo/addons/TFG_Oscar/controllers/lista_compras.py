@@ -27,7 +27,7 @@ class ListaProductos(http.Controller):
         #Generamos la lista de cargamentos
         lista_productos=[]
         for s in productos:
-            lista_productos.append({'idCompra':s.idcompra,'proveedor':s.proveedor.nombre,'productos':s.productos.nombre,
+            lista_productos.append({'id':s.id,'idCompra':s.idcompra,'proveedor':s.proveedor.nombre,'productos':s.productos.nombre,
             'precioCosteUnidad':s.precioCompra,'cantidad':s.cantidad})
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
@@ -113,7 +113,7 @@ class ListaProductos(http.Controller):
                 lista_productos=[]
                 base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
                 for s in record:
-                    lista_productos.append({'idCompra':s.idcompra,'proveedor':s.proveedor.nombre,'productos':s.productos.nombre,
+                    lista_productos.append({'id':s.id,'idCompra':s.idcompra,'idproveedor':s.proveedor.id,'proveedor':s.proveedor.nombre,'idprod':s.productos.id,'productos':s.productos.nombre,
                     'precioCosteUnidad':s.precioCompra,'cantidad':s.cantidad})
                 return http.Response( 
                 json.dumps(lista_productos, default=str)[1:-1], 
