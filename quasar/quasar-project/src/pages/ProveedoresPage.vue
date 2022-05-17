@@ -125,6 +125,24 @@ export default {
           ],
         });
       },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Se ha eliminado el Proveedor con éxito",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
     };
   },
   methods: {
@@ -147,6 +165,7 @@ export default {
         )
         .then((response) => {
           console.log("Everything is awesome.");
+          this.showNotifGood();
         })
         .catch((error) => {
           console.warn("Not good man :(");

@@ -101,6 +101,48 @@ export default {
   mounted() {
     this.getProductos();
   },
+  setup() {
+    const $q = useQuasar();
+    return {
+      showNotif() {
+        $q.notify({
+          message:
+            "Foreign Key ERROR.\n" +
+            "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Se ha eliminado la Reparación con éxito",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+    };
+  },
   methods: {
     getProductos() {
       this.$axios
@@ -115,6 +157,23 @@ export default {
     },
     goTo(event, row) {
       this.$router.push("/producto/" + row.id);
+    },
+    deletePosts(idPosts) {
+      this.$axios
+        .get(
+          'http://localhost:8069/gestion/apirest/delete/reparacion?data={"id":"' +
+          idPosts.id +
+          '"}'
+        )
+        .then((response) => {
+          console.log("Everything is awesome.");
+          this.showNotifGood();
+        })
+        .catch((error) => {
+          console.warn("Not good man :(");
+          this.showNotif();
+        });
+      console.log(idPosts.id);
     },
   },
 };

@@ -117,6 +117,24 @@ export default {
           ],
         });
       },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Se ha eliminado el Empleado con éxito",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
     };
   },
   methods: {
@@ -136,12 +154,13 @@ export default {
     deletePosts(idPosts) {
       this.$axios
         .get(
-          'http://localhost:8069/gestion/apirest/delete/reparacion?data={"id":"' +
+          'http://localhost:8069/gestion/apirest/delete/empleados?data={"id":"' +
           idPosts.id +
           '"}'
         )
         .then((response) => {
           console.log("Everything is awesome.");
+          this.showNotifGood();
         })
         .catch((error) => {
           console.warn("Not good man :(");

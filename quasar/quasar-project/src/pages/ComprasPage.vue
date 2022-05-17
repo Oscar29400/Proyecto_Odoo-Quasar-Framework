@@ -1,8 +1,8 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table title="Compras" :rows="rows" :columns="columns" row-key="name" class="col" >
-      <template v-slot:body-cell-img="props">
+      <q-table title="Compras" :rows="rows" :columns="columns" row-key="name" class="col">
+        <template v-slot:body-cell-img="props">
           <q-tr :props="props">
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
               <span v-if="col.name != 'img'">
@@ -97,7 +97,7 @@ export default {
   mounted() {
     this.getProductos();
   },
-    setup() {
+  setup() {
     const $q = useQuasar();
     return {
       showNotif() {
@@ -105,6 +105,24 @@ export default {
           message:
             "Foreign Key ERROR.\n" +
             "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Se ha eliminado la Compra con éxito",
           color: "primary",
           progress: true,
           multiLine: true,
@@ -145,6 +163,8 @@ export default {
         )
         .then((response) => {
           console.log("Everything is awesome.");
+          this.showNotifGood();
+
         })
         .catch((error) => {
           console.warn("Not good man :(");

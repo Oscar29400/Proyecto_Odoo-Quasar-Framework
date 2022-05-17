@@ -19,6 +19,8 @@
 
 <script>
 import { defineComponent } from "vue";
+import { useQuasar } from "quasar";
+
 export default {
   name: "VentacompletaPage",
   data() {
@@ -84,6 +86,48 @@ export default {
   mounted() {
     this.getProductos();
   },
+  setup() {
+    const $q = useQuasar();
+    return {
+      showNotif() {
+        $q.notify({
+          message:
+            "Foreign Key ERROR.\n" +
+            "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Se ha eliminado la Venta con éxito",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+    };
+  },
   methods: {
     getProductos() {
       this.$axios
@@ -97,6 +141,24 @@ export default {
     },
     goTo(row) {
       this.$router.push("/venta/?id=" + row);
+    },
+    deletePosts(idPosts) {
+      this.$axios
+        .get(
+          'http://localhost:8069/gestion/apirest/delete/ventacompleta?data={"id":"' +
+          idPosts.id +
+          '"}'
+        )
+        .then((response) => {
+          console.log("Everything is awesome.");
+          this.showNotifGood();
+
+        })
+        .catch((error) => {
+          console.warn("Not good man :(");
+          this.showNotif();
+        });
+      console.log(idPosts.id);
     },
   },
 };

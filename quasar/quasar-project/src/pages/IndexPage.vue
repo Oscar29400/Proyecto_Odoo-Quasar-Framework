@@ -118,8 +118,26 @@ export default {
       showNotif() {
         $q.notify({
           message:
-            "Foreign Key ERROR.\n" +
+            "Foreign Key ERROR. " +
             "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
+          color: "primary",
+          progress: true,
+          multiLine: true,
+          actions: [
+            {
+              label: "Aceptar",
+              color: "yellow",
+              handler: () => {
+                /* ... */
+              },
+            },
+          ],
+        });
+      },
+      showNotifGood() {
+        $q.notify({
+          message:
+            "Has eliminado el Producto correctamente.",
           color: "primary",
           progress: true,
           multiLine: true,
@@ -147,6 +165,7 @@ export default {
           console.log(err);
         });
     },
+
     goTo(row) {
       this.$router.push("/producto?id=" + row);
     },
@@ -157,14 +176,15 @@ export default {
           idPosts.id +
           '"}'
         )
-        .then((response) => {
+        .then((response, res) => {
           console.log("Everything is awesome.");
+          this.showNotifGood();
         })
         .catch((error) => {
-          console.warn("Not good man :(");
           this.showNotif();
+          console.log(idPosts.idventasimple);
+
         });
-      console.log(idPosts.id);
     },
   },
 };
