@@ -122,7 +122,7 @@ export default {
   methods: {
     getProductos() {
       this.$axios
-        .get("http://localhost:8069/gestion/cargamento/reparacion")
+        .get("http://localhost:8069/gestion/cargamento/empleados")
         .then((res) => {
           this.rows = res.data;
         })
