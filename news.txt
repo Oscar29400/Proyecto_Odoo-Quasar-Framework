@@ -6,8 +6,8 @@ https://github.com/mayank091193/mayank-profile/blob/master/src/pages/Index.vue
 https://mayank-patel.netlify.app/#/
 -------------------------------------------------------------------------------------------------
 
-API MEJRADAS
-    APLICAR SOLUCION VENTACOMPLETA
+ICONOS
+ti-info-alt PARA MAS INFORMACIÓN EN CASI TODOS
         
 ----------------------------------------------------------------------------------------------
 SIGUIENTES PASOS
