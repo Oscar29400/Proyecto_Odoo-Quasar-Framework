@@ -32,11 +32,12 @@ class ListaProductos(http.Controller):
         i=0
         idventasimple = 0
         for s in productos:
+            idventasimple = s.producto.id
             for ventas in ventar:
-                produc.append(ventas.producto)
-                stringa += str(produc[i].nombre)+", "
-                idventasimple = produc[i].id
-                i +=1
+                if s.producto.id == ventas.id:
+                    produc.append(ventas.producto)
+                    stringa += str(produc[i].nombre)+", "
+                    i +=1
             stringa = stringa[:-2]
             frase = "Cargamento: " + stringa
             x = stringa.split(",")

@@ -40,7 +40,7 @@ class ListaProductos(http.Controller):
             for s in record:
                 pdfurl = str(s.report_file)[2:-1]
                 pdfurl = 'data:application/pdf;base64,'+pdfurl
-                lista_ventas.append({'id':s.id,'cliente':s.cliente.id,'pdf':pdfurl})
+                lista_ventas.append({'id':s.id,'cliente':s.cliente.nombre,'pdf':pdfurl})
         json_result= http.Response(json.dumps(lista_ventas, default=str)
         ,status=200,mimetype='application/json')
         return json_result
