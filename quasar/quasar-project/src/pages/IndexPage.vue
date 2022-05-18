@@ -118,17 +118,17 @@ export default {
       showNotif() {
         $q.notify({
           message:
-            "Foreign Key ERROR. " +
-            "Estas intentando modificar o eliminar un objeto que esta siendo usado por otro modelo en Odoo.",
-          color: "primary",
+            "<b>ERROR.</b><br> Estas intentando eliminar un Producto que se esta vendiendo todavia. <br> Elimina la Venta primero.",
+          html: true,
+          color: "red",
           progress: true,
           multiLine: true,
           actions: [
             {
               label: "Aceptar",
-              color: "yellow",
+              color: "black",
               handler: () => {
-                /* ... */
+                this.$router.push("/ventacompleta");
               },
             },
           ],
@@ -176,13 +176,12 @@ export default {
           idPosts.id +
           '"}'
         )
-        .then((response, res) => {
+        .then((response) => {
           console.log("Everything is awesome.");
           this.showNotifGood();
         })
         .catch((error) => {
           this.showNotif();
-          console.log(idPosts.idventasimple);
 
         });
     },

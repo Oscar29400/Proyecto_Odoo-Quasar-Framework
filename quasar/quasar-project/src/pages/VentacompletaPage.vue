@@ -1,14 +1,37 @@
 <template>
   <q-page>
     <div class="row">
-      <q-table title="Ventas" :rows="rows" :columns="columns" row-key="name" class="col">
+      <q-table
+        title="Ventas"
+        :rows="rows"
+        :columns="columns"
+        row-key="name"
+        class="col"
+      >
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
-            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
-            </q-btn>&nbsp;
-            <q-btn icon="ti-download" color="teal" size="md" :href="props.row.pdf" target="_blank" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Descargar Factura</q-tooltip>
+            <q-btn
+              icon="ti-trash"
+              color="negative"
+              size="md"
+              @click="deletePosts(props.row)"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Eliminar Campo</q-tooltip
+              > </q-btn
+            >&nbsp;
+            <q-btn
+              icon="ti-download"
+              color="teal"
+              size="md"
+              :href="props.row.pdf"
+              target="_blank"
+              dense
+            >
+              <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                >Descargar Factura</q-tooltip
+              >
             </q-btn>
           </q-td>
         </template>
@@ -31,6 +54,13 @@ export default {
           label: "ID Venta",
           align: "left",
           field: "idventa",
+          sortable: true,
+        },
+        {
+          name: "idventasimple",
+          label: "ID Cargamento",
+          align: "left",
+          field: "idventasimple",
           sortable: true,
         },
         {
@@ -110,8 +140,7 @@ export default {
       },
       showNotifGood() {
         $q.notify({
-          message:
-            "Se ha eliminado la Venta con éxito",
+          message: "Se ha eliminado la Venta con éxito",
           color: "primary",
           progress: true,
           multiLine: true,
@@ -146,18 +175,22 @@ export default {
       this.$axios
         .get(
           'http://localhost:8069/gestion/apirest/delete/ventacompleta?data={"id":"' +
-          idPosts.id +
-          '"}'
+            idPosts.id +
+            '"}'
         )
         .then((response) => {
           console.log("Everything is awesome.");
           this.showNotifGood();
-
         })
         .catch((error) => {
           console.warn("Not good man :(");
           this.showNotif();
         });
+      this.$axios.get(
+        'http://localhost:8069/gestion/apirest/delete/venta?data={"id":"' +
+          idPosts.idventasimple +
+          '"}'
+      );
       console.log(idPosts.id);
     },
   },

@@ -163,6 +163,7 @@ export default {
     },
     goToFacturas(row) {
       this.$router.push("/facturas?id=" + row);
+
     },
     deletePosts(idPosts) {
       this.$axios

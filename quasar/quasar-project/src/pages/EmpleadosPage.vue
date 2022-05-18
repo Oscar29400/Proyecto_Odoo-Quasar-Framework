@@ -166,7 +166,6 @@ export default {
           console.warn("Not good man :(");
           this.showNotif();
         });
-      console.log(idPosts.id);
     },
   },
 };

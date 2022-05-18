@@ -1,9 +1,9 @@
 <template>
   <q-page style="background-color: rgba(0, 0, 0, 0.68) !important">
     <section>
-      <div class="full-height full-width flex flex-center text-center" style="height: 15vh !important">
-        <div class="">
-          <div class="text-h3 text-white">Añadir Productos</div>
+      <div class="full-height full-width flex flex-center text-center q-pt-sm" style="height: 15vh !important; background-color: rgba(7, 7, 7, 0.68) !important">
+        <div>
+          <div class="text-h3 text-white q-pa-md">Añadir Productos</div>
         </div>
       </div>
     </section>
@@ -34,12 +34,13 @@
                 </q-input>
               </div>
               <div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
-                <q-input required v-model="formData.descripcion" name="descripcion" class="" type="textarea"
-                  bg-color="white" outlined label="Descripción *">
+                <q-input v-model="formData.descripcion" name="descripcion" class="" type="textarea"
+                  bg-color="white" outlined label="Descripción">
                   <template v-slot:append>
                     <q-icon name="comment" style="color: darkcyan" />
                   </template>
                 </q-input>
+
 
               </div>
             </div>
