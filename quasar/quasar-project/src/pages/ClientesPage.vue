@@ -1,7 +1,7 @@
 <template>
-  <q-page>
+  <q-page style="background-color: #b4b4b4; ">
     <div class="row">
-      <q-table title="Clientes" :rows="rows" :columns="columns" row-key="name" class="col">
+      <q-table title="Clientes" :rows="rows" :columns="columns" row-key="name" class="col" card-class="bg-grey-1 text-black">
         <template v-slot:body-cell-img="props">
           <q-tr :props="props">
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
@@ -17,10 +17,10 @@
             <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
               <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
             </q-btn>&nbsp;
-            <q-btn icon="ti-new-window" color="teal" size="md" @click="goTo(props.row.id)" dense>
+            <q-btn icon="ti-info-alt" color="primary" size="md" @click="goTo(props.row.id)" dense>
               <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Mas Información</q-tooltip>
-            </q-btn>
-            <q-btn icon="ti-new-window" color="teal" size="md" @click="goToFacturas(props.row.id)" dense>
+            </q-btn>&nbsp;
+            <q-btn icon="ti-clip" color="teal" size="md" @click="goToFacturas(props.row.id)" dense>
               <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Facturas</q-tooltip>
             </q-btn>
           </q-td>

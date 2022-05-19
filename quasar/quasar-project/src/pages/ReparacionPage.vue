@@ -1,7 +1,7 @@
 <template>
-  <q-page>
+  <q-page style="background-color: #b4b4b4; ">
     <div class="row">
-      <q-table title="Reparacion" :rows="rows" :columns="columns" row-key="name" class="col">
+      <q-table title="Reparacion" :rows="rows" :columns="columns" row-key="name" class="col" card-class="bg-grey-1 text-black" >
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
             <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>

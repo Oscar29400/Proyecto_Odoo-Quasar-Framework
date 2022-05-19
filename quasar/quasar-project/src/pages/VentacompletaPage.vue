@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page style="background-color: #b4b4b4; ">
     <div class="row">
       <q-table
         title="Ventas"
@@ -7,6 +7,7 @@
         :columns="columns"
         row-key="name"
         class="col"
+        card-class="bg-grey-1 text-black"
       >
         <template v-slot:body-cell-action="props">
           <q-td :props="props">
