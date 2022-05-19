@@ -20,12 +20,12 @@ class ListaProductos(http.Controller):
 
     '''
     #TROZO GET PARA PRODUCTOS
-    @http.route('/gestion/addProducto/<nombre>/<descripcion>/<precioCoste>/<cantidad>', auth="none", cors='*', type='http')
-    def apiPost(self,nombre,descripcion,precioCoste,cantidad ,**args):
+    @http.route('/gestion/addProducto/<nombre>/<descripcion>/<precioCoste>/<cantidad>/<img>', auth="none", cors='*', type='http')
+    def apiPost(self,nombre,descripcion,precioCoste,cantidad,img ,**args):
         productos = request.env['productos'].sudo().search([])
 
         #Generamos la lista de cargamentos
-        record = request.env['productos'].sudo().create({'nombre':nombre,'descripcion':descripcion,'precioCoste':precioCoste,'cantidad':cantidad})
+        record = request.env['productos'].sudo().create({'nombre':nombre,'descripcion':descripcion,'precioCoste':precioCoste,'cantidad':cantidad,'img':img})
         json_result= http.Response(json.dumps(record, default=str)
         ,status=200,mimetype='application/json')
         return json_result

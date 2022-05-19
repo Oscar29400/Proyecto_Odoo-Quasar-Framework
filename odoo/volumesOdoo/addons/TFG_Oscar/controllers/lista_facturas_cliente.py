@@ -33,14 +33,19 @@ class ListaProductos(http.Controller):
             return "{'estado':'CARGAMENTO NO INDICADO'}"
 
         record = request.env['ventacompleta'].sudo().search(search)
+        rec = request.env['reparacion'].sudo().search(search)
     #Si hay algun elemento
         lista_ventas=[]
 
-        if record and record[0]:
+        if (record and record[0]) or (rec and rec[0]):
             for s in record:
                 pdfurl = str(s.report_file)[2:-1]
                 pdfurl = 'data:application/pdf;base64,'+pdfurl
-                lista_ventas.append({'id':s.id,'cliente':s.cliente.nombre,'pdf':pdfurl})
+                lista_ventas.append({'id':s.idventa,'cliente':s.cliente.nombre,'pdf':pdfurl})
+            for c in rec:
+                pdfurlr = str(c.report_file)[2:-1]
+                pdfurlr = 'data:application/pdf;base64,'+pdfurlr
+                lista_ventas.append({'id':c.idventa,'cliente':s.cliente.nombre,'pdf':pdfurlr})
         json_result= http.Response(json.dumps(lista_ventas, default=str)
         ,status=200,mimetype='application/json')
         return json_result
