@@ -30,21 +30,22 @@ class ListaProductos(http.Controller):
         produc= []
         stringa = ""
         i=0
-        idventasimple = 0
+        
         for s in productos:
-            idventasimple = s.producto.id
             for ventas in ventar:
-                if s.producto.id == ventas.id:
-                    produc.append(ventas.producto)
-                    stringa += str(produc[i].nombre)+", "
-                    i +=1
+            #    if s.producto.id == ventas.id:
+                produc.append(ventas.producto)
+                stringa += str(produc[i].nombre)+", "
+                i +=1
             stringa = stringa[:-2]
             frase = "Cargamento: " + stringa
+
             x = stringa.split(",")
+            
             pdfurl = str(s.report_file)[2:-1]
             pdfurl = 'data:application/pdf;base64,'+pdfurl
             lista_productos.append({'id':s.id,'idventa':s.idventa,'empleado':s.empleado.nombre,'cliente':s.cliente.nombre,'producto':frase,
-            'precioTotal':s.precioTotal,'precioNeto':s.precioNeto,'pdf':pdfurl,'idventasimple':idventasimple})
+            'precioTotal':s.precioTotal,'precioNeto':s.precioNeto,'pdf':pdfurl})
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
         return json_result

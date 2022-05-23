@@ -97,7 +97,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Botín" id="botin_menu_root" web_icon="TFG_Oscar,static/description/icon.jpg"/>
+    <menuitem name="Botín" id="botin_menu_root" web_icon="TFG_Oscar,static/description/icon.png"/>
     
     <!-- actions -->
 
