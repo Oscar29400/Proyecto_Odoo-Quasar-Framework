@@ -1,26 +1,67 @@
 <template>
   <q-page style="background-color: #b4b4b4; ">
     <div class="row">
-      <q-table title="Proveedores" :rows="rows" :columns="columns" row-key="name" class="col">
-        <template v-slot:body-cell-img="props">
-          <q-tr :props="props">
-            <q-td v-for="col in props.cols" :key="col.name" :props="props">
-              <span v-if="col.name != 'img'">
-                {{ col.value }}
-              </span>
-              <img :src="props.row.img" style="max-width: 100px" v-if="col.name == 'img'" size="100px" />
-            </q-td>
-          </q-tr>
-        </template>
-        <template v-slot:body-cell-action="props">
-          <q-td :props="props">
-            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Proveedor</q-tooltip>
-            </q-btn>&nbsp;
-            <q-btn icon="ti-info-alt" color="primary" size="md" @click="goTo(props.row.id)" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Mas Información</q-tooltip>
-            </q-btn>
-          </q-td>
+      <q-table grid :rows="rows" :columns="columns" row-key="name" class="col">
+        <template v-slot:item="props">
+          <q-card
+            bordered
+            class="q-ma-sm tileBGColor"
+            style="max-width: 400px; min-width: 300px"
+          >
+            <div class="q-ma-sm">
+              <div class="text-h5">
+                {{ props.row.nombre }}
+              </div>
+              <div>
+                <q-img :src="props.row.img" basic style="max-width: 300px;" />
+              </div>
+              <div></div>
+              <div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>CIF: &nbsp;</b></div>
+                  <div class="column">{{ props.row.cif }}</div>
+                </div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>Direccion: &nbsp;</b></div>
+                  <div class="column">{{ props.row.direccion }} €</div>
+                </div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>Ciudad: &nbsp;</b></div>
+                  <div class="column">{{ props.row.ciudad }} €</div>
+                </div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>Email: &nbsp;</b></div>
+                  <div class="column">{{ props.row.email }}</div>
+                </div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>Telefono: &nbsp;</b></div>
+                  <div class="column">{{ props.row.tlfno }}</div>
+                </div>
+              </div>
+              <q-btn
+                icon="ti-trash"
+                color="negative"
+                size="md"
+                @click="deletePosts(props.row)"
+                dense
+              >
+                <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                  >Eliminar Producto</q-tooltip
+                > </q-btn
+              >&nbsp;
+              <q-btn
+                icon="ti-info-alt"
+                color="primary"
+                size="md"
+                @click="goTo(props.row.id)"
+                dense
+              >
+                <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                  >Mas Información</q-tooltip
+                >
+              </q-btn>
+            </div>
+          </q-card>
         </template>
       </q-table>
     </div>

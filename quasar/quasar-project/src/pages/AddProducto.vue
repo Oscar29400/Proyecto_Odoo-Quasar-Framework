@@ -77,7 +77,7 @@
                 class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pt-sm q-mt-sm"
               >
                 <q-input
-                   v-model="formData.imagen"
+                  @change="fileupload"
                   name="imagen"
                   type="file"
                   color="black"
@@ -141,6 +141,7 @@ export default {
         precioCoste: "",
         cantidad: null,
         file: null,
+        selectedfile: null,
       },
     };
   },
@@ -188,7 +189,8 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.formData.file)
+      console.log(this.formData.file);
+      console.log(this.formData);
       this.$axios
         .get(
           "http://localhost:8069/gestion/addProducto/" +
@@ -200,7 +202,7 @@ export default {
             "/" +
             this.formData.cantidad +
             "/" +
-            this.formData.imagen
+            this.selectedfile
         )
         .then((response) => {
           console.log("Everything is awesome.");
@@ -211,6 +213,10 @@ export default {
           this.showNotif();
         });
     },
+    fileupload(event) {
+      this.selectedfile = event
+      console.log(event)
+    }
   },
 };
 </script>

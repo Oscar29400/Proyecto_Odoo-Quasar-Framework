@@ -1,26 +1,56 @@
 <template>
   <q-page style="background-color: #b4b4b4; ">
     <div class="row">
-      <q-table title="Empleados" :rows="rows" :columns="columns" row-key="name" class="col" card-class="bg-grey-1 text-black">
-        <template v-slot:body-cell-img="props">
-          <q-tr :props="props">
-            <q-td v-for="col in props.cols" :key="col.name" :props="props">
-              <span v-if="col.name != 'img'">
-                {{ col.value }}
-              </span>
-              <img :src="props.row.img" style="max-width: 100px" v-if="col.name == 'img'" size="100px" />
-            </q-td>
-          </q-tr>
-        </template>
-        <template v-slot:body-cell-action="props">
-          <q-td :props="props">
-            <q-btn icon="ti-trash" color="negative" size="md" @click="deletePosts(props.row)" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Eliminar Campo</q-tooltip>
-            </q-btn>&nbsp;
-            <q-btn icon="ti-info-alt" color="primary" size="md" @click="goTo(props.row.id)" dense>
-              <q-tooltip class="bg-black text-body2" :offset="[10, 10]">Mas Información</q-tooltip>
-            </q-btn>
-          </q-td>
+      <q-table grid :rows="rows" :columns="columns" row-key="name" class="col" card-class="bg-grey-1 text-black">
+        <template v-slot:item="props">
+          <q-card
+            bordered
+            class="q-ma-sm tileBGColor"
+            style="max-width: 400px; min-width: 300px"
+          >
+            <div class="q-ma-sm">
+              <div class="text-h5">
+                {{ props.row.nombre }} {{ props.row.apellidos }}
+              </div>
+              <div>
+                <q-img :src="props.row.img" basic style="max-width: 300px;" />
+              </div>
+              <div></div>
+              <div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>DNI: &nbsp;</b></div>
+                  <div class="column">{{ props.row.dni }}</div>
+                </div>
+                <div class="row text-subtitle1">
+                  <div class="column"><b>Seguridad Social: &nbsp;</b></div>
+                  <div class="column">{{ props.row.seguridadSocial }}</div>
+                </div>
+
+              </div>
+              <q-btn
+                icon="ti-trash"
+                color="negative"
+                size="md"
+                @click="deletePosts(props.row)"
+                dense
+              >
+                <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                  >Eliminar Producto</q-tooltip
+                > </q-btn
+              >&nbsp;
+              <q-btn
+                icon="ti-info-alt"
+                color="primary"
+                size="md"
+                @click="goTo(props.row.id)"
+                dense
+              >
+                <q-tooltip class="bg-black text-body2" :offset="[10, 10]"
+                  >Mas Información</q-tooltip
+                >
+              </q-btn>
+            </div>
+          </q-card>
         </template>
       </q-table>
     </div>
