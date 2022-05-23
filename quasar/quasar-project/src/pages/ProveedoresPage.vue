@@ -13,7 +13,7 @@
                 {{ props.row.nombre }}
               </div>
               <div>
-                <q-img :src="props.row.img" basic style="max-width: 300px;" />
+                <q-img :src="props.row.img" basic style="max-height: 250px;" />
               </div>
               <div></div>
               <div>
@@ -23,11 +23,11 @@
                 </div>
                 <div class="row text-subtitle1">
                   <div class="column"><b>Direccion: &nbsp;</b></div>
-                  <div class="column">{{ props.row.direccion }} €</div>
+                  <div class="column">{{ props.row.direccion }} </div>
                 </div>
                 <div class="row text-subtitle1">
                   <div class="column"><b>Ciudad: &nbsp;</b></div>
-                  <div class="column">{{ props.row.ciudad }} €</div>
+                  <div class="column">{{ props.row.ciudad }} </div>
                 </div>
                 <div class="row text-subtitle1">
                   <div class="column"><b>Email: &nbsp;</b></div>

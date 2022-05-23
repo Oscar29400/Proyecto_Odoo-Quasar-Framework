@@ -20,7 +20,7 @@
                 {{ props.row.nombre }}
               </div>
               <div>
-                <q-img :src="props.row.img" basic />
+                <q-img :src="props.row.img" basic style="max-height: 250px"/>
               </div>
               <div></div>
               <div>
