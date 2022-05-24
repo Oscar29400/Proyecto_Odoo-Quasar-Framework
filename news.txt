@@ -4,6 +4,7 @@ https://apps.odoo.com/apps/themes/14.0/vista_backend_theme/#
 PAGINAS
 https://github.com/mayank091193/mayank-profile/blob/master/src/pages/Index.vue
 https://mayank-patel.netlify.app/#/
+https://www.digitalocean.com/community/tutorials/instalar-java-en-ubuntu-con-apt-get-es
 -------------------------------------------------------------------------------------------------
 
 ICONOS
