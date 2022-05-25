@@ -55,6 +55,12 @@
             style="width: 140px; min-height: auto !important; color: white"
             label="Añadir Productos"
           />
+          <q-tab
+            class="q-mr-sm q-py-xs custom_tab"
+            @click="scrollToElement('')"
+            style="width: 140px; min-height: auto !important; color: white"
+            label="Cerrar Sesión"
+          />
         </q-tabs>
       </q-toolbar>
     </q-header>

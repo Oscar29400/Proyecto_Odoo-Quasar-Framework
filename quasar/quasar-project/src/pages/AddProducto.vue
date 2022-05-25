@@ -76,21 +76,12 @@
               <div
                 class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pt-sm q-mt-sm"
               >
-                <q-input
-                  @change="fileupload"
-                  name="imagen"
-                  type="file"
-                  color="black"
-                  bg-color="grey-3"
-                  label-color="black"
-                  outlined
-                  label="Imagen"
-                  input-class="text-right"
-                >
-                  <template v-slot:append>
-                    <q-icon name="comment" style="color: darkcyan" />
-                  </template>
-                </q-input>
+                <q-file
+                  v-model="file"
+                  label="Pick one file"
+                  filled
+                  style="max-width: 300px"
+                />
 
                 <q-input
                   v-model="formData.descripcion"
@@ -140,9 +131,9 @@ export default {
         descripcion: "",
         precioCoste: "",
         cantidad: null,
-        file: null,
         selectedfile: null,
       },
+      img: null,
     };
   },
   setup() {
@@ -189,8 +180,7 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.formData.file);
-      console.log(this.formData);
+      console.log(this.file);
       this.$axios
         .get(
           "http://localhost:8069/gestion/addProducto/" +
@@ -202,7 +192,7 @@ export default {
             "/" +
             this.formData.cantidad +
             "/" +
-            this.selectedfile
+            this.img
         )
         .then((response) => {
           console.log("Everything is awesome.");
@@ -214,9 +204,9 @@ export default {
         });
     },
     fileupload(event) {
-      this.selectedfile = event
-      console.log(event)
-    }
+      this.selectedfile = event;
+      console.log(event);
+    },
   },
 };
 </script>
