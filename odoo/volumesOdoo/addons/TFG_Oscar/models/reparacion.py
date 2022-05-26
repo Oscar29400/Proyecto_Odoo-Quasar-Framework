@@ -29,7 +29,7 @@ class reparacion(models.Model):
     fecha_entrega = fields.Date('Fecha de Entrega')
     fecha_compra = fields.Date(default=datetime.datetime.today(),readonly=True, string='Fecha de Recepción')
     estado = fields.Selection(
-        [('Limpieza Zapatos', 'Recién entregado'),
+        [('Recién entregado', 'Recién entregado'),
          ('En proceso de reparación', 'En proceso de reparación'),
          ('Entregado', 'Entregado'),], required=True)
 

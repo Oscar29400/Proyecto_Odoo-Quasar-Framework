@@ -29,9 +29,11 @@ class ListaProductos(http.Controller):
         #Generamos la lista de cargamentos
         lista_productos=[]
         for s in productos:
+            img2=str(s.foto)[2:-1]
+            img2 = "data:image/jpg;base64,"+ img2
             imgurl = base_url + '/web/image?' + 'model=clientes&id=' + str(s.id) + '&field=foto'
             lista_productos.append({'id':s.id,'nombre':s.nombre,'direccion':s.direccion,
-            'email':s.email,'tlfno':s.tlfno,'dni':s.cif,'img':imgurl})
+            'email':s.email,'tlfno':s.tlfno,'dni':s.cif,'img':img2})
         json_result= http.Response(json.dumps(lista_productos, default=str)
         ,status=200,mimetype='application/json')
         return json_result
@@ -114,9 +116,11 @@ class ListaProductos(http.Controller):
                 lista_productos=[]
                 base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
             for s in record:
+                img2=str(s.foto)[2:-1]
+                img2 = "data:image/jpg;base64,"+ img2
                 imgurl = base_url + '/web/image?' + 'model=clientes&id=' + str(s.id) + '&field=foto'
                 lista_productos.append({'id':s.id,'nombre':s.nombre,'direccion':s.direccion,
-                'email':s.email,'tlfno':s.tlfno,'dni':s.cif,'img':imgurl})
+                'email':s.email,'tlfno':s.tlfno,'dni':s.cif,'img':img2})
                 return http.Response( 
                 json.dumps(lista_productos, default=str)[1:-1], 
                     status=200,

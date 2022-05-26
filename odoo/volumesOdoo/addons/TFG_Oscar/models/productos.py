@@ -25,7 +25,6 @@ class Productos(models.Model):
     precioCoste = fields.Float('Precio Coste', digits=(12,2))
     precioVenta = fields.Float(compute='_precio',store=True,string='Precio Venta', digits=(12,2))
     nuevoc = fields.Integer(compute='_cantidad', store=True,string='Cantidad')
-
     @api.depends('precioCoste')
     def _precio(self):
         for rec in self:
@@ -35,3 +34,4 @@ class Productos(models.Model):
     def _cantidad(self):
         for rec in self:
             rec.nuevoc = rec.cantidad
+    
