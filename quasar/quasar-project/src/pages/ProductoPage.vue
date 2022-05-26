@@ -90,7 +90,7 @@ export default {
         });
     },
     goTo(event, row) {
-      this.$router.push("/");
+      this.$router.push("/productos");
     },
   },
 };

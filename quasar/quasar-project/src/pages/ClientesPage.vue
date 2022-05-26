@@ -165,6 +165,7 @@ export default {
     };
   },
   mounted() {
+    this.sesion();
     this.getProductos();
   },
   setup() {
@@ -209,6 +210,7 @@ export default {
     };
   },
   methods: {
+    
     getProductos() {
       this.$axios
         .get("http://localhost:8069/gestion/cargamento/clientes")
@@ -221,6 +223,17 @@ export default {
     },
     goTo(row) {
       this.$router.push("/cliente?id=" + row);
+    },
+    sesion() {
+      const $q = useQuasar()
+      const sesion = $q.sessionStorage.getItem('email')
+      console.log('Comprobando sesion: ' + sesion)
+
+      if (sesion === 'undefined' || sesion === '' || sesion === null) {
+        document.location.href = 'http://localhost:8080/#/login'
+        console.log('NO SE HA INICIADO SESION')
+        // console.log('ESE USUARIO ' + otherValue)
+      }
     },
     goToFacturas(row) {
       this.$router.push("/facturas?id=" + row);

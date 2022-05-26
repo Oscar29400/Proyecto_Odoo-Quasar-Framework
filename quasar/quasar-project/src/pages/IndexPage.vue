@@ -160,6 +160,8 @@ export default {
     };
   },
   mounted() {
+    this.sesion();
+    console.log("srgrdhthg")
     this.getProductos();
   },
   setup() {
@@ -214,7 +216,17 @@ export default {
           console.log(err);
         });
     },
+    sesion() {
+      const $q = useQuasar()
+      const sesion = $q.sessionStorage.getItem('email')
+      console.log('Comprobando sesion: ' + sesion)
 
+      if (sesion === 'undefined' || sesion === '' || sesion === null) {
+        document.location.href = 'http://localhost:8080/#/login'
+        console.log('NO SE HA INICIADO SESION')
+        // console.log('ESE USUARIO ' + otherValue)
+      }
+    },
     goTo(row) {
       this.$router.push("/producto?id=" + row);
     },
