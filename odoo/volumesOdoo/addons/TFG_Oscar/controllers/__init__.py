@@ -19,3 +19,4 @@ from . import lista_reparacion_delete
 from . import lista_ventacompleta_delete
 from . import lista_venta_delete
 from . import addReparacion
+from . import addVenta

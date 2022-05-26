@@ -7,8 +7,8 @@
       <field name="name">Listado de Reparacion </field>
       <field name="model">reparacion</field>
       <field name="arch" type="xml">
-        <tree decoration-muted ="estado == 'categoria1'" decoration-primary  = "estado == 'categoria2'"  
-        decoration-success = "estado == 'categoria3'">
+        <tree decoration-muted ="estado == 'Recién entregado'" decoration-primary  = "estado == 'En proceso de reparación'"  
+        decoration-success = "estado == 'Entregado'">
           <field name="id" />
           <field name="idventa" />
           <field name="reparar" />
