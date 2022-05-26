@@ -3,13 +3,15 @@
     <q-header class="q-py-sm" style="background-color: rgba(0, 0, 0, 0.7)">
       <q-toolbar class="text-h4">
         <q-tabs v-model="selected_tab" shrink>
-        <q-tab
-        style>
-        <q-img src="../assets/botin.png" style="max-width: 70%; max-height: 100%;"></q-img>
-        </q-tab>
+          <q-tab style>
+            <q-img
+              src="../assets/botin.png"
+              style="max-width: 70%; max-height: 100%"
+            ></q-img>
+          </q-tab>
           <q-tab
             class="q-mr-sm q-py-xs custom_tab"
-            @click="scrollToElement('')"
+            @click="scrollToElement('productos')"
             style="width: 120px; min-height: auto !important; color: white"
             label="Productos"
           />
@@ -57,11 +59,25 @@
           />
           <q-tab
             class="q-mr-sm q-py-xs custom_tab"
-            @click="scrollToElement('')"
+            @click="scrollToElement('addReparacion')"
             style="width: 140px; min-height: auto !important; color: white"
-            label="Cerrar Sesión"
+            label="Añadir Reparación"
           />
+
         </q-tabs>
+        <q-space></q-space>
+        <q-tabs class="">
+          <q-tab
+            class="q-mr-sm q-py-xs custom_tab"
+            style="
+              width: 180px;
+              min-height: auto !important;
+              color: white;
+            "
+          >
+          <q-btn stack glossy size="md" color="red" label="Cerrar Sesión" to="/login"/>
+          </q-tab>
+          </q-tabs>
       </q-toolbar>
     </q-header>
 

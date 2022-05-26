@@ -18,8 +18,15 @@ const routes = [
       { path: 'venta', component: () => import('pages/VentaPage.vue') },
       { path: 'compra', component: () => import('pages/CompraPage.vue') },
       { path: 'facturas', component: () => import('pages/ClienteFacturaPage.vue') },
+      { path: 'addProducto', component: () => import('pages/AddProducto.vue') },
+      { path: 'addReparacion', component: () => import('pages/AddReparacionPage.vue') }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('layouts/LoginLayout.vue'),
+    children: [
       { path: '', component: () => import('pages/LoginPage.vue') },
-      { path: 'addProducto', component: () => import('pages/AddProducto.vue') }
     ]
   },
 
