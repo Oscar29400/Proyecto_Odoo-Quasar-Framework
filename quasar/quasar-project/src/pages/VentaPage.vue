@@ -28,7 +28,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
               <q-card-section class="col-5 flex flex-center">
-                
+
               </q-card-section>
             </div>
           </div>
@@ -41,6 +41,7 @@
 <script>
 import { defineComponent } from "vue";
 import { ref } from "vue";
+import { useQuasar } from "quasar";
 export default {
   name: "PageVenta",
   data() {
@@ -55,12 +56,24 @@ export default {
     };
   },
   mounted() {
+    this.sesion();
     this.getProductos();
   },
   setup() {
     return {};
   },
   methods: {
+    sesion() {
+      const $q = useQuasar()
+      const sesion = $q.sessionStorage.getItem('email')
+      console.log('Comprobando sesion: ' + sesion)
+
+      if (sesion === 'undefined' || sesion === '' || sesion === null) {
+        document.location.href = 'http://localhost:8080/#/login'
+        console.log('NO SE HA INICIADO SESION')
+        // console.log('ESE USUARIO ' + otherValue)
+      }
+    },
     getProductos() {
       this.$axios
         .get('http://localhost:8069/gestion/apirest/ventacompleta?data={"id":"' + this.$route.query.id +'"}')

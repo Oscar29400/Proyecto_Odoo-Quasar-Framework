@@ -210,7 +210,6 @@ export default {
     };
   },
   methods: {
-    
     getProductos() {
       this.$axios
         .get("http://localhost:8069/gestion/cargamento/clientes")

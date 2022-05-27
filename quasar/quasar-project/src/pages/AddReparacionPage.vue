@@ -129,6 +129,7 @@ export default {
     };
   },
   mounted() {
+    this.sesion();
     this.getClientes();
     this.getEmpleados();
   },
@@ -155,6 +156,17 @@ export default {
         }
       }
       this.addReparacion(emp, cli);
+    },
+    sesion() {
+      const $q = useQuasar()
+      const sesion = $q.sessionStorage.getItem('email')
+      console.log('Comprobando sesion: ' + sesion)
+
+      if (sesion === 'undefined' || sesion === '' || sesion === null) {
+        document.location.href = 'http://localhost:8080/#/login'
+        console.log('NO SE HA INICIADO SESION')
+        // console.log('ESE USUARIO ' + otherValue)
+      }
     },
     getClientes() {
       this.$axios

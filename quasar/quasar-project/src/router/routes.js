@@ -21,6 +21,7 @@ const routes = [
       { path: 'addProducto', component: () => import('pages/AddProducto.vue') },
       { path: 'addReparacion', component: () => import('pages/AddReparacionPage.vue') },
       { path: 'addVenta', component: () => import('pages/AddVentaPage.vue') },
+      { path: '', component: () => import('pages/AboutPage.vue') },
     ]
   },
   {

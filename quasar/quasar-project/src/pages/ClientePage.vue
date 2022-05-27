@@ -44,6 +44,7 @@
 <script>
 import { defineComponent } from "vue";
 import { ref } from "vue";
+import { useQuasar } from "quasar";
 export default {
   name: "PageVenta",
   data() {
@@ -58,12 +59,24 @@ export default {
     };
   },
   mounted() {
+    this.sesion();
     this.getProductos();
   },
   setup() {
     return {};
   },
   methods: {
+    sesion() {
+      const $q = useQuasar()
+      const sesion = $q.sessionStorage.getItem('email')
+      console.log('Comprobando sesion: ' + sesion)
+
+      if (sesion === 'undefined' || sesion === '' || sesion === null) {
+        document.location.href = 'http://localhost:8080/#/login'
+        console.log('NO SE HA INICIADO SESION')
+        // console.log('ESE USUARIO ' + otherValue)
+      }
+    },
     getProductos() {
       this.$axios
         .get('http://localhost:8069/gestion/apirest/clientes?data={"id":"' + this.$route.query.id +'"}')
