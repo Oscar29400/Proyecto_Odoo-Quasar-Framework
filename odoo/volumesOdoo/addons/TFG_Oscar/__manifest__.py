@@ -33,6 +33,7 @@
         'views/compras_views.xml',
         'views/ventar_views.xml',
         'views/proveedores_views.xml',
+        'views/usuario_views.xml',
         'views/clientes_views.xml',
         'views/venta_completa_views.xml',
         'views/reparacion_views.xml',

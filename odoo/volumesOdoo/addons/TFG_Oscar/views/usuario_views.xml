@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    <!-- Definicion Explicita de las Vistas -->
+
+    <!-- Vista Tree-->
+   <record model="ir.ui.view" id="empleados_tree"> 
+      <field name="name">Listado de Usuarios </field>
+      <field name="model">usuario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="email"/>
+          <field name="contrasena"/>
+        </tree>
+      </field>
+    </record>
+   
+    <!-- Vista Form-->
+    <record model="ir.ui.view" id="empleados_form_view">
+    <field name="name">Crear el usuario</field>
+    <field name="model">usuario</field>
+    <field name="arch" type="xml">
+    <form>
+      <group>
+        <group>
+          <field name="email"/>
+        </group>
+        <group>
+          <field name="contrasena"/>
+        </group>
+      </group>
+      </form>
+    </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="usuario_action_window">
+      <field name="name">Listado del Usuario</field>
+      <field name="res_model">usuario</field>
+      <!-- Declaramos que vistas se van a ver-->
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    
+
+    <!-- actions -->
+
+    <menuitem name="Usuarios" id="usuario_menu" parent="botin_menu_root" action="usuario_action_window"/>
+
+  </data>
+</odoo>

@@ -7,3 +7,4 @@ acl_proveedores,proveedores_default,model_proveedores,base.group_user,1,1,1,1
 acl_clientes,clientes_default,model_clientes,base.group_user,1,1,1,1
 acl_ventacompleta,ventacompleta_default,model_ventacompleta,base.group_user,1,1,1,1
 acl_reparacion,reparacion_default,model_reparacion,base.group_user,1,1,1,1
+acl_usuario,usuario_default,model_usuario,base.group_user,1,1,1,1
